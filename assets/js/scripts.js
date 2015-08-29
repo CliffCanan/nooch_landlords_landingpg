@@ -18,6 +18,19 @@ jQuery(document).ready(function() {
     $(".form-last-name").val("Last name...");
     $(".form-email").val("Email...");
 
+    $("html").niceScroll({
+        cursorcolor: "#41abef",
+        cursorwidth: '10px',
+        autohidemode: false,
+        zindex: 999,
+        mousescrollstep: 45,  // default is 40 (px)
+        scrollspeed: 75, // default is 60
+        autohidemode: 'cursor',
+        bouncescroll: true,
+        hidecursordelay: 800,
+        horizrailenabled: false
+    });
+
 	/* Navigation */
 	$('a.scroll-link').on('click', function(e) {
 		e.preventDefault();
@@ -26,7 +39,6 @@ jQuery(document).ready(function() {
 	
     /* Background slideshow */
     $('.top-content').backstretch("assets/img/backgrounds/1.jpg");
-    //$('.how-it-works-container').backstretch("assets/img/backgrounds/bg-city.jpg");
     $('.call-to-action-container').backstretch("assets/img/backgrounds/1.jpg");
     
     $('#top-navbar-1').on('shown.bs.collapse', function(){
@@ -37,16 +49,39 @@ jQuery(document).ready(function() {
     });
     
     /* Wow */
-    new WOW().init();
-    
-	/* Modals */
+    new WOW({
+        boxClass: 'wow',      // default
+        animateClass: 'animated', // default
+        offset: 25,          // default is 0
+        mobile: true,       // default
+        live: true        // default
+    }).init();
+
+    /** Benefits Tabs **/
+    $('#forLandlords').change(function () {
+        //if ($('#forLandlordsTab').hasClass('active'))
+        //{
+        $('#forLandlords').tab('show')
+       // }
+    })
+    $('#forTenants').change(function () {
+        $('#forTenants').tab('show')
+    })
+
+    /** Modals **/
 	$('.launch-modal').on('click', function(e){
 		e.preventDefault();
 		$( '#' + $(this).data('modal-id') ).modal();
 	});
-	
+
 });
 
+function toggleBenefitsTabs() {
+    $('#forLandlordsTab').toggleClass('active');
+    $('#forTenantsTab').toggleClass('active');
+    $('#forLandlordsTab').toggleClass('in');
+    $('#forTenantsTab').toggleClass('in');
+}
 
 jQuery(window).load(function() {
 	

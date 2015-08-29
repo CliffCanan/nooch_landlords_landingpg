@@ -65,7 +65,10 @@ body {font-size:17px;}
 *******************************
 */
 .container.nomax {width:100%;}
-.fromOffscrnL {position:relative;left:-3%;}
+.fromOffscrnL {position:relative; left:-3%;}
+.benefits-container .list-group-item {border:none; text-indent:-30px;}
+.list-group-item {color:#333; font-weight:400;}
+.list-group li > .fa-check {color:#72bf44;}
 
 /*
 *******************************
