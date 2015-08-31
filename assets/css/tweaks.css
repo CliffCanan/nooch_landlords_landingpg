@@ -9,15 +9,13 @@ body {font-size:17px;}
 				0 4px 18px -2px rgba(0, 0, 0, 0.2);
 }
 
-.inner-bg { padding: 85px 0 140px 0; }
-
 .section-description h2 > i {
   text-shadow: 1px 1px 4px #f8f8f8, 0 0 0px #000;
   color: rgba(147,150,152,.6);
   margin-right:8px;
 }
-.section-description h2 {letter-spacing: .5px;}
-.section-description h2 strong {font-weight: 400;}
+.section-description h2 { letter-spacing: .5px; }
+.section-description h2 strong { font-weight: 400; }
 
 .lead {
   line-height:1.45;
@@ -47,16 +45,104 @@ body {font-size:17px;}
 
 
 /***  BUTTONS  ***/
-.btn-group > .btn, .btn-lg {font-weight:300; height:50px;}
+.btn-group > .btn, .btn-lg { font-weight:300; height:50px; }
 .btn-group-lg > .btn .fa { margin-right: 10px; }
-
+button.btn { position:relative; }
+:not(a).btn {
+    -o-transition: all .2s;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -ms-transition: all .2s;
+    transition: all .2s;
+}
 /***  PANELS   ***/
 .panel {
   background-color: rgba(188, 190, 192, 0.15);
   text-align: left;
 }
-.panel-heading .fa {margin-right:10px;}
-.panel-body p {font-size:15px; line-height:1.9}
+.panel-heading .fa { margin-right:10px; }
+.panel-body p { font-size:15px; line-height:1.9 }
+
+
+/*
+*******************************
+    TOP Section
+*******************************
+*/
+.top-content .inner-bg .container { min-height:420px; }
+#top-carousel .item { background-color: rgba(0,0,0,.4); padding: 30px; text-shadow: 0 1px 0px rgba(0,0,0,.3); }
+#top-carousel .item p,
+#top-carousel ul {
+  font-size: 20px;
+  text-align: left;
+}
+#top-carousel ul { padding: 20px 30px 20px 50px; }
+#top-carousel ul li { margin-bottom: 10px; }
+#top-carousel p { padding: 0 10px;}
+
+.carousel-indicators.dark li.active { background: rgba(0,0,0,.5); }
+.carousel-indicators.dark li:not(.active):hover { border-color: rgba(0,0,0,.5) !important; }
+
+.top-content .container .form-box { background-color: rgba(63, 171, 225, 0.6); }
+#top-carousel .item,
+.top-content .container .form-box { box-shadow: 0px 10px 32px -11px rgba(0,0,0,.55); }
+
+/*
+  Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
+  CSS from:       http://codepen.io/transportedman/pen/NPWRGq
+  and:            http://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide
+  Inspired from:  http://codepen.io/Rowno/pen/Afykb 
+*/
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+/*
+  WHAT IS NEW IN Bootstrap 3.3: "Added transforms to improve carousel performance in modern browsers."
+  Need to override the 3.3 new styles for modern browsers & apply opacity
+*/
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+}
 
 /*
 *******************************
@@ -585,26 +671,26 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
   margin: 25px auto 0;
 }
 .carousel-indicators li {
-  background-color: rgba(0,0,0,.2);
+  background-color: rgba(0,0,0,.18);
   border:none;
-  width: 15px;
-  height: 15px;
-  margin: 0 9px;
-  -webkit-transition:.2s all ease;
-          transition:.2s all ease;
+  width: 14px;
+  height: 14px;
+  margin: 0 8px;
+  -webkit-transition:.16s all ease;
+          transition:.16s all ease;
 }
 .carousel-indicators li.active {
-  width: 16px;
-  height: 16px;
-  margin: 0 9px;
+  width: 15px;
+  height: 15px;
+  margin: 0 8px;
   background-color: #41abef;
 }
 .carousel-indicators li:not(.active):hover {
   background-color:rgba(0,0,0,.05);
   border: 2px solid rgba(63,171,225,.9);
-  width:17px;
-  height:17px;
-  margin:1px 8px 0;
+  width:16px;
+  height:16px;
+  margin:1px 7px 0;
 }
 
 .testimonial-author {
@@ -805,6 +891,10 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
   .tab-desk-only { display:block; }
 
   .container { width: 90%; }
+
+  #top-carousel .carousel-inner { overflow: visible;}
+  #top-carousel .item { max-width: 600px; }
+  #top-carousel #slide3 { max-width:450px; position:relative; left: -30px; }
 
   .circle-screenshot img { max-width: 80%; }
 

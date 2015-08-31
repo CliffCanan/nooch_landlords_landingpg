@@ -258,32 +258,22 @@ ul.navbar-nav {
 
 /***** Top content *****/
 
-.inner-bg {
-    padding: 120px 0 170px 0;
-}
+.inner-bg { padding: 50px 0 140px 0; }
 
-.top-content .text {
-	padding-top: 120px;
-	color: #fff;
-}
+.top-content .text { color: #fff; }
 
 .top-content .text h1 { color: #fff; }
 
-.top-content .description {
-	margin: 20px 0 10px 0;
-}
+.top-content .description { margin: 20px 0 10px 0; }
 
 .top-content .description p { opacity: 0.8; }
 
-.top-content .top-big-link {
-	margin-top: 35px;
-}
+.top-content .top-big-link { margin-top: 35px; }
 
 .form-top {
 	overflow: hidden;
 	padding: 0 25px 15px 25px;
-	background: #444;
-	background: rgba(0, 0, 0, 0.35);
+	background-color: transparent;
 	text-align: left;
 }
 
@@ -304,19 +294,16 @@ ul.navbar-nav {
 	color: #fff;
 	line-height: 100px;
 	text-align: right;
-	opacity: 0.3;
+	opacity: 0.65;
 }
 
 .form-bottom {
 	padding: 25px 25px 30px 25px;
-	background: #444;
-	background: rgba(0, 0, 0, 0.3);
+	background-color: transparent;
 	text-align: left;
 }
 
-.form-bottom form textarea {
-	height: 100px;
-}
+.form-bottom form textarea { height: 100px; }
 
 .form-bottom form .form-links {
 	display: inline-block;

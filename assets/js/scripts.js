@@ -38,16 +38,52 @@ jQuery(document).ready(function() {
 	});	
 	
     /* Background slideshow */
-    $('.top-content').backstretch("assets/img/backgrounds/1.jpg");
+	$(".top-content").vegas({
+	    slides: [
+            { src: "assets/img/backgrounds/woman-typing.jpg", animation: 'kenburns' },
+            { src: "assets/img/backgrounds/woman-writing-contract.jpg" },
+            { src: "assets/img/backgrounds/woman-check-mailbox-surprised.jpg", animation: "kenburnsDown", animationDuration: 8000 }
+	    ],
+
+	    overlay: "assets/img/backgrounds/overlays/06.png",
+
+	    //animation: 'kenburns',
+
+	    delay: 7500,
+
+	    walk: function (index, slideSettings) {
+	        $('#top-carousel').carousel('prev');
+	    }
+	});
+
+	$('#top-carousel').on('slide.bs.carousel', function (e) {
+	    if ($(e.relatedTarget).is('#slide3')) {
+	        $('#slide3').css('display', 'none');
+
+	        setTimeout(function () {
+	            $('#slide3').fadeIn();
+	        }, 700)
+	    }
+	    console.log(e.relatedTarget);
+	})
+
+	/*$('.top-content').backstretch([
+        "assets/img/backgrounds/woman-writing-contract.jpg",
+        "assets/img/backgrounds/woman-check-mailbox-surprised.jpg",
+        "assets/img/backgrounds/woman-typing.jpg"
+	], { duration: 5000, fade: 'slow' });
+    */
+
     $('.call-to-action-container').backstretch("assets/img/backgrounds/1.jpg");
     
     $('#top-navbar-1').on('shown.bs.collapse', function(){
-    	$('.top-content').backstretch("resize");
+    	//$('.top-content').backstretch("resize");
     });
     $('#top-navbar-1').on('hidden.bs.collapse', function(){
-    	$('.top-content').backstretch("resize");
+    	//$('.top-content').backstretch("resize");
     });
-    
+
+
     /* Wow */
     new WOW({
         boxClass: 'wow',      // default
@@ -70,12 +106,14 @@ jQuery(document).ready(function() {
     });
 
     $('.scrnshotToZoom2').hover(function () {
-        console.log('MOUSED OVER');
+
+        setTimeout(function () {
+            $('.scrnshotToZoom2').evenZoom({
+                lensPinningDistance: 20
+            })
+        }, 1000);
         
-        $(this).evenZoom({
-            lensPinningDistance: 20
-        })
-        $(this).css('transform', 'scale(1.18,1.18)');
+        //$(this).css('transform', 'scale(1.18,1.18)');
     })
     .mouseleave(function () {
         $(this).css('transform', 'scale(1.0,1.0)');
