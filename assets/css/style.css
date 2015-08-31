@@ -94,7 +94,7 @@ img { max-width: 100%; }
 }
 
 .section-description {
-	margin-top: 50px;
+	margin-top: 60px;
     padding-bottom: 10px;
 }
 
@@ -121,7 +121,7 @@ img { max-width: 100%; }
     font-weight: 300;
     line-height: 16px;
     color: #fff;
-    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+    -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;
 }
 .btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active { outline: 0; opacity: 0.6; color: #fff; }
 
@@ -146,7 +146,7 @@ img { max-width: 100%; }
     font-weight: 300;
     line-height: 16px;
     color: #fff;
-    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+    -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;
 }
 .btn-link-2:hover, .btn-link-2:focus, 
 .btn-link-2:active, .btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }
@@ -654,14 +654,14 @@ ul.navbar-nav {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 42px;
-	height: 42px;
-	padding-top: 3px;
+	width: 36px;
+	height: 36px;
+	padding-top: 2px;
 	background: #41abef;
 	-moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;
-	font-size: 32px;
+	font-size: 28px;
 	color: #fff;
-	line-height: 32px;
+	line-height: 30px;
 	text-align: center;
 	-o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 }
@@ -671,31 +671,6 @@ ul.navbar-nav {
 	float: left;
 	width: 83%;
 }
-
-.testimonial-list .nav-tabs {
-    border: 0;
-    text-align: right;
-}
-
-.testimonial-list .nav-tabs li {
-	float: none;
-	display: inline-block;
-	margin-left: 5px;
-    margin-right: 5px;
-}
-
-.testimonial-list .nav-tabs li a {
-    width: 14px;
-    height: 14px;
-    padding: 0;
-    background: #ddd;
-    border: 0;
-    -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
-}
-
-.testimonial-list .nav-tabs li a:hover { border: 0; background: #41abef; }
-.testimonial-list .nav-tabs li.active a { background: #41abef; }
-.testimonial-list .nav-tabs li.active a:focus { border: 0; }
 
 
 /***** Footer *****/

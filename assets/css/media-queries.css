@@ -1,5 +1,5 @@
 
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) {
 	
 	.form-bottom form .form-links { width: 190px; }
 	
@@ -13,7 +13,7 @@
 	
 	.testimonial-list .testimonial-image { width: 20%; }
 	.testimonial-list .testimonial-text { width: 80%; }
-	
+	.testimonials-container {padding: 20px 10px 110px;}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -102,7 +102,9 @@ only screen and (                min-resolution: 2dppx) {
 	
 	/* logo */
     .navbar-brand {
-    	background-image: url(../img/logo@2x.png) !important; background-repeat: no-repeat !important; background-size: 91px 30px !important;
+    	background-image: url(../img/logo@2x.png) !important;
+        background-repeat: no-repeat !important;
+        background-size: 91px 30px !important;
     }
 	
 }

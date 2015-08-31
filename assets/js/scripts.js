@@ -20,11 +20,11 @@ jQuery(document).ready(function() {
 
     $("html").niceScroll({
         cursorcolor: "#41abef",
-        cursorwidth: '10px',
+        cursorwidth: '8px',
         autohidemode: false,
         zindex: 999,
-        mousescrollstep: 45,  // default is 40 (px)
-        scrollspeed: 75, // default is 60
+        mousescrollstep: 35,  // default is 40 (px)
+        scrollspeed: 60, // default is 60
         autohidemode: 'cursor',
         bouncescroll: true,
         hidecursordelay: 800,
@@ -52,7 +52,7 @@ jQuery(document).ready(function() {
     new WOW({
         boxClass: 'wow',      // default
         animateClass: 'animated', // default
-        offset: 25,          // default is 0
+        offset: 20,          // default is 0
         mobile: true,       // default
         live: true        // default
     }).init();
