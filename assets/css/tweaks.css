@@ -1,14 +1,15 @@
 body {font-size:17px;}
+
 .footer-copyright {font-size:15px;}
+
+.tab-desk-only { display:none; }
 
 .shadow-1 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16),
 				0 4px 18px -2px rgba(0, 0, 0, 0.2);
 }
 
-.inner-bg {
-  padding: 85px 0 140px 0;
-}
+.inner-bg { padding: 85px 0 140px 0; }
 
 .section-description h2 > i {
   text-shadow: 1px 1px 4px #f8f8f8, 0 0 0px #000;
@@ -36,11 +37,18 @@ body {font-size:17px;}
   margin:15px 0;
 }
 
-#awards-section {display: none;}
+.container-fullwidth {
+  width:100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 
 /***  BUTTONS  ***/
 .btn-group > .btn, .btn-lg {font-weight:300; height:50px;}
-
+.btn-group-lg > .btn .fa { margin-right: 10px; }
 
 /***  PANELS   ***/
 .panel {
@@ -268,7 +276,7 @@ div#hover-wrap-3:hover #circle-slice3 .circle-color-fill {
 	-webkit-transform: rotate(181deg) !important;
 }
 
-div#hover-wrap-3:hover div.hold {clip:rect(0px, auto, auto, 80px);}
+div#hover-wrap-3:hover div.hold { clip:rect(0px, auto, auto, 80px); }
 
 div#hover-wrap-3:hover #circle-slice3-b .circle-color-fill {
 	opacity: 1; 
@@ -278,13 +286,12 @@ div#hover-wrap-3:hover #circle-slice3-b .circle-color-fill {
 	clip:rect(0px, auto, 0px, 79px);
 	transition: opacity 0.3s ease 0.1s, transform 0.45s ease 0.1s;	
 }
-div#hover-wrap-3:hover div.circleBackground {background: rgba(188,190,192,.8);}
+div#hover-wrap-3:hover div.circleBackground { background: rgba(188,190,192,.8); }
 
     /***     3rd CIRCLE Content Text     ***/
-div#hover-wrap-3:hover #fact3 .stat-number {font-size:35px; margin:8px 0 -5px;}
-div#hover-wrap-3:hover #fact3 .stat-text {opacity: 1; font-size:16px;}
-div#hover-wrap-3:hover #fact3 span.percentage-sign {font-size:20px;opacity:1;position:relative;left:3px;
-}
+div#hover-wrap-3:hover #fact3 .stat-number { font-size:35px; margin:8px 0 -5px; }
+div#hover-wrap-3:hover #fact3 .stat-text { opacity: 1; font-size:16px; }
+div#hover-wrap-3:hover #fact3 span.percentage-sign { font-size:20px; opacity:1; position:relative; left:3px; }
 
    	/*****************************************/ 
     /****  4th CIRCLE IMAGE (The border)  ****/
@@ -295,12 +302,12 @@ div#hover-wrap-4:hover div.circle-color-fill {
 	-ms-transform: rotate(120deg) !important; 
 	opacity: 1;
 }
-div#hover-wrap-4:hover div.circleBackground {background: rgba(188,190,192,.8);}
+div#hover-wrap-4:hover div.circleBackground { background: rgba(188,190,192,.8); }
 
     /****  4th CIRCLE Content Text  ****/
-div#hover-wrap-4:hover #fact4 .stat-number {opacity: .95; font-size:31px;margin:10px 0 -5px;}
-div#hover-wrap-4:hover #fact4 .stat-text {opacity: 1; font-size:13.5px;}
-div#hover-wrap-4:hover #fact4 span.percentage-sign {font-size:19px;opacity:1;position:relative;left:3px;}
+div#hover-wrap-4:hover #fact4 .stat-number { opacity: .95; font-size:31px;margin:10px 0 -5px; }
+div#hover-wrap-4:hover #fact4 .stat-text { opacity: 1; font-size:13.5px; }
+div#hover-wrap-4:hover #fact4 span.percentage-sign { font-size:19px; opacity:1; position:relative; left:3px; }
 
 	/*******************************************/
     /*****  5th CIRCLE IMAGE (The border)  *****/
@@ -314,22 +321,20 @@ div#hover-wrap-5:hover div.circle-color-fill {
 div#hover-wrap-5:hover div.circleBackground {background: rgba(188,190,192,.8);}
    
     /*****     5th CIRCLE Content Text     *****/
-div#hover-wrap-5:hover #fact5 .stat-number {opacity: .95; font-size:32px;margin:10px 0 -5px;}
-div#hover-wrap-5:hover #fact5 .stat-text {opacity: 1; font-size:16px;}
-div#hover-wrap-5:hover #fact5 span.percentage-sign {font-size:20px;opacity:1;position:relative;left:3px;
-}
+div#hover-wrap-5:hover #fact5 .stat-number { opacity: .95; font-size:32px;margin:10px 0 -5px; }
+div#hover-wrap-5:hover #fact5 .stat-text { opacity: 1; font-size:16px; }
+div#hover-wrap-5:hover #fact5 span.percentage-sign { font-size:20px; opacity:1; position:relative; left:3px; }
 	
 	/*********************************************/
     /******  6th CIRCLE IMAGE (The border)  ******/
 	/*********************************************/
-div#hover-wrap-6:hover div.circle-color-fill {transform: rotate(-268deg) !important; opacity: 1;}
-div#hover-wrap-6:hover div.circleBackground {background: rgba(188,190,192,.8);}
+div#hover-wrap-6:hover div.circle-color-fill { transform: rotate(-268deg) !important; opacity: 1; }
+div#hover-wrap-6:hover div.circleBackground { background: rgba(188,190,192,.8); }
    
     /******    6th CIRCLE Content Text      ******/
-div#hover-wrap-6:hover #fact6 .stat-number {opacity: .95; font-size:32px;margin:10px 0 -5px;}
-div#hover-wrap-6:hover #fact6 .stat-text {opacity: 1; font-size:16px;}
-div#hover-wrap-6:hover #fact6 span.percentage-sign {font-size:20px;opacity:1;position:relative;left:3px;
-}
+div#hover-wrap-6:hover #fact6 .stat-number { opacity: .95; font-size:32px; margin:10px 0 -5px; }
+div#hover-wrap-6:hover #fact6 .stat-text { opacity: 1; font-size:16px; }
+div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; position:relative; left:3px }
 
 .circle-content .stat-number {
     display: block;
@@ -374,9 +379,9 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign {font-size:20px;opacity:1;pos
 
 
 /*
-*******************************
+**************************
     PRICING Section
-*******************************
+**************************
 */
 .pricing-box {padding: 0px;}
 .pricing-box-features ul {font-size:15px;}
@@ -392,9 +397,9 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign {font-size:20px;opacity:1;pos
 
 
 /*
-*******************************
+**************************
     FAQ Section
-*******************************
+**************************
 */
 .section-description h2 > span {font-weight:400;}
 #faq .img-responsive {
@@ -407,9 +412,9 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign {font-size:20px;opacity:1;pos
 
 
 /*
-*******************************
- Benefits Section
-*******************************
+**************************
+    BENEFITS Section
+**************************
 */
 .container.nomax {width:100%;}
 #forLandlordsTab .screenshot img {width:98%;height:auto;max-width:500px;}
@@ -429,9 +434,9 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign {font-size:20px;opacity:1;pos
 
 
 /*
-*******************************
+**************************
     CALL TO ACTION - Blue
-*******************************
+**************************
 */
 .section-container-blue-bg .blueCallout {
   background: #41abef;
@@ -445,13 +450,12 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign {font-size:20px;opacity:1;pos
 
 
 /*
-*******************************
- Contact Section
-*******************************
+**************************
+    CONTACT Section
+**************************
 */
 
 /* #contact-section */
-#contact-section { padding: 110px 0 50px 0; }
 .section-subtitle span {font-weight: 500;}
 .section-subtitle { font-size:26px; font-weight: 300 !important; text-align: center; padding: 10px 0 15px 0; }
 .div-center * {margin: 0 auto;}
@@ -539,9 +543,9 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign {font-size:20px;opacity:1;pos
 
 
 /*
-*******************************
- Testimonials Section
-*******************************
+**************************
+   TESTIMONIALS Section
+**************************
 */
 .testimonials-container {
   background: url(../img/backgrounds/headshot-bg.jpg) no-repeat center center fixed;
@@ -611,12 +615,20 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign {font-size:20px;opacity:1;pos
   margin: 10px 0 0 30px;
 }
 .testimonial-author a {margin-left:5px;}
+
+
 /*
+**************************
+    AWARDS Section
+**************************
+*/
+#awards-section {display: none;}
 
 
-*******************************
+/*
+**************************
  Scroll Up Button
-*******************************
+**************************
 */
 a.scroll-up { border-radius:4px; display: none; position: fixed; right: 12px; bottom: 12px; padding:5px 10px; background: #00a8d6; text-align: center; -moz-transition: -moz-transform 0.7s ease-in-out; -o-transition: -o-transform 0.7s ease-in-out; -webkit-transition: -webkit-transform 0.7s ease-in-out; transition: transform 0.7s ease-in-out; -webkit-backface-visibility: hidden;}
 a.scroll-up i {color: #FFF;}
@@ -630,17 +642,29 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
  ***********************
 */
 @media only screen and (max-width: 767px) {
-    .testimonial-text p {
+  .btn-group-lg > .btn {
+    font-size:16px;
+    max-width:50%;
+    padding-top:13px;
+  }
+  .btn-group-lg > .btn .fa {
+    margin-right: 5px;
+  }
+
+  .circle-screenshot { margin-bottom: 40px; }
+
+  .section-container-blue-bg .blueCallout { padding: 60px 15px; min-height: 270px; }
+  .testimonial-text p {
       font-size: 16px;
       line-height: 1.7;
       text-indent: -10px;
       padding-left: 10px;
     }
-    .testimonial-author { margin: 0 auto; max-width:230px; }
+  .testimonial-author { margin: 0 auto; max-width:230px; }
 
-    .contact-form { padding: 10px; width: 92%;}
-    .contact-details {width: 92%;}
-    .contact-details-box {padding-top:30px;}
+  .contact-form { padding: 10px; width: 92%;}
+  .contact-details {width: 92%;}
+  .contact-details-box {padding-top:30px;}
 }
 
 
@@ -654,6 +678,8 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
     .lead {
       font-size: 22px;
     }
+
+    #contact-section { padding: 110px 0 50px 0; }
 
     #awards-section {
 		display: block;
@@ -776,11 +802,11 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 
 
 @media only screen and (min-width: 1030px) {
+  .tab-desk-only { display:block; }
+
   .container { width: 90%; }
 
-  .circle-screenshot img {
-      max-width: 90%;
-  }
+  .circle-screenshot img { max-width: 80%; }
 
   .pricing-container img.screenshot {
     position:relative;
