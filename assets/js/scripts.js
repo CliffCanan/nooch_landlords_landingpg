@@ -59,14 +59,27 @@ jQuery(document).ready(function() {
 
     /** Benefits Tabs **/
     $('#forLandlords').change(function () {
-        //if ($('#forLandlordsTab').hasClass('active'))
-        //{
         $('#forLandlords').tab('show')
-       // }
-    })
+    });
     $('#forTenants').change(function () {
         $('#forTenants').tab('show')
+    });
+
+    $('.scrnshotToZoom').evenZoom({
+        lensPinningDistance: 20
+    });
+
+    $('.scrnshotToZoom2').hover(function () {
+        console.log('MOUSED OVER');
+        
+        $(this).evenZoom({
+            lensPinningDistance: 20
+        })
+        $(this).css('transform', 'scale(1.18,1.18)');
     })
+    .mouseleave(function () {
+        $(this).css('transform', 'scale(1.0,1.0)');
+    });
 
     /** Modals **/
 	$('.launch-modal').on('click', function(e){
