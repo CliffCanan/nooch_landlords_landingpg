@@ -70,7 +70,9 @@ button.btn { position:relative; }
 *******************************
 */
 .top-content .inner-bg .container { min-height:420px; }
-#top-carousel .item { background-color: rgba(0,0,0,.4); padding: 30px; text-shadow: 0 1px 0px rgba(0,0,0,.3); }
+#top-carousel .item { background-color: rgba(0,0,0,.4); padding: 30px; text-shadow: 0 1px 0px rgba(0,0,0,.5); }
+.form-top-left h3 { text-shadow: 0 1px 0px rgba(0,0,0,.3); }
+#top-carousel .item .btn { text-shadow: none; }
 #top-carousel .item p,
 #top-carousel ul {
   font-size: 20px;
@@ -78,7 +80,8 @@ button.btn { position:relative; }
 }
 #top-carousel ul { padding: 20px 30px 20px 50px; }
 #top-carousel ul li { margin-bottom: 10px; }
-#top-carousel p { padding: 0 10px;}
+#top-carousel p { padding: 0 10px; margin-bottom: 15px; }
+#top-carousel #slide1 h1 { font-size:34.5px; }
 
 .carousel-indicators.dark li.active { background: rgba(0,0,0,.5); }
 .carousel-indicators.dark li:not(.active):hover { border-color: rgba(0,0,0,.5) !important; }

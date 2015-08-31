@@ -42,14 +42,14 @@ jQuery(document).ready(function() {
 	    slides: [
             { src: "assets/img/backgrounds/woman-typing.jpg", animation: 'kenburns' },
             { src: "assets/img/backgrounds/woman-writing-contract.jpg" },
-            { src: "assets/img/backgrounds/woman-check-mailbox-surprised.jpg", animation: "kenburnsDown", animationDuration: 8000 }
+            { src: "assets/img/backgrounds/woman-check-mailbox-surprised.jpg", animation: "kenburnsUp", animationDuration: 6500 }
 	    ],
 
 	    overlay: "assets/img/backgrounds/overlays/06.png",
 
 	    //animation: 'kenburns',
 
-	    delay: 7500,
+	    delay: 6500,
 
 	    walk: function (index, slideSettings) {
 	        $('#top-carousel').carousel('prev');
