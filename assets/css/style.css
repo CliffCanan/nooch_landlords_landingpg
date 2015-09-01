@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 300;
-    color: #888;
+    color: #444;
     line-height: 30px;
     text-align: center;
 }
@@ -497,8 +497,6 @@ ul.navbar-nav {
 	font-size: 18px;
 	color: #888;
     line-height: 32px;
-}
-.pricing-box-best .pricing-box-price span {
 	color: #fff;
 }
 

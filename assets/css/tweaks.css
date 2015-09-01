@@ -45,7 +45,7 @@ body {font-size:17px;}
 
 
 /***  BUTTONS  ***/
-.btn-group > .btn, .btn-lg { font-weight:300; height:50px; }
+.btn-group > .btn, .btn-lg { font-weight: 300; height:50px; padding: 10px 20px; }
 .btn-group-lg > .btn .fa { margin-right: 10px; }
 button.btn { position:relative; }
 :not(a).btn {
@@ -70,7 +70,7 @@ button.btn { position:relative; }
 *******************************
 */
 .top-content .inner-bg .container { min-height:420px; }
-#top-carousel .item { background-color: rgba(0,0,0,.4); padding: 30px; text-shadow: 0 1px 0px rgba(0,0,0,.5); }
+#top-carousel .item { background-color: rgba(0,0,0,.4); padding: 30px; text-shadow: 0 1px 0px rgba(0,0,0,.65); }
 .form-top-left h3 { text-shadow: 0 1px 0px rgba(0,0,0,.3); }
 #top-carousel .item .btn { text-shadow: none; }
 #top-carousel .item p,
@@ -484,6 +484,38 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
   right:4.5%;
 }
 
+.pricingBoxHdr {
+  color: #333;
+  font-size: 22px;
+  position: absolute;
+  top: -82px;
+  left: 13%;
+  width: 63px;
+  height: 63px;
+  padding-top: 5px;
+  width: 74%;
+}
+.pricingBoxHdr i {
+  background-color: #fff;
+  color: #41abef;
+  width: 60px;
+  height: 60px;
+  padding: 12px 0 0 3px;
+  font-size: 28px;
+  border: 2px solid #41abef;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin-right: 8px;
+  -webkit-transition: all 0.2s;
+     -moz-transition: all 0.2s;
+       -o-transition: all 0.2s;
+          transition: all 0.2s;
+}
+.pricingBoxHdr.active i {
+  background-color: #41abef;
+  color: #fff;
+}
 
 /*
 **************************
@@ -1026,6 +1058,7 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 .f-24 {font-size: 24px !important;}
 .f-25 {font-size: 25px !important;}
 .f-30 {font-size: 30px !important;}
+.f-35 {font-size: 35px !important;}
 /************************/
 /*****  ANIMATIONS  *****/
 /************************/

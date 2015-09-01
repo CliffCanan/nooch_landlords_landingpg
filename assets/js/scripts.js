@@ -119,6 +119,20 @@ jQuery(document).ready(function() {
         $(this).css('transform', 'scale(1.0,1.0)');
     });
 
+
+    /** Pricing Box Screenshot Toggle **/
+    $('#pricingBox1').hover(function () {
+        $('#pricingScrnShot').attr('src', 'assets/img/devices/nooch-screenshot-property.jpg')
+        $('#pricingBox1 .pricingBoxHdr').addClass('active')
+        $('#pricingBox2 .pricingBoxHdr').removeClass('active')
+    });
+    $('#pricingBox2').hover(function () {
+        $('#pricingScrnShot').attr('src', 'assets/img/devices/nooch-screenshot-pin-rotated.jpg')
+        $('#pricingBox1 .pricingBoxHdr').removeClass('active')
+        $('#pricingBox2 .pricingBoxHdr').addClass('active')
+    });
+
+
     /** Modals **/
 	$('.launch-modal').on('click', function(e){
 		e.preventDefault();
