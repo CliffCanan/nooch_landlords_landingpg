@@ -1,5 +1,7 @@
 body {font-size:17px;}
 
+h3 { font-weight: 400; }
+
 .footer-copyright {font-size:15px;}
 
 .tab-desk-only { display:none; }
@@ -174,10 +176,27 @@ button.btn { position:relative; }
 	-o-transition:all .35s;
 	transition:all .35s;
 }
-.circle-screenshot img:hover {
-  margin-top:-1px;
+.scrnshotCaption > * {
+  margin-top: 30px;
+  margin-bottom: 0px;
+  color: #ccc;
+  font-size: 18px;
+  -webkit-transition: margin 0.35s ease, color .2s;
+     -moz-transition: margin 0.35s ease, color .2s;
+       -o-transition: margin 0.35s ease, color .2s;
+          transition: margin 0.35s ease, color .2s;
+}
+
+.circle-screenshot:hover img {
+  margin-top: 5px;
   transform: scale(1.18,1.18);
 }
+.circle-screenshot:hover .scrnshotCaption > * {
+  color: #222;
+  margin-top: 48px;
+  margin-bottom: -30px;
+}
+
 
 /*
 *******************************
@@ -237,11 +256,11 @@ div.circleBackground {
     clip: rect(0px, 80px, auto, 0px);
     opacity:0;
     top:-1px;
-    left:-1px
-            transition: opacity 0.4s ease 0s, transform .8s ease-in-out 0s;
+    left:-1px;
     -webkit-transition: opacity 0.4s ease 0s, -webkit-transform .8s ease-in-out 0s;
        -moz-transition: opacity 0.4s ease 0s, -moz-transform .8s ease-in-out 0s;
          -o-transition: opacity 0.4s ease 0s, -o-transform .8s ease-in-out 0s;
+            transition: opacity 0.4s ease 0s, transform .8s ease-in-out 0s;
 }
 
 /*  JUST TRANSITIONS  */
@@ -289,18 +308,18 @@ div.circleBackground,
 /**  3RD CIRCLE IMAGE  **/
 #circle-slice3 .circle-color-fill {
     background-color: rgba(63,171,225,1);   
-	transition: opacity 0.3s ease, transform .5s ease-in;
 	-o-transition: opacity 0.3s ease, -o-transform .5s ease-in;
 	-moz-transition: opacity 0.3s ease, -moz-transform .5s ease-in;
 	-webkit-transition: opacity 0.3s ease, -webkit-transform .5s ease-in;
+	transition: opacity 0.3s ease, transform .5s ease-in;
 }
 
 #circle-slice3-b .circle-color-fill {
     background-color: rgba(63,171,225,1);     
-	transition: opacity 0.1s ease 0.5s, transform 0.45s ease 0.42s !important;
 	-o-transition: opacity 0.1s ease 0.5s, -o-transform 0.45s ease 0.42s !important;
 	-moz-transition: opacity 0.1s ease 0.5s, -moz-transform 0.45s ease 0.42s !important;
 	-webkit-transition: opacity 0.1s ease 0.5s, -webkit-transform 0.45s ease 0.42s !important;
+	transition: opacity 0.1s ease 0.5s, transform 0.45s ease 0.42s !important;
 	clip: rect(0px, 79px, auto, auto) !important;
 }
 
@@ -373,7 +392,10 @@ div#hover-wrap-3:hover #circle-slice3-b .circle-color-fill {
 	-ms-transform: rotate(90deg) !important;
 	-webkit-transform: rotate(90deg) !important;
 	clip:rect(0px, auto, 0px, 79px);
-	transition: opacity 0.3s ease 0.1s, transform 0.45s ease 0.1s;	
+    -o-transition: opacity 0.3s ease 0.1s, transform 0.45s ease 0.1s;
+    -moz-transition: opacity 0.3s ease 0.1s, transform 0.45s ease 0.1s;
+    -webkit-transition: opacity 0.3s ease 0.1s, transform 0.45s ease 0.1s;
+	transition: opacity 0.3s ease 0.1s, transform 0.45s ease 0.1s;
 }
 div#hover-wrap-3:hover div.circleBackground { background: rgba(188,190,192,.8); }
 
@@ -432,10 +454,10 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
     margin: 25px 0 -5px;
     text-align: center;
     color: #72bf44;
-    transition: margin 0.5s ease-out 0s, font-size 0.5s ease-out 0s, opacity 0.2s ease-out .3s;
     -webkit-transition: margin 0.5s ease-out 0s, font-size 0.5s ease-out 0s, opacity 0.2s ease-out .3s;
     -moz-transition: margin 0.5s ease-out 0s, font-size 0.5s ease-out 0s, opacity 0.2s ease-out .3s;
     -o-transition: margin 0.5s ease-out 0s, font-size 0.5s ease-out 0s, opacity 0.2s ease-out .3s;
+    transition: margin 0.5s ease-out 0s, font-size 0.5s ease-out 0s, opacity 0.2s ease-out .3s;
 }
 
 .circle-content span.percentage-sign {
@@ -446,10 +468,10 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
     vertical-align: top;
     position:relative;
     left:0;
-    transition: all .4s;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
     -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    transition: all .4s;
 }
     
 .circle-content .stat-text {
@@ -459,10 +481,10 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
     text-align:center;
     padding:4px;
     letter-spacing:.25px;
-    transition: font-size 0.4s ease 0.1s, opacity 0.37s ease 0.13s;
-    -webkit-transition: font-size 0.4s ease 0.1s, opacity 0.37s ease 0.13s;
-    -moz-transition: font-size 0.4s ease 0.1s, opacity 0.37s ease 0.13s;
     -o-transition: font-size 0.4s ease 0.1s, opacity 0.37s ease 0.13s;
+    -moz-transition: font-size 0.4s ease 0.1s, opacity 0.37s ease 0.13s;
+    -webkit-transition: font-size 0.4s ease 0.1s, opacity 0.37s ease 0.13s;
+    transition: font-size 0.4s ease 0.1s, opacity 0.37s ease 0.13s;
 }
 
 
@@ -479,14 +501,11 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
   display:inline-block;
   width: 82%;
 }
-.pricing-box-icon {
-  top:-35px;
-  right:4.5%;
-}
 
 .pricingBoxHdr {
   color: #333;
   font-size: 22px;
+  font-weight: 400;
   position: absolute;
   top: -82px;
   left: 13%;
@@ -512,6 +531,10 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
        -o-transition: all 0.2s;
           transition: all 0.2s;
 }
+.pricing-box.green .pricing-box-price,
+.pricing-box.green h4 { background-color: #72bf44 }
+.pricing-box.green .pricingBoxHdr i { border-color: #72bf44; color: #72bf44; }
+.pricing-box.green .pricingBoxHdr.active i { background-color: #72bf44; color: #fff; }
 .pricingBoxHdr.active i {
   background-color: #41abef;
   color: #fff;
@@ -537,22 +560,27 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
     BENEFITS Section
 **************************
 */
-.container.nomax {width:100%;}
-#forLandlordsTab .screenshot img {width:98%;height:auto;max-width:500px;}
-.fromOffscrnL {position:relative; left:-3%;}
-.benefits-container .list-group-item {border:none; text-indent:-30px;}
-.list-group-item {color:#333; font-weight:400;}
-.list-group li > .fa-check {color:#72bf44;}
+.container.nomax { width:100%; }
+
+#forLandlordsTab .screenshot img { width:98%; height:auto; max-width:500px; }
+#forLandlordsTab .row:nth-child(2) { margin-bottom: 15px; }
+
+.fromOffscrnL { position:relative; left:-3%;}
+.benefits-container .list-group-item {border:none; text-indent: -21px; padding: 8px 15px; }
+.list-group-item { color:#333; font-weight:400; }
+.list-group li > .fa-check { color:#72bf44; }
 
 .benefits-container .appStoreBadgeContainer img {
   width:200px;
   height:auto;
+  -o-transition:.25s transform ease-in-out, .16s margin-top ease-out;
+  -moz-transition:.25s transform ease-in-out, .16s margin-top ease-out;
   -webkit-transition:.25s transform ease-in-out, .16s margin-top ease-out;
   transition:.25s transform ease-in-out, .16s margin-top ease-out;
 }
-.benefits-container .appStoreBadgeContainer img:hover {transform: scale(1.18,1.18);}
-.benefits-container .appStoreBadgeContainer img:active {margin-top:4px;}
-
+.benefits-container .appStoreBadgeContainer img:hover { transform: scale(1.18,1.18); }
+.benefits-container .appStoreBadgeContainer img:active { margin-top:4px; }
+.benefits-container .appStoreBadgeContainer .appIcon { display: block; max-width: 72px; height: auto; margin: -10px auto 10px; }
 
 /*
 **************************
@@ -568,6 +596,92 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
 .section-container-blue-bg .blueCallout * {
   color: #fff;
 }
+
+
+
+/*
+**************************
+   TESTIMONIALS Section
+**************************
+*/
+.testimonials-container {
+  background: url(../img/backgrounds/headshot-bg.jpg) no-repeat center center fixed;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0px 25px 35px -10px rgba(64,65,66,.25) inset,
+              0px -20px 35px -15px rgba(64,65,66,.2) inset;
+}
+.cover {
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+  height: 100%;
+}
+
+.testimonial-list .testimonial-image img {border:3px solid #fff; max-width:124px;}
+.testimonial-text p {
+  font-size:18.5px;
+  line-height:1.8;
+  text-indent: -48px;
+  padding-left: 30px;
+}
+.testimonial-text p::before {
+  font-family: 'FontAwesome';
+  content: "\f10d";
+  font-size: 22px;
+  font-weight: bold;
+  padding-right: 20px;
+  font-weight: normal;
+}
+
+.carousel-indicators.belowSlides {
+  position: static;
+  display: block;
+  width: auto;
+  margin: 25px auto 0;
+}
+.carousel-indicators li {
+  background-color: rgba(0,0,0,.18);
+  border:none;
+  width: 14px;
+  height: 14px;
+  margin: 0 8px;
+  -webkit-transition:.16s all ease;
+          transition:.16s all ease;
+}
+.carousel-indicators li.active {
+  width: 15px;
+  height: 15px;
+  margin: 0 8px;
+  background-color: #41abef;
+}
+.carousel-indicators li:not(.active):hover {
+  background-color:rgba(0,0,0,.05);
+  border: 2px solid rgba(63,171,225,.9);
+  width:16px;
+  height:16px;
+  margin:1px 7px 0;
+}
+
+.testimonial-author {
+  display: block;
+  max-width: 260px;
+  border-top: 2px solid #555;
+  padding: 10px 0px 0;
+  margin: 10px 0 0 30px;
+}
+.testimonial-author a {margin-left:5px;}
+
+
+/*
+**************************
+    ABOUT US Section
+**************************
+*/
+.about-us-box p:not(.callout) { text-align: left; }
+.about-us-box .callout { font-size: 22px; font-weight: 500; margin-top: 20px; }
+.about-us-box .scrnshotContainer { padding: 0 15px; margin: 0px auto 15px; max-width: 94%}
 
 
 /*
@@ -665,81 +779,6 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
 
 /*
 **************************
-   TESTIMONIALS Section
-**************************
-*/
-.testimonials-container {
-  background: url(../img/backgrounds/headshot-bg.jpg) no-repeat center center fixed;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  box-shadow: 0px 25px 35px -10px rgba(64,65,66,.25) inset,
-              0px -20px 35px -15px rgba(64,65,66,.2) inset;
-}
-.cover {
-  -webkit-background-size: cover;
-     -moz-background-size: cover;
-       -o-background-size: cover;
-          background-size: cover;
-  height: 100%;
-}
-
-.testimonial-list .testimonial-image img {border:3px solid #fff; max-width:124px;}
-.testimonial-text p {
-  font-size:18.5px;
-  line-height:1.8;
-  text-indent: -48px;
-  padding-left: 30px;
-}
-.testimonial-text p::before {
-  font-family: 'FontAwesome';
-  content: "\f10d";
-  font-size: 22px;
-  font-weight: bold;
-  padding-right: 20px;
-  font-weight: normal;
-}
-
-.carousel-indicators.belowSlides {
-  position: static;
-  display: block;
-  width: auto;
-  margin: 25px auto 0;
-}
-.carousel-indicators li {
-  background-color: rgba(0,0,0,.18);
-  border:none;
-  width: 14px;
-  height: 14px;
-  margin: 0 8px;
-  -webkit-transition:.16s all ease;
-          transition:.16s all ease;
-}
-.carousel-indicators li.active {
-  width: 15px;
-  height: 15px;
-  margin: 0 8px;
-  background-color: #41abef;
-}
-.carousel-indicators li:not(.active):hover {
-  background-color:rgba(0,0,0,.05);
-  border: 2px solid rgba(63,171,225,.9);
-  width:16px;
-  height:16px;
-  margin:1px 7px 0;
-}
-
-.testimonial-author {
-  display: block;
-  max-width: 260px;
-  border-top: 2px solid #555;
-  padding: 10px 0px 0;
-  margin: 10px 0 0 30px;
-}
-.testimonial-author a {margin-left:5px;}
-
-
-/*
-**************************
     AWARDS Section
 **************************
 */
@@ -763,6 +802,7 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
  ***********************
 */
 @media only screen and (max-width: 767px) {
+
   .btn-group-lg > .btn {
     font-size:16px;
     max-width:50%;
@@ -783,6 +823,12 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
     }
   .testimonial-author { margin: 0 auto; max-width:230px; }
 
+  .pricing-box {
+    max-width: 90%;
+    margin: 40px auto;
+    display: block;
+  }
+
   .contact-form { padding: 10px; width: 92%;}
   .contact-details {width: 92%;}
   .contact-details-box {padding-top:30px;}
@@ -791,13 +837,25 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 
 @media only screen and (min-width: 768px) {
 	.pricing-container img.screenshot {
-      position:relative;
-      top:-40px;
-      left:5%;
+      position: relative;
+      top: -40px;
+      left: 5%;
     }
 
-    .lead {
-      font-size: 22px;
+    #forLandlordsTab .features-box {
+      padding-left: 90px;
+      padding-right: 0;
+      padding-top: 0;
+    }
+    #forLandlordsTab .screenshot { padding-left: 0; }
+
+    .lead { font-size: 22px; }
+
+    .about-us-box .scrnshotContainer {
+      padding: 0 25px;
+      max-width: 520px;
+      position: relative;
+      top: -10px;
     }
 
     #contact-section { padding: 110px 0 50px 0; }
@@ -913,12 +971,7 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 		transform:rotateY(180deg);
 	}
 
-    #forLandlordsTab .features-box {
-      padding-left: 90px;
-      padding-right: 0;
-      padding-top: 0;
-    }
-    #forLandlordsTab .screenshot { padding-left:0; }
+
 }
 
 
@@ -933,6 +986,13 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 
   .circle-screenshot img { max-width: 80%; }
 
+  #forLandlordsTab .features-box { padding-left: 130px; }
+  #forLandlordsTab .list-group-item > .fa-check { font-size:20px; }
+  #forLandlordsTab .row:nth-child(2) { margin-bottom: 30px; }
+  .benefits-container #forLandlordsTab .list-group-item { text-indent: -25px; }
+  .benefits-container #forTenantsTab .list-group-item { text-indent: -22px; }
+  .benefits-container #forTenantsTab .features-box { padding-left: 40px; }
+
   .pricing-container img.screenshot {
     position:relative;
     top:-70px;
@@ -945,10 +1005,6 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
     width: 16.66%;
   }
   #awards-section li:nth-child(5) { display: inline-block; }
-
-  #forLandlordsTab .features-box { padding-left: 130px; }
-  #forLandlordsTab .list-group-item > .fa-check { font-size:20px; }
-  .benefits-container .list-group-item {text-indent:-33px;}
 }
 
 

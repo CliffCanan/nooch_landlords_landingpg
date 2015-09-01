@@ -20,7 +20,7 @@ jQuery(document).ready(function() {
 
     $("html").niceScroll({
         cursorcolor: "#41abef",
-        cursorwidth: '8px',
+        cursorwidth: '10px',
         autohidemode: false,
         zindex: 999,
         mousescrollstep: 35,  // default is 40 (px)
@@ -31,12 +31,14 @@ jQuery(document).ready(function() {
         horizrailenabled: false
     });
 
+
 	/* Navigation */
 	$('a.scroll-link').on('click', function(e) {
 		e.preventDefault();
 		scroll_to($(this), 0);
 	});	
 	
+
     /* Background slideshow */
 	$(".top-content").vegas({
 	    slides: [
@@ -56,6 +58,7 @@ jQuery(document).ready(function() {
 	    }
 	});
 
+
 	$('#top-carousel').on('slide.bs.carousel', function (e) {
 	    if ($(e.relatedTarget).is('#slide3')) {
 	        $('#slide3').css('display', 'none');
@@ -64,7 +67,6 @@ jQuery(document).ready(function() {
 	            $('#slide3').fadeIn();
 	        }, 700)
 	    }
-	    console.log(e.relatedTarget);
 	})
 
 	/*$('.top-content').backstretch([
@@ -75,16 +77,9 @@ jQuery(document).ready(function() {
     */
 
     $('.call-to-action-container').backstretch("assets/img/backgrounds/1.jpg");
-    
-    $('#top-navbar-1').on('shown.bs.collapse', function(){
-    	//$('.top-content').backstretch("resize");
-    });
-    $('#top-navbar-1').on('hidden.bs.collapse', function(){
-    	//$('.top-content').backstretch("resize");
-    });
 
 
-    /* Wow */
+    /** Wow - Make Elements Animate Into View **/
     new WOW({
         boxClass: 'wow',      // default
         animateClass: 'animated', // default
@@ -93,7 +88,8 @@ jQuery(document).ready(function() {
         live: true        // default
     }).init();
 
-    /** Benefits Tabs **/
+
+    /** Benefits Toggle **/
     $('#forLandlords').change(function () {
         $('#forLandlords').tab('show')
     });
@@ -101,23 +97,19 @@ jQuery(document).ready(function() {
         $('#forTenants').tab('show')
     });
 
-    $('.scrnshotToZoom').evenZoom({
-        lensPinningDistance: 20
-    });
 
-    $('.scrnshotToZoom2').hover(function () {
-
-        setTimeout(function () {
-            $('.scrnshotToZoom2').evenZoom({
+    /** Always Beautiful **/
+    $('.circle-screenshot').hover(function () {
+        var $elem = $(this);
+        $elem.find('.evenZoomLens').remove()
+        setTimeout(function() {
+            $elem.find('.scrnshotToZoom').evenZoom({
                 lensPinningDistance: 20
             })
-        }, 1000);
-        
-        //$(this).css('transform', 'scale(1.18,1.18)');
+        }, 300)
+    }).mouseout(function () {
+        console.log("MOUSE DID EXIT!!")
     })
-    .mouseleave(function () {
-        $(this).css('transform', 'scale(1.0,1.0)');
-    });
 
 
     /** Pricing Box Screenshot Toggle **/

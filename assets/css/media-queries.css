@@ -73,7 +73,6 @@
 	
 	.how-it-works-box-icon .how-it-works-step { left: 20px; }
     
-    .pricing-box { padding-bottom: 50px; }
     .pricing-box:last-child { padding-bottom: 0; }
 	
 	.testimonial-list .testimonial-image { float: none; width: auto; text-align: center; }
