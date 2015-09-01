@@ -44,6 +44,7 @@ jQuery(document).ready(function() {
 	    slides: [
             { src: "assets/img/backgrounds/woman-typing.jpg", animation: 'kenburns' },
             { src: "assets/img/backgrounds/woman-writing-contract.jpg" },
+            { src: "assets/img/backgrounds/woman-typing.jpg", animation: 'kenburnsDown' },
             { src: "assets/img/backgrounds/woman-check-mailbox-surprised.jpg", animation: "kenburnsUp", animationDuration: 6500 }
 	    ],
 

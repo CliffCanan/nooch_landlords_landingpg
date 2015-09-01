@@ -391,8 +391,8 @@ body.vegas-container {
 }
 @-webkit-keyframes kenburnsUp {
     0% {
-        -webkit-transform: scale(1.16) translate(0, 7%);
-                transform: scale(1.16) translate(0, 7%);
+        -webkit-transform: scale(1.16) translate(0, 6%);
+                transform: scale(1.16) translate(0, 6%);
     }
     100% {
         -webkit-transform: scale(1) translate(0, 0);
@@ -401,8 +401,8 @@ body.vegas-container {
 }
 @keyframes kenburnsUp {
     0% {
-        -webkit-transform: scale(1.16) translate(0, 7%);
-                transform: scale(1.16) translate(0, 7%);
+        -webkit-transform: scale(1.16) translate(0, 6%);
+                transform: scale(1.16) translate(0, 6%);
     }
     100% {
         -webkit-transform: scale(1) translate(0, 0);
@@ -416,8 +416,8 @@ body.vegas-container {
 }
 @-webkit-keyframes kenburnsDown {
     0% {
-        -webkit-transform: scale(1.2) translate(0, -10%);
-                transform: scale(1.2) translate(0, -10%);
+        -webkit-transform: scale(1.15) translate(0, -6%);
+                transform: scale(1.15) translate(0, -6%);
     }
     100% {
         -webkit-transform: scale(1) translate(0, 0);
@@ -426,8 +426,8 @@ body.vegas-container {
 }
 @keyframes kenburnsDown {
     0% {
-        -webkit-transform: scale(1.2) translate(0, -10%);
-                transform: scale(1.2) translate(0, -10%);
+        -webkit-transform: scale(1.15) translate(0, -6%);
+                transform: scale(1.15) translate(0, -6%);
     }
     100% {
         -webkit-transform: scale(1) translate(0, 0);
