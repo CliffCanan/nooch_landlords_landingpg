@@ -387,9 +387,7 @@ ul.navbar-nav {
 
 /***** Always beautiful *****/
 
-.always-beautiful-container {
-	padding-bottom: 60px;
-}
+.always-beautiful-container { padding-bottom: 60px; }
 
 .always-beautiful-box {
 	margin-top: 30px;
@@ -409,21 +407,14 @@ ul.navbar-nav {
 	padding-right: 30px;
 }
 
-.always-beautiful-box-text h3 {
-	margin-top: 0;
-}
+.always-beautiful-box-text h3 { margin-top: 0; }
 
-.always-beautiful-box-text .med-par {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
+.always-beautiful-box-text .med-par { margin-bottom: 20px; }
 
 
-/***** How it works *****/
+/***** How It Works *****/
 
-.how-it-works {
-	padding-bottom: 30px;
-}
+.how-it-works { padding-bottom: 30px; }
 
 .how-it-works-box {
 	padding-top: 15px;
@@ -449,29 +440,21 @@ ul.navbar-nav {
     line-height: 32px;
 }
 
-.how-it-works-box h3 {
-	margin-top: 15px;
-}
+.how-it-works-box h3 { margin-top: 15px; }
 
-.how-it-works-box p {
-	opacity: 0.8;
-}
+.how-it-works-box p { opacity: 0.8; }
 
 
 /***** Pricing *****/
 
-.pricing {
-	padding-bottom: 30px;
-}
+.pricing { padding-bottom: 30px; }
 
 .pricing-box {
 	padding-top: 30px;
 	padding-bottom: 20px;
 }
 
-.pricing-box-inner {
-	background: #f8f8f8;
-}
+.pricing-box-inner { background: #f8f8f8; }
 
 .pricing-box-price {
 	position: relative;

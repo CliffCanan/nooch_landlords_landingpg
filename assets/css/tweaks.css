@@ -74,10 +74,15 @@ ul.navbar-nav {
 }
 
 .scroll-fixed-navbar { padding: 6px 0; background-color: #FFF; -webkit-box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1); box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);}
+.scroll-fixed-navbar .navbar-brand {
+  width: 94px;
+  background-image: url(../img/nooch-logo.svg);
+}
 .scroll-fixed-navbar ul.navbar-nav > li > a {color: #333;}
 .scroll-fixed-navbar ul.navbar-nav > li > a:hover, 
 .scroll-fixed-navbar ul.navbar-nav > li.active > a,
-.scroll-fixed-navbar ul.navbar-nav > li.active > a:hover { background-color: #fff; color: #41abef; }
+.scroll-fixed-navbar ul.navbar-nav > li.active > a:hover,
+.scroll-fixed-navbar ul.navbar-nav > li.active > a:focus { background-color: #fff; color: #41abef; }
 .scroll-fixed-navbar ul.navbar-nav > li.active > a:after {
   content: "";
   background-color: #41abef;
@@ -87,10 +92,6 @@ ul.navbar-nav {
   float: left;
   position: relative;
   top: 6px;
-}
-.scroll-fixed-navbar .navbar-brand {
-  width: 94px;
-  background-image: url(../img/nooch-logo.svg);
 }
 
 /*
@@ -204,12 +205,14 @@ ul.navbar-nav {
   margin-bottom: 0px;
   color: #ccc;
   font-size: 18px;
+}
+.scrnshotCaption * {
   -webkit-transition: margin 0.35s ease, color .2s;
      -moz-transition: margin 0.35s ease, color .2s;
        -o-transition: margin 0.35s ease, color .2s;
           transition: margin 0.35s ease, color .2s;
 }
-
+.scrnshotCaption .fa { color: inherit; opacity: .7; }
 .circle-screenshot:hover img {
   margin-top: 5px;
   transform: scale(1.18,1.18);
@@ -219,6 +222,7 @@ ul.navbar-nav {
   margin-top: 48px;
   margin-bottom: -30px;
 }
+.circle-screenshot:hover .scrnshotCaption .fa { color:#41abef; }
 
 .always-beautiful-container .container > .row:nth-child(2) { margin-bottom: 50px; }
 
@@ -436,10 +440,7 @@ div.circleBackground,
     background-color: rgba(63,171,225,1);    
 }
 
-
-/***************************/
 /******  HOVER STUFF  ******/
-/***************************/
 	
 /***********************************/
 /*  1st CIRCLE IMAGE (The border)  */
@@ -452,14 +453,14 @@ div#hover-wrap-1:hover div.circle-color-fill {
 }
 div#hover-wrap-1:hover div.circleBackground {background: rgba(188,190,192,.8);}
 
-    /*  1st CIRCLE Content Text  */
+/*  1st CIRCLE Content Text  */
 div#hover-wrap-1:hover #fact1 .stat-number {opacity: .95; font-size:32px;margin:10px 0 -5px;}
 div#hover-wrap-1:hover #fact1 .stat-text {opacity: 1; font-size:17px;}
 div#hover-wrap-1:hover #fact1 span.percentage-sign {font-size:20px;opacity:1;position:relative;left:3px;}
 
-    /*************************************/
-    /**  2nd CIRCLE IMAGE (The border)  **/
-	/*************************************/
+/***********************************/
+/*  2nd CIRCLE IMAGE (The border)  */
+/***********************************/
 div#hover-wrap-2:hover div.circle-color-fill {
 	transform: rotate(117deg) !important;
 	-webkit-transform: rotate(117deg) !important;
@@ -468,15 +469,15 @@ div#hover-wrap-2:hover div.circle-color-fill {
 }
 div#hover-wrap-2:hover div.circleBackground {background: rgba(188,190,192,.8);}
 
-    /**      2nd CIRCLE Content Text      **/
+ /***  2nd CIRCLE Content Text  ***/
 div#hover-wrap-2:hover #fact2 .stat-number {opacity: .95; font-size:31px;margin:10px 0 -5px;}
 div#hover-wrap-2:hover #fact2 .stat-text {opacity: 1; font-size:15px;}
 div#hover-wrap-2:hover #fact2 span.percentage-sign {font-size:19px;opacity:1;position:relative;left:3px;
 }
 
-	/*************************************/
-    /*** 3rd CIRCLE IMAGE (The border) ***/ 
-	/*************************************/
+/*********************************/
+/* 3rd CIRCLE IMAGE (The border) */ 
+/*********************************/
 div#hover-wrap-3:hover #circle-slice3 .circle-color-fill {
 	opacity: 1; 
 	transform: rotate(181deg) !important;
@@ -504,9 +505,9 @@ div#hover-wrap-3:hover #fact3 .stat-number { font-size:35px; margin:8px 0 -5px; 
 div#hover-wrap-3:hover #fact3 .stat-text { opacity: 1; font-size:16px; }
 div#hover-wrap-3:hover #fact3 span.percentage-sign { font-size:20px; opacity:1; position:relative; left:3px; }
 
-   	/*****************************************/ 
-    /****  4th CIRCLE IMAGE (The border)  ****/
-	/*****************************************/
+/***********************************/ 
+/*  4th CIRCLE IMAGE (The border)  */
+/***********************************/
 div#hover-wrap-4:hover div.circle-color-fill {
 	transform: rotate(120deg) !important;
 	-webkit-transform: rotate(120deg) !important;
@@ -515,14 +516,14 @@ div#hover-wrap-4:hover div.circle-color-fill {
 }
 div#hover-wrap-4:hover div.circleBackground { background: rgba(188,190,192,.8); }
 
-    /****  4th CIRCLE Content Text  ****/
+/***  4th CIRCLE Content Text  ***/
 div#hover-wrap-4:hover #fact4 .stat-number { opacity: .95; font-size:31px;margin:10px 0 -5px; }
 div#hover-wrap-4:hover #fact4 .stat-text { opacity: 1; font-size:13.5px; }
 div#hover-wrap-4:hover #fact4 span.percentage-sign { font-size:19px; opacity:1; position:relative; left:3px; }
 
-	/*******************************************/
-    /*****  5th CIRCLE IMAGE (The border)  *****/
-	/*******************************************/	
+/***********************************/
+/*  5th CIRCLE IMAGE (The border)  */
+/***********************************/	
 div#hover-wrap-5:hover div.circle-color-fill {
 	transform: rotate(178deg) !important;
 	-webkit-transform: rotate(178deg) !important;
@@ -531,18 +532,18 @@ div#hover-wrap-5:hover div.circle-color-fill {
 }
 div#hover-wrap-5:hover div.circleBackground {background: rgba(188,190,192,.8);}
    
-    /*****     5th CIRCLE Content Text     *****/
+/***  5th CIRCLE Content Text  ***/
 div#hover-wrap-5:hover #fact5 .stat-number { opacity: .95; font-size:32px;margin:10px 0 -5px; }
 div#hover-wrap-5:hover #fact5 .stat-text { opacity: 1; font-size:16px; }
 div#hover-wrap-5:hover #fact5 span.percentage-sign { font-size:20px; opacity:1; position:relative; left:3px; }
 	
-	/*********************************************/
-    /******  6th CIRCLE IMAGE (The border)  ******/
-	/*********************************************/
+/***********************************/
+/*  6th CIRCLE IMAGE (The border)  */
+/***********************************/
 div#hover-wrap-6:hover div.circle-color-fill { transform: rotate(-268deg) !important; opacity: 1; }
 div#hover-wrap-6:hover div.circleBackground { background: rgba(188,190,192,.8); }
    
-    /******    6th CIRCLE Content Text      ******/
+/***  6th CIRCLE Content Text  ***/
 div#hover-wrap-6:hover #fact6 .stat-number { opacity: .95; font-size:32px; margin:10px 0 -5px; }
 div#hover-wrap-6:hover #fact6 .stat-text { opacity: 1; font-size:16px; }
 div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; position:relative; left:3px }
@@ -589,11 +590,9 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
 
 
 
-/*
-**************************
+/***********************
     PRICING Section
-**************************
-*/
+***********************/
 .pricing-box {padding: 0px;}
 .pricing-box-features ul {font-size:15px;}
 .pricing-box-features ul * {line-height:inherit;}
@@ -640,11 +639,10 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
   color: #fff;
 }
 
-/*
-**************************
+
+/***********************
     FAQ Section
-**************************
-*/
+***********************/
 .section-description h2 > span {font-weight:400;}
 #faq .img-responsive {
   max-height: 550px;
@@ -655,11 +653,9 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
 }
 
 
-/*
-**************************
+/***********************
     BENEFITS Section
-**************************
-*/
+***********************/
 .container.nomax { width:100%; }
 
 #forLandlordsTab .screenshot img { width:98%; height:auto; max-width:500px; }
@@ -682,11 +678,10 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
 .benefits-container .appStoreBadgeContainer img:active { margin-top:4px; }
 .benefits-container .appStoreBadgeContainer .appIcon { display: block; max-width: 72px; height: auto; margin: -10px auto 10px; }
 
-/*
-**************************
+
+/***************************
     CALL TO ACTION - Blue
-**************************
-*/
+***************************/
 .section-container-blue-bg .blueCallout {
   background: #41abef;
   color: #fff;
@@ -699,11 +694,9 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
 
 
 
-/*
-**************************
+/***************************
    TESTIMONIALS Section
-**************************
-*/
+***************************/
 .testimonials-container {
   background: url(../img/backgrounds/headshot-bg.jpg) no-repeat center center fixed;
   border-top: 1px solid #ccc;
@@ -774,26 +767,22 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
 .testimonial-author a {margin-left:5px;}
 
 
-/*
-**************************
+/***************************
     ABOUT US Section
-**************************
-*/
+***************************/
 .about-us-box p:not(.callout) { text-align: left; }
 .about-us-box .callout { font-size: 22px; font-weight: 500; margin-top: 20px; }
 .about-us-box .scrnshotContainer { padding: 0 15px; margin: 0px auto 15px; max-width: 94%}
 
 
-/*
-**************************
+/*************************
     CONTACT Section
-**************************
-*/
-
+*************************/
 /* #contact-section */
 .section-subtitle span {font-weight: 500;}
 .section-subtitle { font-size:26px; font-weight: 300 !important; text-align: center; padding: 10px 0 15px 0; }
 .div-center * {margin: 0 auto;}
+
 /* Social links */
 .social { display: inline-block; padding: 10px 5px 5px 5px; }
 .social li { margin: 5px 5px 5px 0; width: 58px; height: 58px; line-height: 50px; border-radius: 50%; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
@@ -877,30 +866,24 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
 .message-contact-box { width: 100%; padding: 0 15px 0 15px; }
 
 
-/*
-**************************
+/**********************
     AWARDS Section
-**************************
-*/
+**********************/
 #awards-section {display: none;}
 
 
-/*
-**************************
- Scroll Up Button
-**************************
-*/
+/**********************
+  Scroll Up Button
+**********************/
 a.scroll-up { border-radius:4px; display: none; position: fixed; right: 12px; bottom: 12px; padding:5px 10px; background: #00a8d6; text-align: center; -moz-transition: -moz-transform 0.7s ease-in-out; -o-transition: -o-transform 0.7s ease-in-out; -webkit-transition: -webkit-transform 0.7s ease-in-out; transition: transform 0.7s ease-in-out; -webkit-backface-visibility: hidden;}
 a.scroll-up i {color: #FFF;}
 a.scroll-up:hover, 
 a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1.1); -webkit-transform: scale(1.1, 1.1); transform: scale(1.1, 1.1); background: #31373a;}
 
 
-/*
- ***********************
-    MOBILE SCREENS
- ***********************
-*/
+/***********************
+     MOBILE SCREENS
+ ***********************/
 @media only screen and (max-width: 767px) {
 
   .btn-group-lg > .btn {
@@ -935,6 +918,9 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 }
 
 
+/***********************
+     TABLET SCREENS
+ ***********************/
 @media only screen and (min-width: 768px) {
     .inner-bg { padding: 100px 0 110px 0; }
 
@@ -1077,6 +1063,9 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 }
 
 
+/***********************
+     DESKTOP SCREENS
+ ***********************/
 @media only screen and (min-width: 1030px) {
   .tab-desk-only { display:block; }
 
@@ -1103,6 +1092,8 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
     top:-70px;
     left:10%;
   }
+
+  .section-container-blue-bg .blueCallout { padding: 150px 45px; }
 
   #awards-section ul { max-width: 960px; }
   #awards-section ul li {

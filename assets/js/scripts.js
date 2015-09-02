@@ -139,7 +139,7 @@ function toggleBenefitsTabs() {
 $(window).scroll(function () {
     "use strict";
     var scroll = $(window).scrollTop();
-    console.log(scroll);
+
     if (scroll > 100) {
         $(".navbar").addClass("scroll-fixed-navbar");
     } else {
@@ -153,12 +153,20 @@ $(window).scroll(function () {
 function scroll_to(clicked_link, nav_height) {
     var element_class = clicked_link.attr('href').replace('#', '.');
     var scroll_to = 0;
+
     if (element_class != '.top-content') {
         element_class += '-container';
         scroll_to = $(element_class).offset().top - nav_height;
     }
+
     if ($(window).scrollTop() != scroll_to) {
-        $('html, body').stop().animate({ scrollTop: scroll_to }, 1000);
+        $('html, body').stop().animate({
+            scrollTop: scroll_to
+        }, 1000, function () {
+            if (element_class == '.top-content') {
+                $('#form-email').focus()
+            }
+        });
     }
 }
 
