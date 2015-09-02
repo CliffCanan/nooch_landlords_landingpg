@@ -1,6 +1,4 @@
-body {font-size:17px;}
-
-h3 { font-weight: 400; }
+body { position: relative; }
 
 .footer-copyright {font-size:15px;}
 
@@ -67,13 +65,44 @@ button.btn { position:relative; }
 
 
 /*
-*******************************
-    TOP Section
-*******************************
+*********************
+    NAV BAR
+*********************
 */
+ul.navbar-nav {
+    font-weight: 400;
+}
+
+.scroll-fixed-navbar { padding: 6px 0; background-color: #FFF; -webkit-box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1); box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);}
+.scroll-fixed-navbar ul.navbar-nav > li > a {color: #333;}
+.scroll-fixed-navbar ul.navbar-nav > li > a:hover, 
+.scroll-fixed-navbar ul.navbar-nav > li.active > a,
+.scroll-fixed-navbar ul.navbar-nav > li.active > a:hover { background-color: #fff; color: #41abef; }
+.scroll-fixed-navbar ul.navbar-nav > li.active > a:after {
+  content: "";
+  background-color: #41abef;
+  height: 2px;
+  width: 100%;
+  display: block;
+  float: left;
+  position: relative;
+  top: 6px;
+}
+.scroll-fixed-navbar .navbar-brand {
+  width: 94px;
+  background-image: url(../img/nooch-logo.svg);
+}
+
+/*
+*********************
+    TOP Section
+*********************
+*/
+.inner-bg { padding: 60px 0 90px 0; }
 .top-content .inner-bg .container { min-height:420px; }
 #top-carousel .item { background-color: rgba(0,0,0,.4); padding: 30px; text-shadow: 0 1px 0px rgba(0,0,0,.65); }
-.form-top-left h3 { text-shadow: 0 1px 0px rgba(0,0,0,.3); }
+.form-top-left h3,
+.form-top-right { text-shadow: 0 1px 0px rgba(0,0,0,.4); }
 #top-carousel .item .btn { text-shadow: none; }
 #top-carousel .item p,
 #top-carousel ul {
@@ -91,42 +120,36 @@ button.btn { position:relative; }
 .top-content .container .form-box { background-color: rgba(63, 171, 225, 0.6); }
 #top-carousel .item,
 .top-content .container .form-box { box-shadow: 0px 10px 32px -11px rgba(0,0,0,.55); }
+.top-content .form-bottom .input-group { margin: 5px 0 20px; }
 
-/*
-  Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
-  CSS from:       http://codepen.io/transportedman/pen/NPWRGq
-  and:            http://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide
-  Inspired from:  http://codepen.io/Rowno/pen/Afykb 
-*/
+
+/*  Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
+    CSS from:       http://codepen.io/transportedman/pen/NPWRGq
+    and:            http://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide
+    Inspired from:  http://codepen.io/Rowno/pen/Afykb   */
 .carousel-fade .carousel-inner .item {
   opacity: 0;
   transition-property: opacity;
 }
-
 .carousel-fade .carousel-inner .active {
   opacity: 1;
 }
-
 .carousel-fade .carousel-inner .active.left,
 .carousel-fade .carousel-inner .active.right {
   left: 0;
   opacity: 0;
   z-index: 1;
 }
-
 .carousel-fade .carousel-inner .next.left,
 .carousel-fade .carousel-inner .prev.right {
   opacity: 1;
 }
-
 .carousel-fade .carousel-control {
   z-index: 2;
 }
 
-/*
-  WHAT IS NEW IN Bootstrap 3.3: "Added transforms to improve carousel performance in modern browsers."
-  Need to override the 3.3 new styles for modern browsers & apply opacity
-*/
+/*  WHAT IS NEW IN Bootstrap 3.3: "Added transforms to improve carousel performance in modern browsers."
+    Need to override the 3.3 new styles for modern browsers & apply opacity  */
 @media all and (transform-3d), (-webkit-transform-3d) {
     .carousel-fade .carousel-inner > .item.next,
     .carousel-fade .carousel-inner > .item.active.right {
@@ -195,6 +218,83 @@ button.btn { position:relative; }
   color: #222;
   margin-top: 48px;
   margin-bottom: -30px;
+}
+
+.always-beautiful-container .container > .row:nth-child(2) { margin-bottom: 50px; }
+
+
+/*
+*******************************
+    WHY USE NOOCH? Section
+*******************************
+*/
+.portfolio-row {
+	margin-top: 50px;
+}
+.portfolio-item {
+	position: relative;
+	margin-left: -15px;
+	margin-right: -15px;
+	background-color: #fff;
+	cursor: pointer;
+	overflow: hidden;
+}
+.portfolio-item-picture {
+	width: 100% !important;
+	height: 100% !important;
+	-webkit-transition: all ease 1.5s;
+	transition: all ease 1.5s;
+}
+.portfolio-item:hover .portfolio-item-picture {
+	-webkit-transform: scale(1.12,1.12);
+	transform: scale(1.12,1.12);
+}
+.portfolio-item-overlay {
+    background-color: #41abef;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+	-webkit-transition: all ease 0.3s;
+	transition: all ease 0.3s;
+}
+.section-accent .portfolio-item-overlay {
+	background-color: #333;
+}
+.portfolio-item:hover .portfolio-item-overlay {
+	opacity: 0.75;
+}
+.portfolio-item-text {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 30px;
+	background-color: #222;
+	color: #ccc;
+	-webkit-transition: all ease 0.25s;
+	transition: all ease 0.25s;
+	-webkit-transform: translate(0,100%);
+	transform: translate(0,100%);
+}
+.section-accent .portfolio-item-text,
+.section-dark .portfolio-item-text {
+	background-color: #fff;
+	color: #444;
+}
+.portfolio-item:hover .portfolio-item-text {
+	-webkit-transform: translate(0,0);
+	transform: translate(0,0);
+}
+.portfolio-item-title {
+	margin: 0 0 15px;
+	color: #fff;
+	font-family: "Montserrat", sans-serif;
+	font-size: 18px;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
 }
 
 
@@ -337,13 +437,13 @@ div.circleBackground,
 }
 
 
-   /***************************/
-   /******  HOVER STUFF  ******/
-   /***************************/
+/***************************/
+/******  HOVER STUFF  ******/
+/***************************/
 	
-	/***********************************/
-    /*  1st CIRCLE IMAGE (The border)  */
-	/***********************************/
+/***********************************/
+/*  1st CIRCLE IMAGE (The border)  */
+/***********************************/
 div#hover-wrap-1:hover div.circle-color-fill {
 	opacity: 1; 
 	transform: rotate(171deg) !important;
@@ -836,6 +936,10 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 
 
 @media only screen and (min-width: 768px) {
+    .inner-bg { padding: 100px 0 110px 0; }
+
+    .always-beautiful-container .container > .row:nth-child(2) { margin-bottom: 90px; }
+
 	.pricing-container img.screenshot {
       position: relative;
       top: -40px;
@@ -970,19 +1074,20 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 		-ms-transform: rotateY(180deg);
 		transform:rotateY(180deg);
 	}
-
-
 }
 
 
 @media only screen and (min-width: 1030px) {
   .tab-desk-only { display:block; }
 
+  .inner-bg { padding: 130px 0 140px 0; }
+
   .container { width: 90%; }
 
   #top-carousel .carousel-inner { overflow: visible;}
   #top-carousel .item { max-width: 600px; }
   #top-carousel #slide3 { max-width:450px; position:relative; left: -30px; }
+  .top-content .form-bottom .input-group { margin: 5px 0 30px; }
 
   .circle-screenshot img { max-width: 80%; }
 

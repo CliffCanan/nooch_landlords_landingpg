@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Rent Payments | Simple, Safe, Fast - Bootstrap Landing Page</title>
+        <title>Rent Payments | Simple, Safe, Fast</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">        
@@ -37,7 +37,7 @@
 
     </head>
 
-    <body>
+    <body data-spy="scroll" data-target="#top-navbar-1">
 
         <!-- Loader -->
     	<div class="loader">
@@ -48,7 +48,7 @@
         <div class="top-content">
 
         	<!-- Top menu -->
-			<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+			<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 				<div class="container">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
@@ -64,9 +64,10 @@
 						<ul class="nav navbar-nav navbar-right">
 							<li><a class="scroll-link" href="#features">Features</a></li>
 							<li><a class="scroll-link" href="#how-it-works">How it works</a></li>
-							<li><a class="scroll-link" href="#pricing">Pricing</a></li>
+                            <li><a class="scroll-link" href="#pricing">Pricing</a></li>
+                            <li><a class="scroll-link" href="#faq">FAQs</a></li>
 							<li><a class="scroll-link" href="#about-us">About</a></li>
-							<li><a class="btn btn btn-link-2" href="https://www.nooch.com/">Nooch P2P</a></li>
+							<li><a class="btn btn btn-link" href="https://www.nooch.com/" data-toggle="tooltip" title="Learn about Nooch for P2P (new page)" data-placement="bottom">Nooch P2P</a></li>
 						</ul>
 					</div>
 				</div>
@@ -83,7 +84,7 @@
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner" role="listbox">
 
-                                    <div class="item active wow fadeIn" id="slide3">
+                                    <div class="item active wow fadeInLeft" id="slide3">
                                         <h1 class="">No More <strong>Excuses</strong></h1>
                                         <div class="description wow fadeInUp" data-wow-delay=".3s">
                                             <p class="p-0">
@@ -101,7 +102,7 @@
 
                                     <div class="item" id="slide4">
                                         <h1 class="wow fadeInDown">Collect Rent Payments On Your Terms</h1>
-                                        <div class="description">
+                                        <div class="description wow fadeInUp">
                                             <ul>
                                                 <li>Nooch makes it easy for Landlords to get paid on time every month.</li>
                                                 <li>Avoid the high fees of accepting credit cards, and the hassle of taking checks.</li>
@@ -114,8 +115,8 @@
                                     </div>
 
                                     <div class="item" id="slide2">
-                                        <h1 class="wow fadeInDown">Down with <strong>paper checks</strong>!</h1>
-                                        <div class="description">
+                                        <h1 class="wow zoomIn">Down with <strong>paper checks</strong>!</h1>
+                                        <div class="description wow fadeInUp">
                                             <p>
                                                 Give your tenants a better way to pay rent.  Paper checks are just plain inconvenient. Not to mention totally insecure.  And slow.  And annoying.
                                             </p>
@@ -146,11 +147,11 @@
                                 </div>
 
                                 <!-- Indicators -->
-                                <ol class="carousel-indicators belowSlides dark">
+                            <!--<ol class="carousel-indicators belowSlides dark">
                                     <li data-target="#top-carousel" data-slide-to="0" class="active"></li>
                                     <li data-target="#top-carousel" data-slide-to="1"></li>
                                     <li data-target="#top-carousel" data-slide-to="2"></li>
-                                </ol>
+                                </ol>-->
 
                             </div>
                             
@@ -179,7 +180,7 @@
 			                        	<input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
 			                        </div>-->
 
-                                    <div class="input-group m-b-15">
+                                    <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
                                         <input class="form-control" id="form-email" type="text" placeholder="Email Address">
                                     </div>
@@ -195,8 +196,8 @@
 			                        <button type="submit" class="btn btn-default btn-lg m-t-15">Sign me up!</button>
 
                                     <div class="form-links m-t-20 pull-right">
-                                        <a href="#" class="launch-modal" data-modal-id="modal-privacy">Privacy Policy</a> -
-                                        <a href="#" class="launch-modal" data-modal-id="modal-faq">FAQ</a>
+                                        <a href="#" class="launch-modal" data-modal-id="modal-privacy">Privacy Policy</a>&nbsp; •&nbsp;
+                                        <a href="#faq" class="scroll-link">FAQ</a>
                                     </div>
 
 			                    </form>
@@ -211,7 +212,7 @@
         </div>
 
 		<!-- More features -->
-        <div class="more-features-container section-container section-container-gray-bg">
+        <div class="more-features-container section-container section-container-gray-bg" id="more-features">
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-sm-12 more-features section-description wow fadeIn">
@@ -248,7 +249,7 @@
         </div>
 
         <!-- Why Use Nooch -->
-        <div class="features-container section-container">
+        <div class="features-container section-container" id="features">
 	        <div class="container">
 
                 <div class="row">
@@ -258,13 +259,38 @@
 	                </div>
 	            </div>
 
-	            <div class="row">
+                <div class="row portfolio-row hidden">
+
+                    <div class="col-sm-6 col-md-3 fadeIn animated done-animation" data-animation="fadeIn">
+                        <div class="portfolio-item">
+                            <img class="portfolio-item-picture" src="assets/img/screenshots/nooch-rent-payments-add-bank.jpg" alt="">
+                            <div class="portfolio-item-overlay"></div>
+                            <div class="portfolio-item-text">
+                                <h4 class="portfolio-item-title">Standard Square Box</h4>
+                                <p class="portfolio-item-description">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Vivamus eu sollicitudin lacus, nec ultricies lorem.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-3 fadeIn animated done-animation" data-animation="fadeIn">
+                        <div class="portfolio-item">
+                            <img class="portfolio-item-picture" src="assets/img/screenshots/nooch-rent-payments-add-bank.jpg" alt="">
+                            <div class="portfolio-item-overlay"></div>
+                            <div class="portfolio-item-text">
+                                <h4 class="portfolio-item-title">It's Simple (Really)</h4>
+                                <p class="portfolio-item-description">Sign up, add your properties, and start asking your tenants to pay rent using Nooch.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+	            <div class="row m-t-10">
                 	<div class="col-sm-4 features-box wow bounceInLeft">
 	                	<div class="features-box-icon">
 	                		<span aria-hidden="true" class="fa fa-child"></span>
 	                	</div>
 	                    <h3>It's Simple (Really)</h3>
-	                    <p>It's so easy a child could do it, even a below-average, run-of-the-mill type of child.</p>
+	                    <p>Sign up, add your properties, and start asking your tenants to pay rent using Nooch.</p>
                     </div>
                     <div class="col-sm-4 features-box features-box-gray wow zoomIn">
                         <div class="features-box-icon">
@@ -402,14 +428,16 @@
         </div>
 
 		<!-- HOW IT WORKS Section -->
-        <div class="how-it-works-container section-container cover section-container-image-bg">
+        <div class="how-it-works-container section-container cover section-container-image-bg" id="how-it-works">
 	        <div class="container">
+
 	            <div class="row">
 	                <div class="col-sm-12 how-it-works section-description wow zoomInUp">
 	                    <h2>Ready in <span>4 steps</span></h2>
 	                    <div class="divider-1 wow fadeInUp"><span></span></div>
 	                </div>
 	            </div>
+
 	            <div class="row">
                 	<div class="col-sm-4 col-sm-offset-1 how-it-works-box wow slideInLeft">
 	                	<div class="how-it-works-box-icon">
@@ -428,6 +456,7 @@
 	                    <p>Quickly add as many properties as you want. Properties may only have between 1 - Infinity units.</p>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-sm-4 col-sm-offset-1 how-it-works-box wow slideInLeft">
 	                	<div class="how-it-works-box-icon">
@@ -446,11 +475,13 @@
 	                    <p>Ask your tenants to pay their monthly rent using Nooch.</p>
                     </div>
 	            </div>
+
 	            <div class="row">
 	            	<div class="col-sm-12 section-bottom-button wow bounceIn">
                         <a class="btn btn-lg btn-primary scroll-link" href="#top-content">Sign up now</a>
 	            	</div>
 	            </div>
+
 	        </div>
         </div>
 
@@ -465,7 +496,7 @@
 	                </div>
 	            </div>
 
-                <div class="row m-t-25 m-b-20 p-b-30">
+                <div class="row m-t-25 p-b-30">
 
                     <div class="col-sm-4 circle-screenshot wow bounceInLeft">
                         <div class="scrnshotToZoom" data-zoomed="assets/img/screenshots/nooch-rent-payments-property.jpg">
@@ -496,7 +527,7 @@
 
                 </div>
 
-	            <div class="row m-t-40 p-t-10">
+	            <div class="row p-t-10">
 	            	<div class="col-sm-7 always-beautiful-box wow fadeInLeft">
 	                    <div class="always-beautiful-box-text always-beautiful-box-text-left">
 	                    	<h3>Ut wisi enim ad minim</h3>
@@ -504,7 +535,7 @@
 	                    		Lorem ipsum dolor sit amet, <span class="colored-text">consectetur adipisicing</span> elit, 
 	                    		sed do eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam, quis nostrud.
 	                    	</p>
-                            <h3>Safe, Secure, &amp; Private Rent Payments</h3>
+                            <h3><i class="fa fa-fw fa-lock"></i> Safe, Secure, &amp; Private Rent Payments</h3>
                             <p class="med-par">
                                 We never ask for or store sensitive details like a routing number or debit card.
                                 And Nooch is not a social network, so the details of all transactions are kept private between the parties involved.
@@ -664,7 +695,7 @@
         </div>
 		
         <!-- Pricing -->
-        <div class="pricing-container section-container">
+        <div class="pricing-container section-container" id="pricing">
 	        <div class="container">
 
                 <div class="row">
@@ -676,7 +707,7 @@
 
 	            <div class="row">
 
-                    <div id="pricingBox1" class="col-sm-4 pricing-box green pricing-box-best wow fadeInDownBig shadow-1">
+                    <div id="pricingBox1" class="col-sm-4 pricing-box green pricing-box-best wow fadeInDown shadow-1" data-wow-delay=".7s">
                         <div class="pricingBoxHdr">
                             <i aria-hidden="true" class="fa fa-fw fa-building"></i> For Landlords
                         </div>
@@ -700,11 +731,11 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4 always-beautiful-box wow fadeInLeft">
+                    <div class="col-sm-4 always-beautiful-box wow zoomIn">
                         <img src="assets/img/devices/nooch-screenshot-pin-rotated.jpg" id="pricingScrnShot" class="screenshot" alt="Mobile Rent Payment PIN">
                     </div>
 
-                    <div id="pricingBox2" class="col-sm-4 pricing-box pricing-box-best wow fadeInDownBig shadow-1">
+                    <div id="pricingBox2" class="col-sm-4 pricing-box pricing-box-best wow fadeInDown shadow-1" data-wow-delay=".7s">
                         <div class="pricingBoxHdr">
                             <i aria-hidden="true" class="fa fa-fw fa-user"></i> For Tenants
                         </div>
@@ -755,33 +786,9 @@
 
             </div>
         </div>
-
-        <!-- Call to action #2 -->
-    <!--<div class="call-to-action-container section-container section-container-image-bg">
-	        <div class="container">
-
-	            <div class="row">
-	                <div class="col-sm-12 call-to-action section-description">
-                        <h2 class="wow fadeInLeftBig">...unless you're really fond of paper checks</h2>
-	                    <div class="divider-1 wow fadeInUp"><span></span></div>
-	                    <p class="wow fadeInRightBig">
-	                    	Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut 
-	                    	aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud.
-	                    </p>
-	                </div>
-	            </div>
-
-	            <div class="row">
-	            	<div class="col-sm-12 section-bottom-button wow zoomIn">
-                        <a class="btn btn-default btn-lg scroll-link" href="#top-content">Sign up now</a>
-	            	</div>
-	            </div>
-
-	        </div>
-        </div> -->
         
         <!-- FAQ -->
-        <section id="faq" class="section-container">
+        <section class="faq-container section-container" id="faq">
             <div class="container">
 
                 <div class="row">
@@ -798,7 +805,8 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-parent="#accordion" data-toggle="collapse" class="panel-toggle" href="#faq1">
-                                    <i class="fa fa-plus-square"></i>Is this safe?</a>
+                                        <i class="fa fa-plus-square"></i>Is this safe?
+                                    </a>
                                 </h4>
                             </div>
                             <div class="panel-collapse collapse in" id="faq1">
@@ -812,7 +820,8 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-parent="#accordion" data-toggle="collapse" class="panel-toggle" href="#faq2">
-                                    <i class="fa fa-plus-square"></i>Is it hard to set up?</a>
+                                        <i class="fa fa-plus-square"></i>Is it hard to set up?
+                                    </a>
                                 </h4>
                             </div>
                             <div class="panel-collapse collapse" id="faq2">
@@ -826,7 +835,8 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-parent="#accordion" data-toggle="collapse" class="panel-toggle" href="#faq3">
-                                    <i class="fa fa-plus-square"></i>What would my tenants have to do?</a>
+                                        <i class="fa fa-plus-square"></i>What would my tenants have to do?
+                                    </a>
                                 </h4>
                             </div>
                             <div class="panel-collapse collapse" id="faq3">
@@ -840,7 +850,8 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-parent="#accordion" data-toggle="collapse" class="panel-toggle" href="#faq4">
-                                    <i class="fa fa-plus-square"></i>I don't like smartphones and refuse to use one.  Can I still use Nooch?</a>
+                                        <i class="fa fa-plus-square"></i>I don't like smartphones and refuse to use one.  Can I still use Nooch?
+                                    </a>
                                 </h4>
                             </div>
                             <div class="panel-collapse collapse" id="faq4">
@@ -854,7 +865,8 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-parent="#accordion" data-toggle="collapse" class="panel-toggle" href="#faq5">
-                                    <i class="fa fa-plus-square"></i>Will I save lots of time and aggravation from not chasing down paper checks?</a>
+                                        <i class="fa fa-plus-square"></i>Will I save lots of time and aggravation from not chasing down paper checks?
+                                    </a>
                                 </h4>
                             </div>
                             <div class="panel-collapse collapse" id="faq5">
@@ -962,7 +974,7 @@
         </div>
 
         <!-- About us -->
-        <div class="about-us-container section-container">
+        <div class="about-us-container section-container" id="about-us">
 	        <div class="container">
 
 	            <div class="row m-b-10">
@@ -1344,6 +1356,29 @@
                 </div>
             </div>
         </section>
+
+        <!-- Call to action #2 -->
+        <div class="call-to-action-container section-container section-container-image-bg">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-sm-12 call-to-action section-description">
+                        <h2 class="wow fadeInLeftBig">Ready to try Nooch out?</h2>
+                        <div class="divider-1 wow fadeInUp"><span></span></div>
+                        <p class="wow fadeIn f-20">
+                            Click below to find out how easy and stress-<em>less</em> collecting rent payments can be.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 section-bottom-button wow zoomIn">
+                        <a class="btn btn-default btn-lg scroll-link" href="#top-content">Get Started</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
 
         <!-- Footer -->

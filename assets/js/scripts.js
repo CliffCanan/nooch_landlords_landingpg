@@ -1,15 +1,13 @@
+jQuery(window).load(function () {
 
-function scroll_to(clicked_link, nav_height) {
-	var element_class = clicked_link.attr('href').replace('#', '.');
-	var scroll_to = 0;
-	if(element_class != '.top-content') {
-		element_class += '-container';
-		scroll_to = $(element_class).offset().top - nav_height;
-	}
-	if($(window).scrollTop() != scroll_to) {
-		$('html, body').stop().animate({scrollTop: scroll_to}, 1000);
-	}
-}
+    /* Loader */
+    $(".loader-img").fadeOut();
+    $(".loader").delay(1000).fadeOut("slow");
+
+    /* Hidden images */
+    $(".modal-body img, .testimonial-image img").attr("style", "width: auto !important; height: auto !important;");
+
+});
 
 
 jQuery(document).ready(function() {
@@ -43,7 +41,7 @@ jQuery(document).ready(function() {
 	$(".top-content").vegas({
 	    slides: [
             { src: "assets/img/backgrounds/woman-typing.jpg", animation: 'kenburns' },
-            { src: "assets/img/backgrounds/woman-writing-contract.jpg" },
+            { src: "assets/img/backgrounds/woman-writing-contract.jpg", animation: 'kenburnsRight' },
             { src: "assets/img/backgrounds/woman-typing.jpg", animation: 'kenburnsDown' },
             { src: "assets/img/backgrounds/woman-check-mailbox-surprised.jpg", animation: "kenburnsUp", animationDuration: 6500 }
 	    ],
@@ -52,13 +50,12 @@ jQuery(document).ready(function() {
 
 	    //animation: 'kenburns',
 
-	    delay: 6500,
+	    delay: 7500,
 
 	    walk: function (index, slideSettings) {
 	        $('#top-carousel').carousel('prev');
 	    }
 	});
-
 
 	$('#top-carousel').on('slide.bs.carousel', function (e) {
 	    if ($(e.relatedTarget).is('#slide3')) {
@@ -70,15 +67,11 @@ jQuery(document).ready(function() {
 	    }
 	})
 
-	/*$('.top-content').backstretch([
-        "assets/img/backgrounds/woman-writing-contract.jpg",
-        "assets/img/backgrounds/woman-check-mailbox-surprised.jpg",
-        "assets/img/backgrounds/woman-typing.jpg"
-	], { duration: 5000, fade: 'slow' });
-    */
-
     $('.call-to-action-container').backstretch("assets/img/backgrounds/1.jpg");
 
+
+    /** Initialize all Tooltips on the page **/
+    $('[data-toggle="tooltip"]').tooltip()
 
     /** Wow - Make Elements Animate Into View **/
     new WOW({
@@ -103,14 +96,12 @@ jQuery(document).ready(function() {
     $('.circle-screenshot').hover(function () {
         var $elem = $(this);
         $elem.find('.evenZoomLens').remove()
-        setTimeout(function() {
+        setTimeout(function () {
             $elem.find('.scrnshotToZoom').evenZoom({
                 lensPinningDistance: 20
             })
         }, 300)
-    }).mouseout(function () {
-        console.log("MOUSE DID EXIT!!")
-    })
+    });
 
 
     /** Pricing Box Screenshot Toggle **/
@@ -141,16 +132,35 @@ function toggleBenefitsTabs() {
     $('#forTenantsTab').toggleClass('in');
 }
 
-jQuery(window).load(function() {
-	
-	/* Loader */
-	$(".loader-img").fadeOut();
-	$(".loader").delay(1000).fadeOut("slow");
-	
-	/* Hidden images */
-	$(".modal-body img, .testimonial-image img").attr("style", "width: auto !important; height: auto !important;");
-	
+
+// --------------------------------------------------------
+//	Navigation Bar
+// -------------------------------------------------------- 	
+$(window).scroll(function () {
+    "use strict";
+    var scroll = $(window).scrollTop();
+    console.log(scroll);
+    if (scroll > 100) {
+        $(".navbar").addClass("scroll-fixed-navbar");
+    } else {
+        $(".navbar").removeClass("scroll-fixed-navbar");
+    }
 });
+
+// --------------------------	
+//	Scroll To Section
+// --------------------------	
+function scroll_to(clicked_link, nav_height) {
+    var element_class = clicked_link.attr('href').replace('#', '.');
+    var scroll_to = 0;
+    if (element_class != '.top-content') {
+        element_class += '-container';
+        scroll_to = $(element_class).offset().top - nav_height;
+    }
+    if ($(window).scrollTop() != scroll_to) {
+        $('html, body').stop().animate({ scrollTop: scroll_to }, 1000);
+    }
+}
 
 // --------------------------	
 //	Scroll Up
