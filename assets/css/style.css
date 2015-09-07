@@ -264,11 +264,10 @@ ul.navbar-nav {
 /***** Top content *****/
 
 .top-content .text,
-.top-content .text h1 { color: #fff; }
+.top-content .text h1,
+.top-content h2 { color: #fff; }
 
 .top-content .description { margin: 20px 0 10px 0; }
-
-.top-content .top-big-link { margin-top: 35px; }
 
 .form-top {
 	overflow: hidden;

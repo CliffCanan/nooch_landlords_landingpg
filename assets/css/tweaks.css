@@ -43,6 +43,7 @@ body { position: relative; }
   margin-left: auto;
 }
 
+.text-success { color: #72bf44; }
 
 /***  BUTTONS  ***/
 .btn-group > .btn, .btn-lg { font-weight: 300; height:50px; padding: 10px 20px; }
@@ -64,14 +65,10 @@ button.btn { position:relative; }
 .panel-body p { font-size:15px; line-height:1.9 }
 
 
-/*
-*********************
-    NAV BAR
-*********************
-*/
-ul.navbar-nav {
-    font-weight: 400;
-}
+/*******************
+       NAV BAR
+ *******************/
+ul.navbar-nav { font-weight: 400; }
 
 .scroll-fixed-navbar { padding: 6px 0; background-color: #FFF; -webkit-box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1); box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);}
 .scroll-fixed-navbar .navbar-brand {
@@ -94,12 +91,45 @@ ul.navbar-nav {
   top: 6px;
 }
 
-/*
-*********************
+.navbar-brand { position: relative; }
+.navbar-brand::after {
+  content: 'For Landlords';
+  color: #fff;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 300;
+  max-width: 100px;
+  text-align: left;
+  position: absolute;
+  left: 110%;
+  top: 3px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  border-left: 2px solid #3fabe1;
+  padding-left: 12px;
+  text-indent: 0;
+}
+.scroll-fixed-navbar .navbar-brand::after {
+  color: #3fabe1;
+  top: 4px;
+}
+
+
+/*****************
     TOP Section
-*********************
-*/
-.inner-bg { padding: 60px 0 90px 0; }
+******************/
+.inner-bg { padding: 70px 0 90px 0; }
+.inner-bg .main-title h1 {
+  color: white;
+  font-size: 44px;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 400;
+  max-width: 630px;
+  margin: 0 auto;
+  text-shadow: 0 2px 1px rgba(0,0,0,.5);
+}
 .top-content .inner-bg .container { min-height:420px; }
 #top-carousel .item { background-color: rgba(0,0,0,.4); padding: 30px; text-shadow: 0 1px 0px rgba(0,0,0,.65); }
 .form-top-left h3,
@@ -110,10 +140,13 @@ ul.navbar-nav {
   font-size: 20px;
   text-align: left;
 }
-#top-carousel ul { padding: 20px 30px 20px 50px; }
+#top-carousel ul { padding: 0px 0px 0px 30px; }
 #top-carousel ul li { margin-bottom: 10px; }
 #top-carousel p { padding: 0 10px; margin-bottom: 15px; }
-#top-carousel #slide1 h1 { font-size:34.5px; }
+#top-carousel .item h2 { line-height: 1.33;}
+#top-carousel #slide1 h2 { font-size:34px; }
+
+.top-content .top-big-link { margin-top: 20px; }
 
 .carousel-indicators.dark li.active { background: rgba(0,0,0,.5); }
 .carousel-indicators.dark li:not(.active):hover { border-color: rgba(0,0,0,.5) !important; }
@@ -124,10 +157,10 @@ ul.navbar-nav {
 .top-content .form-bottom .input-group { margin: 5px 0 20px; }
 
 
-/*  Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
-    CSS from:       http://codepen.io/transportedman/pen/NPWRGq
-    and:            http://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide
-    Inspired from:  http://codepen.io/Rowno/pen/Afykb   */
+/* Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
+   CSS from:       http://codepen.io/transportedman/pen/NPWRGq
+   and:            http://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide
+   Inspired from:  http://codepen.io/Rowno/pen/Afykb   */
 .carousel-fade .carousel-inner .item {
   opacity: 0;
   transition-property: opacity;
@@ -149,8 +182,8 @@ ul.navbar-nav {
   z-index: 2;
 }
 
-/*  WHAT IS NEW IN Bootstrap 3.3: "Added transforms to improve carousel performance in modern browsers."
-    Need to override the 3.3 new styles for modern browsers & apply opacity  */
+/* WHAT IS NEW IN Bootstrap 3.3: "Added transforms to improve carousel performance in modern browsers."
+   Need to override the 3.3 new styles for modern browsers & apply opacity  */
 @media all and (transform-3d), (-webkit-transform-3d) {
     .carousel-fade .carousel-inner > .item.next,
     .carousel-fade .carousel-inner > .item.active.right {
@@ -173,21 +206,17 @@ ul.navbar-nav {
     }
 }
 
-/*
-*******************************
+/******************************
     How It Works 1 Section
-*******************************
-*/
+*******************************/
 .how-it-works-container {
   background: url(../img/backgrounds/bg-city.jpg) no-repeat center center fixed;
 }
 
 
-/*
-*******************************
+/******************************
    ALWAYS BEAUTIFUL Section
-*******************************
-*/
+*******************************/
 .circle-screenshot img {
   max-width: 96%;
   -mox-border-radius: 50%;
@@ -227,11 +256,9 @@ ul.navbar-nav {
 .always-beautiful-container .container > .row:nth-child(2) { margin-bottom: 50px; }
 
 
-/*
-*******************************
+/*****************************
     WHY USE NOOCH? Section
-*******************************
-*/
+******************************/
 .portfolio-row {
 	margin-top: 50px;
 }
@@ -302,11 +329,9 @@ ul.navbar-nav {
 }
 
 
-/*
-*******************************
+/******************************
     BY THE NUMBERS Section
-*******************************
-*/
+*******************************/
 table#spinnerStats {
   display: block;
   width: 98%;
@@ -593,9 +618,9 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
 /***********************
     PRICING Section
 ***********************/
-.pricing-box {padding: 0px;}
-.pricing-box-features ul {font-size:15px;}
-.pricing-box-features ul * {line-height:inherit;}
+.pricing-box { padding: 0px; }
+.pricing-box-features ul { font-size: 15px; }
+.pricing-box-features ul * { line-height: 1.75; }
 .pricing-box-features ul li > span {
   display:inline-block;
   width: 82%;
@@ -606,12 +631,11 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
   font-size: 22px;
   font-weight: 400;
   position: absolute;
-  top: -82px;
-  left: 13%;
-  width: 63px;
+  top: -95px;
+  left: 2.5%;
   height: 63px;
   padding-top: 5px;
-  width: 74%;
+  width: 95%;
 }
 .pricingBoxHdr i {
   background-color: #fff;
@@ -630,6 +654,22 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
        -o-transition: all 0.2s;
           transition: all 0.2s;
 }
+.pricingBoxHdr span.iconContainer {
+  display: inline-block;
+  margin-top: 0px;
+  position: relative;
+  top: -13px;
+}
+.pricingBoxHdr span.textContainer {
+  display: inline-block;
+  margin-top: 15px;
+}
+.pricingBoxHdr .subhead {
+  display: block;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
 .pricing-box.green .pricing-box-price,
 .pricing-box.green h4 { background-color: #72bf44 }
 .pricing-box.green .pricingBoxHdr i { border-color: #72bf44; color: #72bf44; }
@@ -886,14 +926,33 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
  ***********************/
 @media only screen and (max-width: 767px) {
 
+  .navbar { padding: 0; }
+  .navbar-inverse .navbar-toggle { border-color: rgba(255,255,255,.8); }
+  .navbar-inverse.scroll-fixed-navbar .navbar-toggle { border-color: #41abef; margin-bottom: 2px; }
+  .navbar-inverse.scroll-fixed-navbar .navbar-toggle .icon-bar { background-color: #41abef; }
+
+  .inner-bg .main-title h1 {
+    font-size: 36px;
+    margin: 0 auto;
+  }
+  #top-carousel .item { padding: 10px; }
+  .top-content .top-big-link .btn {
+    max-width: 48%;
+    margin: 0;
+    padding: 13px 12px;
+    height: auto;
+    font-size: 17px;
+    line-height: 1.0;
+  }
+
+  .top-content .top-big-link .btn:last-child { margin-left: 1%; }
+
   .btn-group-lg > .btn {
     font-size:16px;
     max-width:50%;
     padding-top:13px;
   }
-  .btn-group-lg > .btn .fa {
-    margin-right: 5px;
-  }
+  .btn-group-lg > .btn .fa { margin-right: 5px; }
 
   .circle-screenshot { margin-bottom: 40px; }
 
@@ -1063,18 +1122,41 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 }
 
 
+/*********************************
+    ALL *EXCEPT* DESKTOP SCREENS
+ *********************************/
+@media only screen and (max-width: 1029px) {
+  .form-top { padding: 0 15px 0; }
+  .form-bottom { padding: 15px 15px 0; }
+  .top-content .form-box button[type='submit'] {
+    display: block;
+    height: auto;
+    margin: 12px auto 0;
+  }
+  .top-content .form-box .form-links {
+    width: 100%;
+    text-align: center;
+    margin: 10px auto 5px !important;
+    font-size: 15px;
+    font-weight: 200;
+  }
+
+}
+
+
 /***********************
      DESKTOP SCREENS
  ***********************/
 @media only screen and (min-width: 1030px) {
   .tab-desk-only { display:block; }
 
-  .inner-bg { padding: 130px 0 140px 0; }
-
   .container { width: 90%; }
 
+  .top-content { height: 690px; }
   #top-carousel .carousel-inner { overflow: visible;}
   #top-carousel .item { max-width: 600px; }
+  #top-carousel ul { padding: 5px 30px 0 50px; }
+  .top-content .top-big-link { margin-top: 35px; }
   #top-carousel #slide3 { max-width:450px; position:relative; left: -30px; }
   .top-content .form-bottom .input-group { margin: 5px 0 30px; }
 
@@ -1092,6 +1174,7 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
     top:-70px;
     left:10%;
   }
+  .pricing-box-features li { padding: 9px 25px; }
 
   .section-container-blue-bg .blueCallout { padding: 150px 45px; }
 
@@ -1143,6 +1226,11 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 .m-b-30 {margin-bottom: 30px !important;}
 .m-l-30 {margin-left: 30px !important;}
 .m-r-30 {margin-right: 30px !important;}
+.m-35 {margin: 35px !important;}
+.m-t-35 {margin-top: 35px !important;}
+.m-b-35 {margin-bottom: 35px !important;}
+.m-l-35 {margin-left: 35px !important;}
+.m-r-35 {margin-right: 35px !important;}
 .m-40 {margin: 40px !important;}
 .m-t-40 {margin-top: 40px !important;}
 .m-b-40 {margin-bottom: 40px !important;}
@@ -1185,6 +1273,11 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 .p-b-30 {padding-bottom: 30px !important;}
 .p-l-30 {padding-left: 30px !important;}
 .p-r-30 {padding-right: 30px !important;}
+.p-35 {padding: 35px !important;}
+.p-t-35 {padding-top: 35px !important;}
+.p-b-35 {padding-bottom: 35px !important;}
+.p-l-35 {padding-left: 35px !important;}
+.p-r-35 {padding-right: 35px !important;}
 .p-40 {padding: 40px !important;}
 .p-t-40 {padding-top: 40px !important;}
 .p-b-40 {padding-bottom: 40px !important;}

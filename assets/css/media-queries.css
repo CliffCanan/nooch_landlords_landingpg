@@ -41,8 +41,7 @@
 }
 
 @media (max-width: 767px) {
-	
-	.navbar { padding-top: 0; }
+
 	.navbar.navbar-no-bg { background: #333; background: rgba(51, 51, 51, 0.9); }
 	.navbar-brand { margin-left: 15px; }
 	.navbar-collapse { border: 0; }
@@ -56,7 +55,6 @@
 
 	.top-content .text { padding-top: 0; padding-bottom: 60px; }
 	.top-content .top-big-link { margin-top: 25px; }
-	.top-content .top-big-link a.btn { margin-top: 10px; }
 	.form-bottom form .form-links { display: block; width: auto; margin-top: 15px; }
 	
 	.section-description p { padding: 0; }
@@ -85,24 +83,4 @@
 	
 	h1, h2 { font-size: 32px; }
 
-}
-
-
-/* Retina-ize images/icons */
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (   min--moz-device-pixel-ratio: 2),
-only screen and (     -o-min-device-pixel-ratio: 2/1),
-only screen and (        min-device-pixel-ratio: 2),
-only screen and (                min-resolution: 192dpi),
-only screen and (                min-resolution: 2dppx) {
-	
-	/* logo */
-    .navbar-brand {
-    	background-image: url(../img/logo@2x.png) !important;
-        background-repeat: no-repeat !important;
-        background-size: 91px 30px !important;
-    }
-	
 }

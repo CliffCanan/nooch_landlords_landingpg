@@ -17,15 +17,16 @@ jQuery(document).ready(function() {
     $(".form-email").val("Email...");
 
     $("html").niceScroll({
+        cursorborder: 0,
         cursorcolor: "#41abef",
         cursorwidth: '10px',
         autohidemode: false,
-        zindex: 999,
+        zindex: 9999,
         mousescrollstep: 35,  // default is 40 (px)
         scrollspeed: 60, // default is 60
         autohidemode: 'cursor',
         bouncescroll: true,
-        hidecursordelay: 800,
+        hidecursordelay: 700,
         horizrailenabled: false
     });
 
