@@ -35,6 +35,8 @@ body { position: relative; }
   margin:15px 0;
 }
 
+.med-par { line-height: 1.65; }
+
 .container-fullwidth {
   width:100%;
   padding-right: 15px;
@@ -43,10 +45,11 @@ body { position: relative; }
   margin-left: auto;
 }
 
+.text-primary { color: #41abef; }
 .text-success { color: #72bf44; }
 
 /***  BUTTONS  ***/
-.btn-group > .btn, .btn-lg { font-weight: 300; height:50px; padding: 10px 20px; }
+.btn-group > .btn, .btn-lg { font-size: 19px; font-weight: 300; height:50px; padding: 11px 19px; }
 .btn-group-lg > .btn .fa { margin-right: 10px; }
 button.btn { position:relative; }
 :not(a).btn {
@@ -128,12 +131,13 @@ ul.navbar-nav { font-weight: 400; }
   font-weight: 400;
   max-width: 630px;
   margin: 0 auto;
-  text-shadow: 0 2px 1px rgba(0,0,0,.5);
+  text-shadow: 0 2px 1px rgba(34,35,36,.4);
 }
 .top-content .inner-bg .container { min-height:420px; }
 #top-carousel .item { background-color: rgba(0,0,0,.4); padding: 30px; text-shadow: 0 1px 0px rgba(0,0,0,.65); }
+.form-top-left h3 { margin: 0; }
 .form-top-left h3,
-.form-top-right { text-shadow: 0 1px 0px rgba(0,0,0,.4); }
+.form-top-right { text-shadow: 0 1px 1px rgba(4,21,29,.3); }
 #top-carousel .item .btn { text-shadow: none; }
 #top-carousel .item p,
 #top-carousel ul {
@@ -230,10 +234,11 @@ ul.navbar-nav { font-weight: 400; }
 	transition:all .35s;
 }
 .scrnshotCaption > * {
-  margin-top: 30px;
+  margin-top: 32px;
   margin-bottom: 0px;
   color: #ccc;
-  font-size: 18px;
+  font-size: 18.5px;
+  font-weight: 400;
 }
 .scrnshotCaption * {
   -webkit-transition: margin 0.35s ease, color .2s;
@@ -248,8 +253,9 @@ ul.navbar-nav { font-weight: 400; }
 }
 .circle-screenshot:hover .scrnshotCaption > * {
   color: #222;
-  margin-top: 48px;
+  margin-top: 60px;
   margin-bottom: -30px;
+  font-size: 19px;
 }
 .circle-screenshot:hover .scrnshotCaption .fa { color:#41abef; }
 

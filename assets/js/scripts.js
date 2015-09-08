@@ -71,8 +71,9 @@ jQuery(document).ready(function() {
     $('.call-to-action-container').backstretch("assets/img/backgrounds/1.jpg");
 
 
-    /** Initialize all Tooltips on the page **/
-    $('[data-toggle="tooltip"]').tooltip()
+    /** Initialize all Tooltips & Popovers on the page **/
+    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="popover"]').popover();
 
     /** Wow - Make Elements Animate Into View **/
     new WOW({
