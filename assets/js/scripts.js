@@ -106,6 +106,37 @@ jQuery(document).ready(function() {
     });
 
 
+    $('div#hover-wrap-1').hover(function () {
+        $('#circle-slice1-b .circle-color-fill').animate({
+            opacity: 1
+        }, 600);
+    }, function () {
+        $('#circle-slice1-b .circle-color-fill').animate({
+            opacity: 0
+        }, 125);
+    })
+
+    $('div#hover-wrap-3').hover(function () {
+        $('#circle-slice3-b .circle-color-fill').animate({
+            opacity: 1
+        }, 700);
+    }, function () {
+        $('#circle-slice3-b .circle-color-fill').animate({
+            opacity: 0
+        }, 200);
+    })
+
+    $('div#hover-wrap-5').hover(function () {
+        $('#circle-slice5-b .circle-color-fill').animate({
+            opacity: 1
+        }, 600);
+    }, function () {
+        $('#circle-slice5-b .circle-color-fill').animate({
+            opacity: 0
+        }, 150);
+    })
+
+
     /** Pricing Box Screenshot Toggle **/
     $('#pricingBox1').hover(function () {
         $('#pricingScrnShot').attr('src', 'assets/img/devices/nooch-screenshot-property.jpg')

@@ -430,18 +430,19 @@ ul.navbar-nav {
 	position: absolute;
 	top: 0;
 	left: 95px;
-	width: 32px;
-	height: 32px;
+	width: 36px;
+	height: 36px;
 	background: #41abef;
 	-moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;
 	font-size: 24px;
+    font-weight: 400;
 	color: #fff;
-    line-height: 32px;
+    line-height: 36px;
 }
 
 .how-it-works-box h3 { margin-top: 15px; }
 
-.how-it-works-box p { opacity: 0.8; }
+.how-it-works-box p { font-size: 18px; opacity: 0.9; }
 
 
 /***** Pricing *****/

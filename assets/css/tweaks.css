@@ -49,24 +49,32 @@ body { position: relative; }
 .text-success { color: #72bf44; }
 
 /***  BUTTONS  ***/
-.btn-group > .btn, .btn-lg { font-size: 19px; font-weight: 300; height:50px; padding: 11px 19px; }
+.btn-success { background-color: #64c42b; border-color: #54a424; text-shadow: 0 -1px 0 rgba(26,52,11,.4);}
+.btn-success:hover,
+.btn-success:active,
+.btn-success:active:hover { color: #fff; background-color: #54a424; border-color: #43841d }
+.btn-primary { text-shadow: 0 -1px rgba(13,30,45,.4); }
+
+.btn-group > .btn, .btn-lg { font-size: 19px; height:50px; padding: 11px 19px; }
 .btn-group-lg > .btn .fa { margin-right: 10px; }
 button.btn { position:relative; }
 :not(a).btn {
-    -o-transition: all .2s;
-    -moz-transition: all .2s;
-    -webkit-transition: all .2s;
-    -ms-transition: all .2s;
-    transition: all .2s;
+    -o-transition: all .18s;
+    -moz-transition: all .18s;
+    -webkit-transition: all .18s;
+    -ms-transition: all .18s;
+    transition: all .18s;
 }
+
 /***  PANELS   ***/
 .panel {
   background-color: rgba(188, 190, 192, 0.15);
   text-align: left;
 }
-.panel-heading .fa { margin-right:10px; }
-.panel-body p { font-size:15px; line-height:1.9 }
-
+.panel-heading .fa { margin-right: 15px; }
+.panel-body { padding: 5px 15px 10px; }
+.panel-body p { color: #222; font-size: 16px; line-height: 1.8 }
+.panel a { font-weight: 400; }
 
 /*******************
        NAV BAR
@@ -159,7 +167,7 @@ ul.navbar-nav { font-weight: 400; }
 #top-carousel .item,
 .top-content .container .form-box { box-shadow: 0px 10px 32px -11px rgba(0,0,0,.55); }
 .top-content .form-bottom .input-group { margin: 5px 0 20px; }
-
+.top-content form .btn-success:active { margin: 17px 0 -2px !important; }
 
 /* Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
    CSS from:       http://codepen.io/transportedman/pen/NPWRGq
@@ -210,13 +218,18 @@ ul.navbar-nav { font-weight: 400; }
     }
 }
 
+
 /******************************
     How It Works 1 Section
 *******************************/
 .how-it-works-container {
   background: url(../img/backgrounds/bg-city.jpg) no-repeat center center fixed;
 }
-
+.how-it-works-box h3,
+.how-it-works-box p { letter-spacing: .2px; text-shadow: 0 2px 0 rgba(0,0,0,.8); }
+.how-it-works-box-icon .how-it-works-step {
+  font-family: 'Open Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Roboto', Verdana, sans-serif;
+}
 
 /******************************
    ALWAYS BEAUTIFUL Section
@@ -392,10 +405,10 @@ div.circleBackground {
     opacity:0;
     top:-1px;
     left:-1px;
-    -webkit-transition: opacity 0.4s ease 0s, -webkit-transform .8s ease-in-out 0s;
-       -moz-transition: opacity 0.4s ease 0s, -moz-transform .8s ease-in-out 0s;
-         -o-transition: opacity 0.4s ease 0s, -o-transform .8s ease-in-out 0s;
-            transition: opacity 0.4s ease 0s, transform .8s ease-in-out 0s;
+    -webkit-transition: opacity 0.4s ease 0s, -webkit-transform .75s ease-in-out 0s;
+       -moz-transition: opacity 0.4s ease 0s, -moz-transform .75s ease-in-out 0s;
+         -o-transition: opacity 0.4s ease 0s, -o-transform .75s ease-in-out 0s;
+            transition: opacity 0.4s ease 0s, transform .75s ease-in-out 0s;
 }
 
 /*  JUST TRANSITIONS  */
@@ -434,10 +447,18 @@ div.circleBackground,
     transform:rotate(0deg);
 }
 
-/**  1st & 2ND CIRCLE Color  **/
+/**  1st & 4th CIRCLE Color  **/
 #circle-slice1 .circle-color-fill,
-#circle-slice2 .circle-color-fill {
-    background-color: rgba(114,191,68,1);   
+#circle-slice2 .circle-color-fill,
+#circle-slice1-b .circle-color-fill,
+#circle-slice4 .circle-color-fill { background-color: rgba(114,191,68,1); }
+
+#circle-slice1-b .circle-color-fill {
+	     -o-transition: -o-transform 0.38s ease 0.68s !important;
+	   -moz-transition: -moz-transform 0.38s ease 0.68s !important;
+	-webkit-transition: -webkit-transform 0.38s ease 0.68s !important;
+	        transition: transform 0.38s ease 0.68s !important;
+	clip: rect(0px, 79px, auto, auto) !important;
 }
 
 /**  3RD CIRCLE IMAGE  **/
@@ -448,29 +469,29 @@ div.circleBackground,
 	-webkit-transition: opacity 0.3s ease, -webkit-transform .5s ease-in;
 	transition: opacity 0.3s ease, transform .5s ease-in;
 }
-
 #circle-slice3-b .circle-color-fill {
     background-color: rgba(63,171,225,1);     
-	-o-transition: opacity 0.1s ease 0.5s, -o-transform 0.45s ease 0.42s !important;
-	-moz-transition: opacity 0.1s ease 0.5s, -moz-transform 0.45s ease 0.42s !important;
-	-webkit-transition: opacity 0.1s ease 0.5s, -webkit-transform 0.45s ease 0.42s !important;
-	transition: opacity 0.1s ease 0.5s, transform 0.45s ease 0.42s !important;
+	     -o-transition: -o-transform 0.45s ease 0.42s !important;
+	   -moz-transition: -moz-transform 0.45s ease 0.42s !important;
+	-webkit-transition: -webkit-transform 0.45s ease 0.42s !important;
+	        transition: transform 0.45s ease 0.42s !important;
 	clip: rect(0px, 79px, auto, auto) !important;
 }
 
-#circle-slice3-b {
+#circle-slice1-b,
+#circle-slice3-b,
+#circle-slice5-b {
+       -moz-transform:rotate(180deg);
     -webkit-transform:rotate(180deg);
-    -moz-transform:rotate(180deg);
-    -o-transform:rotate(180deg);
-    transform:rotate(180deg);
+            transform:rotate(180deg);
 }
 
-/**  4th & 5th CIRCLE COLOR  **/
-#circle-slice4 .circle-color-fill,
-#circle-slice5 .circle-color-fill {
-    background-color: rgba(63,171,225,1);    
+/**  5th CIRCLE COLOR  **/
+#circle-slice5 .circle-color-fill { background-color: rgba(63,171,225,1); }
+#circle-slice5-b .circle-color-fill {
+    background-color: rgba(63,171,225,1);
+	clip: rect(0px, 79px, auto, auto) !important;
 }
-
 /******  HOVER STUFF  ******/
 	
 /***********************************/
@@ -478,16 +499,24 @@ div.circleBackground,
 /***********************************/
 div#hover-wrap-1:hover div.circle-color-fill {
 	opacity: 1; 
-	transform: rotate(171deg) !important;
-	-webkit-transform: rotate(171deg) !important;
-	-ms-transform: rotate(171deg) !important;
+	    -ms-transform: rotate(181deg) !important;
+	-webkit-transform: rotate(181deg) !important;
+	        transform: rotate(181deg) !important;
 }
-div#hover-wrap-1:hover div.circleBackground {background: rgba(188,190,192,.8);}
+div#hover-wrap-1:hover div.circleBackground { background: rgba(188,190,192,.8); }
 
 /*  1st CIRCLE Content Text  */
-div#hover-wrap-1:hover #fact1 .stat-number {opacity: .95; font-size:32px;margin:10px 0 -5px;}
-div#hover-wrap-1:hover #fact1 .stat-text {opacity: 1; font-size:17px;}
-div#hover-wrap-1:hover #fact1 span.percentage-sign {font-size:20px;opacity:1;position:relative;left:3px;}
+div#hover-wrap-1:hover #fact1 .stat-number { opacity: .95; font-size:32px; margin:10px 0 -1px; }
+div#hover-wrap-1:hover #fact1 .stat-text { opacity: 1; font-size:17px; }
+div#hover-wrap-1:hover #fact1 span.percentage-sign { font-size:20px; opacity:1; position:relative; left:3px; }
+div#hover-wrap-1:hover #circle-slice1-b .circle-color-fill {
+	    -ms-transform: rotate(50deg) !important;
+	-webkit-transform: rotate(50deg) !important;
+ 	        transform: rotate(50deg) !important;
+       -moz-transition: transform 0.45s ease 0.2s;
+    -webkit-transition: transform 0.45s ease 0.2s;
+	        transition: transform 0.45s ease 0.2s;
+}
 
 /***********************************/
 /*  2nd CIRCLE IMAGE (The border)  */
@@ -498,36 +527,30 @@ div#hover-wrap-2:hover div.circle-color-fill {
 	-ms-transform: rotate(117deg) !important;
 	opacity: 1; 
 }
-div#hover-wrap-2:hover div.circleBackground {background: rgba(188,190,192,.8);}
+div#hover-wrap-2:hover div.circleBackground { background: rgba(188,190,192,.8); }
 
  /***  2nd CIRCLE Content Text  ***/
-div#hover-wrap-2:hover #fact2 .stat-number {opacity: .95; font-size:31px;margin:10px 0 -5px;}
-div#hover-wrap-2:hover #fact2 .stat-text {opacity: 1; font-size:15px;}
-div#hover-wrap-2:hover #fact2 span.percentage-sign {font-size:19px;opacity:1;position:relative;left:3px;
-}
+div#hover-wrap-2:hover #fact2 .stat-number { opacity: .95; font-size:31px;margin:10px 0 -5px;}
+div#hover-wrap-2:hover #fact2 .stat-text { opacity: 1; font-size:15px;}
+div#hover-wrap-2:hover #fact2 span.percentage-sign { font-size:19px; opacity:1; position:relative; left:3px;}
 
 /*********************************/
 /* 3rd CIRCLE IMAGE (The border) */ 
 /*********************************/
-div#hover-wrap-3:hover #circle-slice3 .circle-color-fill {
+div#hover-wrap-3:hover #circle-slice3 .circle-color-fill,
+div#hover-wrap-5:hover div.circle-color-fill {
 	opacity: 1; 
-	transform: rotate(181deg) !important;
-	-ms-transform: rotate(181deg) !important;
 	-webkit-transform: rotate(181deg) !important;
+	    -ms-transform: rotate(181deg) !important;
+	        transform: rotate(181deg) !important;
 }
-
 div#hover-wrap-3:hover div.hold { clip:rect(0px, auto, auto, 80px); }
-
 div#hover-wrap-3:hover #circle-slice3-b .circle-color-fill {
 	opacity: 1; 
-	transform: rotate(90deg) !important;
-	-ms-transform: rotate(90deg) !important;
-	-webkit-transform: rotate(90deg) !important;
 	clip:rect(0px, auto, 0px, 79px);
-    -o-transition: opacity 0.3s ease 0.1s, transform 0.45s ease 0.1s;
-    -moz-transition: opacity 0.3s ease 0.1s, transform 0.45s ease 0.1s;
-    -webkit-transition: opacity 0.3s ease 0.1s, transform 0.45s ease 0.1s;
-	transition: opacity 0.3s ease 0.1s, transform 0.45s ease 0.1s;
+	    -ms-transform: rotate(118deg) !important;
+	-webkit-transform: rotate(118deg) !important;
+	        transform: rotate(118deg) !important;
 }
 div#hover-wrap-3:hover div.circleBackground { background: rgba(188,190,192,.8); }
 
@@ -555,14 +578,16 @@ div#hover-wrap-4:hover #fact4 span.percentage-sign { font-size:19px; opacity:1; 
 /***********************************/
 /*  5th CIRCLE IMAGE (The border)  */
 /***********************************/	
-div#hover-wrap-5:hover div.circle-color-fill {
-	transform: rotate(178deg) !important;
-	-webkit-transform: rotate(178deg) !important;
-	-ms-transform: rotate(178deg) !important;
-	opacity: 1;
+div#hover-wrap-5:hover div.circleBackground { background: rgba(188,190,192,.8); }
+div#hover-wrap-5:hover #circle-slice5-b .circle-color-fill {
+	    -ms-transform: rotate(62deg) !important;
+	-webkit-transform: rotate(62deg) !important;
+ 	        transform: rotate(62deg) !important;
+       -moz-transition: transform 0.45s ease 0.2s;
+    -webkit-transition: transform 0.45s ease 0.2s;
+	        transition: transform 0.45s ease 0.2s;
 }
-div#hover-wrap-5:hover div.circleBackground {background: rgba(188,190,192,.8);}
-   
+
 /***  5th CIRCLE Content Text  ***/
 div#hover-wrap-5:hover #fact5 .stat-number { opacity: .95; font-size:32px;margin:10px 0 -5px; }
 div#hover-wrap-5:hover #fact5 .stat-text { opacity: 1; font-size:16px; }
@@ -591,7 +616,6 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
     -o-transition: margin 0.5s ease-out 0s, font-size 0.5s ease-out 0s, opacity 0.2s ease-out .3s;
     transition: margin 0.5s ease-out 0s, font-size 0.5s ease-out 0s, opacity 0.2s ease-out .3s;
 }
-
 .circle-content span.percentage-sign {
     line-height: 120%;
     font-size: 10px;
@@ -605,7 +629,6 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
     -webkit-transition: all .3s;
     transition: all .4s;
 }
-    
 .circle-content .stat-text {
     display:block;
     opacity:0;
@@ -1146,7 +1169,6 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
     font-size: 15px;
     font-weight: 200;
   }
-
 }
 
 
@@ -1166,6 +1188,11 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
   #top-carousel #slide3 { max-width:450px; position:relative; left: -30px; }
   .top-content .form-bottom .input-group { margin: 5px 0 30px; }
 
+  .how-it-works-box { padding: 15px 30px; }
+  .how-it-works-box h3 {
+    margin: 20px auto 15px;
+    font-size: 24px;
+  }
   .circle-screenshot img { max-width: 80%; }
 
   #forLandlordsTab .features-box { padding-left: 130px; }
