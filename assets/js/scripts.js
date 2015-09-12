@@ -12,8 +12,6 @@ jQuery(window).load(function () {
 
 jQuery(document).ready(function() {
 
-    $(".form-first-name").val("First name...");
-    $(".form-last-name").val("Last name...");
     $(".form-email").val("Email...");
 
     $("html").niceScroll({
@@ -49,8 +47,6 @@ jQuery(document).ready(function() {
 
 	    overlay: "assets/img/backgrounds/overlays/06.png",
 
-	    //animation: 'kenburns',
-
 	    delay: 7500,
 
 	    walk: function (index, slideSettings) {
@@ -71,18 +67,19 @@ jQuery(document).ready(function() {
     $('.call-to-action-container').backstretch("assets/img/backgrounds/1.jpg");
 
 
+    /** Wow - Make Elements Animate Into View **/
+    new WOW({
+        boxClass: 'wow',         // default
+        animateClass: 'animated',// default
+        offset: 20,              // default is 0
+        mobile: true,            // default
+        live: true               // default
+    }).init();
+
+
     /** Initialize all Tooltips & Popovers on the page **/
     $('[data-toggle="tooltip"]').tooltip();
     $('[data-toggle="popover"]').popover();
-
-    /** Wow - Make Elements Animate Into View **/
-    new WOW({
-        boxClass: 'wow',      // default
-        animateClass: 'animated', // default
-        offset: 20,          // default is 0
-        mobile: true,       // default
-        live: true        // default
-    }).init();
 
 
     /** Benefits Toggle **/
@@ -106,6 +103,7 @@ jQuery(document).ready(function() {
     });
 
 
+    /** Stats Hover Animation Helper (mostly uses CSS, but for stats > 50%, this JS fixes some CSS quirks **/
     $('div#hover-wrap-1').hover(function () {
         $('#circle-slice1-b .circle-color-fill').animate({
             opacity: 1
@@ -156,6 +154,10 @@ jQuery(document).ready(function() {
 		$( '#' + $(this).data('modal-id') ).modal();
 	});
 
+    /** (For Mobile): Collepse the Navbar menu when any nav link is tapped **/
+	$('.navbar-collapse .scroll-link').click(function () {
+	    $('.navbar-collapse').collapse('hide');
+	})
 });
 
 function toggleBenefitsTabs() {
