@@ -162,25 +162,60 @@ jQuery(document).ready(function() {
 // -----------------------------
 //   SUBMIT EMAIL ADDRESS FORM
 // -----------------------------
+// unblock when ajax activity stops 
+$(document).ajaxStop($.unblockUI);
+
 $('#signup-form').submit(function (e) {
     e.preventDefault();
 
     if ($('#mce-EMAIL').val().length > 4) {
+        // ADD THE LOADING BOX
+        $.blockUI({
+            message: '<span><i class="fa fa-refresh fa-spin fa-loading"></i></span><br/><span class="loadingMsg">Submitting...</span>',
+            css: {
+                border: 'none',
+                padding: '26px 10px 23px',
+                backgroundColor: '#000',
+                '-webkit-border-radius': '12px',
+                '-moz-border-radius': '12px',
+                'border-radius': '12px',
+                opacity: '.8',
+            }
+        });
+
+        var nameTosave = $('#mce-EMAIL').val();
+
         $.ajax({
             type: "POST",
-            url: "https://www.noochme.com/noochservice/NoochService.svc/saveLandlordEmail/",
-            data: "{ email: '" + $('#mce-EMAIL').val() + "}",
-            contentType: "application/json",
-            dataType: "json",
+            url: "https://www.noochme.com/CampaignServices/api/Services/SaveNewEmailForLandlordsApp",
+            data: { Email: nameTosave },
             success: function (msg) {
                 console.log(msg);
+                if (msg.IsSuccess == true) {
+                    swal({
+                        title: "Great Success",
+                        text: "Thanks for your interest in Nooch!  We'll be in touch in the next few days about how to get started using Nooch to collect rent payments.",
+                        type: "success",
+                        confirmButtonColor: "#3fabe1",
+                        confirmButtonText: "Awesome"
+                    }, function (isConfirm) {
+                    });
+                }
             },
             Error: function (x, e) {
                 // On Error
                 console.log(x);
                 console.log(e);
-                // Hide UIBlock (loading box)
-                //$('#addBank2').unblock();
+
+                swal({
+                    title: "Oh No",
+                    text: "Looks like we had trouble submitting your email address.  We hate it when this happens too - sorry about this... Please try again later.",
+                    type: "error",
+                    confirmButtonColor: "#3fabe1",
+                    confirmButtonText: "Oh, Ok :-("
+                }, function (isConfirm) {
+                });
+
             }
         });
     }
