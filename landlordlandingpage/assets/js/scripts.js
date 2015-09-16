@@ -12,8 +12,6 @@ jQuery(window).load(function () {
 
 jQuery(document).ready(function() {
 
-    $(".form-email").val("Email...");
-
     $("html").niceScroll({
         cursorborder: 0,
         cursorcolor: "#41abef",
@@ -39,13 +37,13 @@ jQuery(document).ready(function() {
     /* Background slideshow */
 	$(".top-content").vegas({
 	    slides: [
-            { src: "assets/img/backgrounds/woman-typing.jpg", animation: 'kenburns' },
-            { src: "assets/img/backgrounds/woman-writing-contract.jpg", animation: 'kenburnsRight' },
-            { src: "assets/img/backgrounds/woman-typing.jpg", animation: 'kenburnsDown' },
-            { src: "assets/img/backgrounds/woman-check-mailbox-surprised.jpg", animation: "kenburnsUp", animationDuration: 6500 }
+            { src: "landlordlandingpage/assets/img/backgrounds/woman-typing.jpg", animation: 'kenburns' },
+            { src: "landlordlandingpage/assets/img/backgrounds/woman-writing-contract.jpg", animation: 'kenburnsRight' },
+            { src: "landlordlandingpage/assets/img/backgrounds/nooch-rent-payments-cash-exchange.jpg", animation: 'kenburnsDown' },
+            { src: "landlordlandingpage/assets/img/backgrounds/woman-check-mailbox-surprised.jpg", animation: "kenburnsUp", animationDuration: 6500 }
 	    ],
 
-	    overlay: "assets/img/backgrounds/overlays/06.png",
+	    overlay: "landlordlandingpage/assets/img/backgrounds/overlays/06.png",
 
 	    delay: 7500,
 
@@ -64,7 +62,7 @@ jQuery(document).ready(function() {
 	    }
 	})
 
-    $('.call-to-action-container').backstretch("assets/img/backgrounds/1.jpg");
+	$('.call-to-action-container').backstretch("landlordlandingpage/assets/img/backgrounds/1.jpg");
 
 
     /** Wow - Make Elements Animate Into View **/
@@ -137,12 +135,12 @@ jQuery(document).ready(function() {
 
     /** Pricing Box Screenshot Toggle **/
     $('#pricingBox1').hover(function () {
-        $('#pricingScrnShot').attr('src', 'assets/img/devices/nooch-screenshot-property.jpg')
+        $('#pricingScrnShot').attr('src', 'landlordlandingpage/assets/img/devices/nooch-screenshot-property.jpg')
         $('#pricingBox1 .pricingBoxHdr').addClass('active')
         $('#pricingBox2 .pricingBoxHdr').removeClass('active')
     });
     $('#pricingBox2').hover(function () {
-        $('#pricingScrnShot').attr('src', 'assets/img/devices/nooch-screenshot-pin-rotated.jpg')
+        $('#pricingScrnShot').attr('src', 'landlordlandingpage/assets/img/devices/nooch-screenshot-pin-rotated.jpg')
         $('#pricingBox1 .pricingBoxHdr').removeClass('active')
         $('#pricingBox2 .pricingBoxHdr').addClass('active')
     });
@@ -160,17 +158,40 @@ jQuery(document).ready(function() {
 	})
 });
 
-function toggleBenefitsTabs() {
-    $('#forLandlordsTab').toggleClass('active');
-    $('#forTenantsTab').toggleClass('active');
-    $('#forLandlordsTab').toggleClass('in');
-    $('#forTenantsTab').toggleClass('in');
-}
 
+// -----------------------------
+//   SUBMIT EMAIL ADDRESS FORM
+// -----------------------------
+$('#signup-form').submit(function (e) {
+    e.preventDefault();
 
-// --------------------------------------------------------
+    if ($('#mce-EMAIL').val().length > 4) {
+        $.ajax({
+            type: "POST",
+            url: "https://www.noochme.com/noochservice/NoochService.svc/saveLandlordEmail/",
+            data: "{ email: '" + $('#mce-EMAIL').val() + "}",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (msg) {
+                console.log(msg);
+            },
+            Error: function (x, e) {
+                // On Error
+                console.log(x);
+                console.log(e);
+                // Hide UIBlock (loading box)
+                //$('#addBank2').unblock();
+            }
+        });
+    }
+    else {
+        alert("Uh Oh");
+    }
+});
+
+// -----------------------------
 //	Navigation Bar
-// -------------------------------------------------------- 	
+// -----------------------------
 $(window).scroll(function () {
     "use strict";
     var scroll = $(window).scrollTop();
@@ -182,9 +203,9 @@ $(window).scroll(function () {
     }
 });
 
-// --------------------------	
+// -----------------------------
 //	Scroll To Section
-// --------------------------	
+// -----------------------------
 function scroll_to(clicked_link, nav_height) {
     var element_class = clicked_link.attr('href').replace('#', '.');
     var scroll_to = 0;
@@ -199,15 +220,15 @@ function scroll_to(clicked_link, nav_height) {
             scrollTop: scroll_to
         }, 1000, function () {
             if (element_class == '.top-content') {
-                $('#form-email').focus()
+                $('#mce-EMAIL').focus()
             }
         });
     }
 }
 
-// --------------------------	
+// -----------------------------
 //	Scroll Up
-// --------------------------	
+// -----------------------------
 $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
         $('.scroll-up').fadeIn();
@@ -222,6 +243,18 @@ $('.scroll-up').click(function () {
     }, 600);
     return false;
 });
+
+
+// --------------------------	
+//	Benefits Tab
+// --------------------------	
+function toggleBenefitsTabs() {
+    $('#forLandlordsTab').toggleClass('active');
+    $('#forTenantsTab').toggleClass('active');
+    $('#forLandlordsTab').toggleClass('in');
+    $('#forTenantsTab').toggleClass('in');
+}
+
 
 // --------------------------	
 //	Accordion (FAQ)

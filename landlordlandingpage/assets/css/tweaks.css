@@ -66,6 +66,8 @@ button.btn { position:relative; }
     transition: all .18s;
 }
 
+iframe {border: 1px solid rgba(188,190,192,.7);border-radius:5px;}
+
 /***  PANELS   ***/
 .panel {
   background-color: rgba(188, 190, 192, 0.15);
@@ -80,8 +82,9 @@ button.btn { position:relative; }
 /*******************
     FORM ELEMENTS
 ********************/
-input[type="text"], 
-textarea, 
+input[type="text"],
+input[type="email"],
+textarea,
 textarea.form-control,
 select.form-control {
 	height: 50px;
@@ -1420,4 +1423,37 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 @-o-keyframes "bannermove" {
  0% {margin-left: 0px;}
  100% {margin-left: -2250px;}
+}
+
+/*******************
+     EVEN ZOOM
+ *******************/
+.evenZoom {
+    display: inline-block;
+}
+.evenZoom .evenZoomLens {
+    background-color: #fff;
+    box-shadow: -5px -5px 30px rgba(255, 255, 255, .7) inset, 5px 5px 20px rgba(0, 0, 0, .3) inset, 10px 10px 25px rgba(0, 0, 0, .1);
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    -webkit-transition: opacity .2s;
+    -moz-transition: opacity .2s;
+    -o-transition: opacity .2s;
+    transition: opacity .2s;
+
+    cursor: none;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.evenZoom .evenZoomLens.hidden {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    visibility: hidden;
 }

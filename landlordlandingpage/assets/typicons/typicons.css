@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+﻿@charset 'UTF-8';
  
 /* @FONT-FACE loads font into browser */
 @font-face {
@@ -7,7 +7,7 @@
   font-style: normal;
   src: url('typicons.eot');
   src: url('typicons.eot?#iefix') format('embedded-opentype'),
-       url('typicons.woff') format('woff'),
+       /*url('typicons.woff') format('woff'),*/
        url('typicons.ttf') format('truetype'),
        url('typicons.svg#typicons') format('svg');
 }
