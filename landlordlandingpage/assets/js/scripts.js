@@ -167,8 +167,12 @@ $(document).ajaxStop($.unblockUI);
 
 $('#signup-form').submit(function (e) {
     e.preventDefault();
+    var email = $('#mce-EMAIL').val();
 
-    if ($('#mce-EMAIL').val().length > 4) {
+    if (ValidateEmail(email))
+    {
+        updateValidationUI(true);
+
         // ADD THE LOADING BOX
         $.blockUI({
             message: '<span><i class="fa fa-refresh fa-spin fa-loading"></i></span><br/><span class="loadingMsg">Submitting...</span>',
@@ -191,6 +195,8 @@ $('#signup-form').submit(function (e) {
             data: { Email: nameTosave },
             success: function (msg) {
                 console.log(msg);
+                $('#mce-EMAIL').val('');
+
                 if (msg.IsSuccess == true) {
                     swal({
                         title: "Great Success",
@@ -212,17 +218,81 @@ $('#signup-form').submit(function (e) {
                     text: "Looks like we had trouble submitting your email address.  We hate it when this happens too - sorry about this... Please try again later.",
                     type: "error",
                     confirmButtonColor: "#3fabe1",
-                    confirmButtonText: "Oh, Ok :-("
+                    confirmButtonText: "Oh, ok  :-("
                 }, function (isConfirm) {
                 });
-
             }
         });
     }
     else {
-        alert("Uh Oh");
+        updateValidationUI(false);
     }
 });
+
+ValidateEmail = function (str) {
+
+    var at = "@"
+    var dot = "."
+    var lat = str.indexOf(at)
+    var lstr = str.length
+    var ldot = str.indexOf(dot)
+
+    if (lat == -1 || lat == 0 || lat == lstr) {
+        return false
+    }
+
+    if (ldot == -1 || ldot == 0 || ldot == lstr) {
+        return false
+    }
+
+    if (str.indexOf(at, (lat + 1)) != -1) {
+        return false
+    }
+
+    if (str.substring(lat - 1, lat) == dot || str.substring(lat + 1, lat + 2) == dot) {
+        return false
+    }
+
+    if (str.indexOf(dot, (lat + 2)) == -1) {
+        return false
+    }
+
+    if (str.indexOf(" ") != -1) {
+        return false
+    }
+
+    return true
+};
+
+updateValidationUI = function(success)
+{
+    if (success == true)
+    {
+        $('#emailGrp').removeClass('has-error').addClass('has-success');
+        if ($('#emailGrp .help-block').length)
+        {
+            $('#emailGrp .help-block').slideUp(400, 'swing');
+        }
+    }
+    else
+    {
+        $('#emailGrp').removeClass('has-success').addClass('has-error');
+
+        var helpBlockTxt = "Please enter your full email address.";
+
+        if (!$('#emailGrp .help-block').length)
+        {
+            $('#emailGrp').append('<small class="help-block pull-left" style="display:none">' + helpBlockTxt + '</small>');
+            $('#emailGrp .help-block').slideDown(300, 'swing');
+        }
+        else { $('#emailGrp .help-block').show() }
+
+        // Now focus on the element that failed validation
+        setTimeout(function () {
+            $('#emailGrp input').focus();
+        }, 200)
+    }
+}
 
 // -----------------------------
 //	Navigation Bar

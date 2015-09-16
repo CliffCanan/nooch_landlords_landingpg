@@ -143,6 +143,35 @@ input[type="text"]:-moz-placeholder, textarea:-moz-placeholder, textarea.form-co
 input[type="text"]:-ms-input-placeholder, textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder { color: #888; }
 input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder { color: #888; }
 
+.help-block {
+  background-color: rgba(244,28,34,.8);
+  margin: 0;
+  padding: 0px 10px;
+  line-height: 1.9;
+  border-radius: 0 0 6px;
+  width:100%;
+  font-size: 14px;
+}
+form .has-error .help-block {
+  background-color: rgba(244,28,34,.85);
+  color: #fff;
+  padding: 0 0 0 20px;
+}
+form .has-success .help-block {
+  background-color: rgba(100,170,50,.85);
+  color: #fff;
+  padding: 0 0 0 20px;
+}
+#signup-form .input-group .form-control {
+     -moz-border-radius: 0 6px 6px 0;
+  -webkit-border-radius: 0 6px 6px 0;
+          border-radius: 0 6px 6px 0;
+}
+#signup-form .input-group.has-error .form-control {
+     -moz-border-radius: 0 6px 0 0;
+  -webkit-border-radius: 0 6px 0 0;
+          border-radius: 0 6px 0 0;
+}
 
 /*******************
        NAV BAR

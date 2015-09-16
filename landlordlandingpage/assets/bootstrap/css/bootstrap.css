@@ -2880,6 +2880,28 @@ select[multiple].input-lg {
 .has-error.checkbox-inline label {
   color: #a94442;
 }
+
+
+
+.has-error .form-control:focus {
+  border-color: #ea1c0d;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #f99d97;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #f99d97;
+}
+
+.has-error .input-group-addon {
+  color: #f44336;
+  border-color: #f44336;
+  background-color: #f2dede;
+}
+
+.has-error .form-control-feedback {
+  color: #f44336;
+}
+
+
+
+
 .has-error .form-control {
   border-color: #a94442;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
