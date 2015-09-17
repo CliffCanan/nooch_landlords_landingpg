@@ -2,7 +2,7 @@ jQuery(window).load(function () {
 
     /* Loader */
     $(".loader-img").fadeOut();
-    $(".loader").delay(1000).fadeOut("slow");
+    $(".loader").delay(800).fadeOut("slow");
 
     /* Hidden images */
     $(".modal-body img, .testimonial-image img").attr("style", "width: auto !important; height: auto !important;");
@@ -16,9 +16,8 @@ jQuery(document).ready(function() {
         cursorborder: 0,
         cursorcolor: "#41abef",
         cursorwidth: '10px',
-        autohidemode: false,
         zindex: 9999,
-        mousescrollstep: 35,  // default is 40 (px)
+        mousescrollstep: 36,  // default is 40 (px)
         scrollspeed: 60, // default is 60
         autohidemode: 'cursor',
         bouncescroll: true,
@@ -318,7 +317,7 @@ $(window).scroll(function () {
     "use strict";
     var scroll = $(window).scrollTop();
 
-    if (scroll > 100) {
+    if (scroll > 80) {
         $(".navbar").addClass("scroll-fixed-navbar");
     } else {
         $(".navbar").removeClass("scroll-fixed-navbar");
