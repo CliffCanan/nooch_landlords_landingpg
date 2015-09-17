@@ -1471,10 +1471,11 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 }
 
 
-
+/********************
+     SWEET ALERT
+ ********************/
 .sweet-overlay {
   background: rgba(10, 10, 10, 0.6); }
-
 .sweet-alert {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding-top: 45px;
@@ -1499,16 +1500,16 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
   margin: 20px 0;
 }
 .sweet-alert button {
-  border-radius: 2px;
   box-shadow: none !important;
   background: none !important;
-  border-radius: 2px;
+  border-radius: 5px;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   padding: 8px 16px;
   position: relative;
-  margin-top: 0; }
+  margin-top: 0;
+}
 .sweet-alert button:hover, .sweet-alert button:focus {background-color: #f6f6f6 !important;}
 .sweet-alert button.confirm {color: #3c80f6; }
 .sweet-alert button.cancel {color: #757575; }
@@ -1565,7 +1566,6 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
     transform: rotateX(0deg), scale(0.5);
     -webkit-transform: rotateX(0deg), scale(0.5);
     opacity: 1; } }
-
 @keyframes animateErrorIcon {
   0% {
     transform: rotateX(100deg), scale(0.5);
@@ -1580,9 +1580,7 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 /*******************
      EVEN ZOOM
  *******************/
-.evenZoom {
-    display: inline-block;
-}
+.evenZoom { display: inline-block; }
 .evenZoom .evenZoomLens {
     background-color: #fff;
     box-shadow: -5px -5px 30px rgba(255, 255, 255, .7) inset, 5px 5px 20px rgba(0, 0, 0, .3) inset, 10px 10px 25px rgba(0, 0, 0, .1);

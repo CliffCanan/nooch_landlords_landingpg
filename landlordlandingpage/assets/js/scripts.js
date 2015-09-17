@@ -200,12 +200,29 @@ $('#signup-form').submit(function (e) {
                 if (msg.IsSuccess == true) {
                     swal({
                         title: "Great Success",
-                        text: "Thanks for your interest in Nooch!  We'll be in touch in the next few days about how to get started using Nooch to collect rent payments.",
+                        text: "<p>Thanks for your interest in Nooch For Landlords!</p><p>We'll be in touch in the next few days about how to get started using Nooch to collect rent payments.</p>",
                         type: "success",
                         confirmButtonColor: "#3fabe1",
-                        confirmButtonText: "Awesome"
+                        confirmButtonText: "Awesome",
+                        html: true
                     }, function (isConfirm) {
                     });
+                }
+                else if (msg.ErrorMessage.indexOf("already stored") > -1)
+                {
+                    swal({
+                        title: "Already Submitted",
+                        text: "<p>Thanks for your interest in Nooch!</p><p>Looks like <span style='color:#3fabe1'>" + nameTosave + "</span> has already been submitted.</p><p>We'll be in touch in the next few days about how to get started using Nooch to collect rent payments.",
+                        type: "success",
+                        confirmButtonColor: "#3fabe1",
+                        confirmButtonText: "Great!",
+                        html: true
+                    }, function (isConfirm) {
+                    });
+                }
+                else
+                {
+                    alert("Uh oh");
                 }
             },
             Error: function (x, e) {
