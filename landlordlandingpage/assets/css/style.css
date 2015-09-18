@@ -231,23 +231,15 @@ ul.navbar-nav {
 	padding: 0 25px 15px 25px;
 	background-color: transparent;
 	text-align: left;
+    position: relative;
 }
 .form-top-left {
 	float: left;
-	width: 87%;
+	width: 100%;
 	padding-top: 25px;
 }
-.form-top-left h3 { margin-top: 0; color: #fff; }
+.form-top-left h3 { margin-top: 0; color: #fff; font-weight: 300;}
 .form-top-left p { opacity: 0.8; color: #fff; }
-.form-top-right {
-	float: left;
-	width: 13%;
-	padding-top: 25px;
-	font-size: 34px;
-	color: #fff;
-	text-align: right;
-	opacity: 0.5;
-}
 .form-bottom {
 	padding: 25px 25px 30px 25px;
 	background-color: transparent;
@@ -846,9 +838,7 @@ ul.navbar-nav { font-weight: 400; }
 }
 .top-content .inner-bg .container { min-height:420px; }
 #top-carousel .item { background-color: rgba(0,0,0,.4); padding: 30px; text-shadow: 0 1px 0px rgba(0,0,0,.65); }
-.form-top-left h3 { margin: 0; }
 .form-top-left h3,
-.form-top-right { text-shadow: 0 1px 1px rgba(4,21,29,.3); }
 #top-carousel .item .btn { text-shadow: none; }
 #top-carousel .item p,
 #top-carousel ul {

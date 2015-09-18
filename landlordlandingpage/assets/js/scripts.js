@@ -164,8 +164,26 @@ jQuery(document).ready(function() {
 // unblock when ajax activity stops 
 $(document).ajaxStop($.unblockUI);
 
+var flag = false;
+$('#signup-form .btn').bind('touchend click', function () {
+
+    if (!flag) {
+        flag = true;
+        setTimeout(function () {
+            flag = false;
+        }, 200);
+
+        attemptEmailSubmit();
+    }
+
+    return false
+});
 $('#signup-form').submit(function (e) {
     e.preventDefault();
+    attemptEmailSubmit();
+});
+attemptEmailSubmit = function() {
+
     var email = $('#mce-EMAIL').val();
 
     if (ValidateEmail(email))
@@ -193,7 +211,7 @@ $('#signup-form').submit(function (e) {
             url: "https://www.noochme.com/CampaignServices/api/Services/SaveNewEmailForLandlordsApp",
             data: { Email: nameTosave },
             success: function (msg) {
-                console.log(msg);
+                //console.log(msg);
                 $('#mce-EMAIL').val('');
 
                 if (msg.IsSuccess == true) {
@@ -243,7 +261,7 @@ $('#signup-form').submit(function (e) {
     else {
         updateValidationUI(false);
     }
-});
+}
 
 ValidateEmail = function (str) {
 
