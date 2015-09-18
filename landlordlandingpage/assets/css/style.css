@@ -1648,7 +1648,9 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
   }
   .top-content .top-big-link .btn:last-child { margin-left: 1%; }
   .top-content .container .form-box { margin: 0 auto; max-width: 94%; padding: 0 2px 50px; }
-  .form-top-left h3 { font-size: 19px; line-height: 1.5; }
+  .top-content .form-bottom #emailGrp {margin-bottom:5px;}
+  .top-content .form-bottom button.btn {width:100%;}
+  .form-top-left h3 { font-size: 21px; line-height: 1.5; text-align:center; margin-bottom:0 }
 
   .btn-group-lg > .btn {
     font-size:16px;
@@ -1853,7 +1855,7 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 @media only screen and (max-width: 1029px) {
   .form-top { padding: 0 15px 0; }
   .form-bottom { padding: 15px 15px 0; }
-  .top-content .form-box button[type='submit'] {
+  .top-content .form-box button.btn {
     display: block;
     height: auto;
     margin: 12px auto 0;
