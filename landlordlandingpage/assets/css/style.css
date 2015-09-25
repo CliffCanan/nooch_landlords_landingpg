@@ -981,9 +981,9 @@ ul.navbar-nav { font-weight: 400; }
 /******************************
     How It Works 1 Section
 *******************************/
-.how-it-works-container {
+/*.how-it-works-container {
   background: url(../img/backgrounds/bg-city.jpg) no-repeat center center fixed;
-}
+}*/
 .how-it-works-box h3,
 .how-it-works-box p { letter-spacing: .2px; text-shadow: 0 2px 0 rgba(0,0,0,.8); }
 .how-it-works-box-icon .how-it-works-step {
@@ -2195,4 +2195,11 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
     -khtml-opacity: 0;
     opacity: 0;
     visibility: hidden;
+}
+
+@media screen and (max-width: 800px) {
+    .wow {
+        animation-name: none !important;
+        visibility: visible !important;
+    }
 }

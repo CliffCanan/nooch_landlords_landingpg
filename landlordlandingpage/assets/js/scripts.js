@@ -63,6 +63,8 @@ jQuery(document).ready(function() {
 
 	$('.call-to-action-container').backstretch("landlordlandingpage/assets/img/backgrounds/1.jpg");
 
+	$('.how-it-works-container').backstretch("landlordlandingpage/assets/img/backgrounds/bg-city.jpg");
+
 
     /** Wow - Make Elements Animate Into View **/
     new WOW({
@@ -86,6 +88,7 @@ jQuery(document).ready(function() {
     {
         $(".pricingAmnt").text("1.00");
         $(".pricingToHide").addClass("hide");
+        $("#pricingSlogan").html("No hidden fees. &nbsp;Period.");
     }
 
     /** Initialize all Tooltips & Popovers on the page **/
