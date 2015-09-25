@@ -74,16 +74,30 @@ jQuery(document).ready(function() {
     }).init();
 
 
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    var pricing = getParameterByName("prc");
+    if (pricing.indexOf("alt") > -1)
+    {
+        $(".pricingAmnt").text("1.00");
+        $(".pricingToHide").addClass("hide");
+    }
+
     /** Initialize all Tooltips & Popovers on the page **/
     $('[data-toggle="tooltip"]').tooltip();
     $('[data-toggle="popover"]').popover();
 
 
     /** Benefits Toggle **/
-    $('#forLandlords').change(function () {
+    $("#forLandlords").change(function () {
         $('#forLandlords').tab('show')
     });
-    $('#forTenants').change(function () {
+    $("#forTenants").change(function () {
         $('#forTenants').tab('show')
     });
 

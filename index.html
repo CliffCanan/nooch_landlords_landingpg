@@ -39,17 +39,26 @@
         <link rel="apple-touch-icon-precomposed" href="landlordlandingpage/assets/ico/nooch-icon.png">
 
         <script>
-        /*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
           ga('create', 'UA-36976317-4', 'auto');
-          ga('send', 'pageview');*/
+          ga('send', 'pageview');
         </script>
     </head>
 
     <body data-spy="scroll" data-target="#top-navbar-1">
+        <!-- Google Tag Manager -->
+        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MPGSWZ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MPGSWZ');</script>
+        <!-- End Google Tag Manager -->
 
         <!-- Loader -->
     	<div class="loader">
@@ -153,7 +162,7 @@
                                         <h2 class="wow fadeInDown">The <strong>Hassle-Free</strong> way to collect <strong>Rent Payments</strong> in the 21st century</h2>
                                         <div class="description wow fadeInUp">
                                             <ul>
-                                                <li>Always <strong>free to landlords</strong>. Tenants pay just $0.48 per payment - less than a stamp</li>
+                                                <li>Always <strong>free to landlords</strong>. Tenants pay just $<span class="pricingAmnt">0.48</span> per payment<span class="pricingToHide"> - less than a stamp</span></li>
                                                 <li>Full landlord account setup in less than 3 minutes</li>
                                             </ul>
                                         </div>
@@ -231,14 +240,14 @@
 	            	<div class="col-sm-5 more-features-box wow bounceInLeft">
 	                    <img src="landlordlandingpage/assets/img/devices/pc.png" alt="">
 	                </div>
-	                <div class="col-sm-7 more-features-box wow bounceInRight">
+	                <div class="col-sm-7 col-lg-6 more-features-box wow bounceInRight">
 	                    <div class="more-features-box-text">
 	                    	<div class="more-features-box-text-icon">
 	                    		<span aria-hidden="true" class="typcn typcn-attachment"></span>
 	                    	</div>
 	                    	<h3>Hassle-Free Rent Payments</h3>
 	                    	<div class="more-features-box-text-description">
-	                    		Nooch gives you peace of mind knowing your tenants' rent will be automatically sent directly to your bank account each month.
+	                    		Nooch gives you peace of mind knowing your tenants' rent will be automatically deposited into your bank account each month.
 	                    	</div>
 	                    </div>
 	                    <div class="more-features-box-text">
@@ -247,7 +256,7 @@
 	                    	</div>
 	                    	<h3>Get The Full Picture</h3>
 	                    	<div class="more-features-box-text-description">
-                                View detailed payment history for all of your units so you always know which exactly tenants have already paid this month (and which ones need an extra reminder).
+                                View detailed payment history for each unit and send reminders to tenants who haven't paid.
 	                    	</div>
 	                    </div>
 	                </div>
@@ -311,7 +320,7 @@
                             <span aria-hidden="true" class="fa fa-calendar"></span>
                         </div>
                         <h3>Automatic Payments</h3>
-                        <p>Sick of scrambling each month to make tenants mail that check? Never again!</p>
+                        <p>Nooch gives you peace of mind knowing your tenants have pre-approved their rent payment so it arrives on time.</p>
                     </div>
 	            </div>
 
@@ -461,7 +470,7 @@
 	                	</div>
 	                    <h3>Add Your Properties</h3>
 	                    <p class="m-b-0">Quickly add as many properties as you want.</p>
-                        <small>(Note: Properties may only have between one - infinity units.)</small>
+                        <!--<small>(Note: Properties may only have between one - infinity units.)</small>-->
                     </div>
                 </div>
 
@@ -626,7 +635,7 @@
 
                                     <div id="fact3" class="circle-content">
                                         <span class="stat-number">83<span class="percentage-sign">%</span></span>
-                                        <span class="stat-text">of Gen-M owns a smartphone</span>
+                                        <span class="stat-text">of Gen-M own smartphones</span>
                                     </div>
                                 </div>
                             </td>
@@ -760,7 +769,7 @@
                         </div>
                         <div class="pricing-box-inner">
                             <div class="pricing-box-price">
-                                <span>$ </span><strong>0.48</strong><span> / transaction</span>
+                                <span>$ </span><strong class="pricingAmnt">0.48</strong><span> / transaction</span>
                             </div>
                             <h4>(less than a stamp!)</h4>
                             <div class="pricing-box-features">
@@ -899,7 +908,7 @@
                             </div>
                         </div>
                         <!-- Faq 6 -->
-                        <div class="panel ">
+                        <div class="panel pricingToHide">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-parent="#accordion" data-toggle="collapse" class="panel-toggle" href="#faq6">
@@ -928,7 +937,7 @@
 
                 <div class="row">
                     <div class="col-sm-12 testimonials section-description">
-                        <h2 class="wow fadeInDown"><i class="fa fa-fw fa-comments"></i> Testimonials</h2>
+                        <h2 class="wow fadeInDown"><i class="fa fa-fw fa-comments"></i> You're In <span>Good Company</span></h2>
                         <div class="divider-1 wow fadeInUp"><span></span></div>
                     </div>
                 </div>
@@ -1505,7 +1514,7 @@
         <script src="landlordlandingpage/assets/js/wow.min.js"></script>
         <script src="landlordlandingpage/assets/js/blockui.min.js"></script>
         <script src="landlordlandingpage/assets/js/sweetalert.min.js"></script>
-        <script src="landlordlandingpage/assets/js/retina-1.1.0.min.js"></script>
+        <!--<script src="landlordlandingpage/assets/js/retina-1.1.0.min.js"></script>-->
         <script src="landlordlandingpage/assets/js/evenZoom.js"></script>
         <script src="landlordlandingpage/assets/js/scripts.js"></script>
 
