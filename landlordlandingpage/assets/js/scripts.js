@@ -17,8 +17,8 @@ jQuery(document).ready(function() {
         cursorcolor: "#41abef",
         cursorwidth: '10px',
         zindex: 9999,
-        mousescrollstep: 36,  // default is 40 (px)
-        scrollspeed: 60, // default is 60
+        mousescrollstep: 25,  // default is 40 (px)
+        scrollspeed: 40, // default is 60
         autohidemode: 'cursor',
         bouncescroll: true,
         hidecursordelay: 700,
@@ -39,13 +39,10 @@ jQuery(document).ready(function() {
             { src: "landlordlandingpage/assets/img/backgrounds/woman-typing.jpg", animation: 'kenburns' },
             { src: "landlordlandingpage/assets/img/backgrounds/woman-writing-contract.jpg", animation: 'kenburnsRight' },
             { src: "landlordlandingpage/assets/img/backgrounds/nooch-rent-payments-cash-exchange.jpg", animation: 'kenburnsDown' },
-            { src: "landlordlandingpage/assets/img/backgrounds/woman-check-mailbox-surprised.jpg", animation: "kenburnsUp", animationDuration: 6500 }
+            { src: "landlordlandingpage/assets/img/backgrounds/woman-check-mailbox-surprised.jpg", animation: "kenburnsUp", animationDuration: 7000 }
 	    ],
-
 	    overlay: "landlordlandingpage/assets/img/backgrounds/overlays/06.png",
-
-	    delay: 7500,
-
+	    delay: 8000,
 	    walk: function (index, slideSettings) {
 	        $('#top-carousel').carousel('prev');
 	    }
@@ -70,9 +67,9 @@ jQuery(document).ready(function() {
     new WOW({
         boxClass: 'wow',         // default
         animateClass: 'animated',// default
-        offset: 20,              // default is 0
-        mobile: true,            // default
-        live: true               // default
+        offset: 10,              // default is 0
+        mobile: false,
+        live: true
     }).init();
 
 
@@ -217,7 +214,7 @@ attemptEmailSubmit = function() {
                 '-webkit-border-radius': '12px',
                 '-moz-border-radius': '12px',
                 'border-radius': '12px',
-                opacity: '.8',
+                opacity: '.82',
             }
         });
 
