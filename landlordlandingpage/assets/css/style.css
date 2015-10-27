@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 17px;
     font-weight: 300;
-    color: #333;
+    color: #222;
     line-height: 30px;
     text-align: center;
     position:relative;
@@ -2101,7 +2101,7 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
   margin-top: 0;
 }
 .sweet-alert button:hover, .sweet-alert button:focus {background-color: #f6f6f6 !important;}
-.sweet-alert button.confirm {color: #3c80f6; }
+.sweet-alert button.confirm {color: #3fabe1; }
 .sweet-alert button.cancel {color: #757575; }
 .sweet-alert button.cancel:focus {box-shadow: none !important; }
 .sweet-alert .sa-icon:not(.sa-custom) {
