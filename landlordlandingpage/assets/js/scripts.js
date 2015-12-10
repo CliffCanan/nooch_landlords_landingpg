@@ -161,7 +161,8 @@ $('#signup-form').submit(function (e) {
 });
 attemptEmailSubmit = function () {
     var email = $('#mce-EMAIL').val();
-    if (ValidateEmail(email)) {
+    if (ValidateEmail(email))
+    {
         updateValidationUI(true);
         // ADD THE LOADING BOX
         $.blockUI({
@@ -176,7 +177,14 @@ attemptEmailSubmit = function () {
                 opacity: '.82'
             }
         });
+
         var emailToSave = $('#mce-EMAIL').val();
+
+        fbq('track', 'Lead', {
+            content_name: emailToSave,
+            content_category: 'Nooch For Landlords > Email Submit'
+        });
+
         $.ajax({
             type: 'POST',
             url: 'https://www.noochme.com/CampaignServices/api/Services/SaveNewEmailForLandlordsApp',

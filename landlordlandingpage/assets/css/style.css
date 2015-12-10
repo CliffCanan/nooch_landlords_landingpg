@@ -71,7 +71,7 @@ img { max-width: 100%; }
 /***** General style, all sections *****/
 .section-container {
     margin: 0 auto;
-    padding-bottom: 80px;
+    padding-bottom: 75px;
 }
 .section-container-gray-bg {
 	background: #f8f8f8;
@@ -85,7 +85,7 @@ img { max-width: 100%; }
 }
 .section-container-image-bg .divider-1 span { background: #fff; }
 .section-description {
-	margin-top: 60px;
+	margin-top: 50px;
     padding-bottom: 10px;
 }
 .section-description p {
@@ -585,7 +585,7 @@ ul.navbar-nav {
 
 
 /***** Footer *****/
-footer {padding: 40px 0 35px 0;}
+footer {padding: 25px 0 5px;}
 .footer-social {
 	font-size: 50px;
     line-height: 50px;
@@ -1908,7 +1908,7 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
   }
   .pricing-box-features li { padding: 9px 25px; }
 
-  .section-container-blue-bg .blueCallout { padding: 150px 45px; }
+  .section-container-blue-bg .blueCallout { padding: 90px 9%; }
 
   #awards-section ul { max-width: 960px; }
   #awards-section ul li {
