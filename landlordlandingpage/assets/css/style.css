@@ -43,6 +43,7 @@ img { max-width: 100%; }
 ::-moz-selection { background: #41abef; color: #fff; text-shadow: none; }
 ::selection { background: #41abef; color: #fff; text-shadow: none; }
 
+body.rentscene .hide-rs { display: none !important; }
 
 /***** Loader *****/
 .loader {
@@ -219,7 +220,11 @@ ul.navbar-nav {
     -ms-transition: none;
     transition: none;
 }
-
+body.rentscene .navbar-brand {
+  background-image: url(../img/rentscenelogo.png);
+  background-size: 170px auto;
+  width: 170px;
+}
 
 /***** Top content *****/
 .top-content .text,
@@ -592,7 +597,7 @@ footer {padding: 25px 0 5px;}
 }
 .footer-social a { color: #ddd; }
 .footer-social a:hover, .footer-social a:focus { color: #41abef; }
-.footer-copyright {margin-top: 25px; font-size:15px;}
+.footer-copyright {margin-top: 25px; font-size:13px; opacity: .7}
 
 
 @media (min-width: 992px) {
@@ -854,6 +859,10 @@ ul.navbar-nav { font-weight: 400; }
 .scroll-fixed-navbar .navbar-brand {
   width: 94px;
   background-image: url(../img/nooch-logo.svg);
+}
+body.rentscene .scroll-fixed-navbar .navbar-brand {
+  background-image: url(../img/rentscenelogo.png);
+  width: 170px;
 }
 .scroll-fixed-navbar ul.navbar-nav > li > a {color: #333;}
 .scroll-fixed-navbar ul.navbar-nav > li > a:hover, 
