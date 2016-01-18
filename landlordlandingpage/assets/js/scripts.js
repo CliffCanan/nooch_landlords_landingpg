@@ -285,9 +285,9 @@ attemptEmailSubmit = function ()
                 console.log(e);
                 swal({
                     title: 'Oh No',
-                    text: 'Looks like we had trouble submitting your email address.  We hate it when this happens too - sorry about this... Please try again later.',
+                    text: 'Looks like we had trouble submitting your email address.  Sorry about this - we hate it when this happens too!  Please try again later.',
                     type: 'error',
-                    confirmButtonText: 'Oh, ok  :-('
+                    confirmButtonText: 'OK  :-('
                 });
             }
         });

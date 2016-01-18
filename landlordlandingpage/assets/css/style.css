@@ -631,7 +631,7 @@ footer {padding: 25px 0 5px;}
 }
 .footer-social a { color: #ddd; }
 .footer-social a:hover, .footer-social a:focus { color: #41abef; }
-.footer-copyright {margin-top: 25px; font-size:13px; opacity: .7}
+.footer-copyright {color:#666; margin-top: 25px; font-size:12px; opacity: .7}
 
 
 @media (min-width: 992px) {
@@ -2134,7 +2134,7 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 }
 .sweet-alert h2 {
   color: #212121;
-  margin: 25px 0 20px;
+  margin: 20px 0 15px;
   font-size: 1.35em;
   line-height: 1.6;
 }
@@ -2143,9 +2143,9 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
   text-align: center;
   color: #212121;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 15.5px;
   line-height: 1.4;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 .sweet-alert button {
   box-shadow: none !important;
@@ -2202,6 +2202,12 @@ a.scroll-up:focus { -moz-transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1
 }
 .sweet-alert .sa-error-container .icon { display: none; }
 .sweet-alert .sa-error-container p { color: #d9453c; margin-top: 0; }
+
+@media (min-width: 768px) {
+    .sweet-alert p {
+        font-size: 16.5px;
+    }
+}
 
 @-webkit-keyframes animateErrorIcon {
   0% {
