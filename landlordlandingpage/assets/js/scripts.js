@@ -1,10 +1,12 @@
 var isRentScene_Global = false;
+var pp;
+var isPPinit = false;
 
 jQuery(window).load(function ()
 {
     /* Loader */
     $('.loader-img').fadeOut();
-    $('.loader').delay(800).fadeOut('slow');
+    $('.loader').delay(500).fadeOut('slow');
     /* Hidden images */
     $('.modal-body img, .testimonial-image img').attr('style', 'width: auto !important; height: auto !important;');
 });
@@ -16,9 +18,9 @@ jQuery(document).ready(function ()
         cursorcolor: '#41abef',
         cursorwidth: '10px',
         zindex: 9999,
-        mousescrollstep: 25,
+        mousescrollstep: 30,
         // default is 40 (px)
-        scrollspeed: 40,
+        scrollspeed: 52, //updated 3.28.16
         // default is 60
         autohidemode: 'cursor',
         bouncescroll: true,
@@ -129,6 +131,13 @@ jQuery(document).ready(function ()
     /** Initialize all Tooltips & Popovers on the page **/
     $('[data-toggle="tooltip"]').tooltip();
     $('[data-toggle="popover"]').popover();
+
+    /** Initialize Floating Pointer **/
+    setTimeout(function ()
+    {
+        pp = $('#emailGrp').pointPoint();
+        isPPinit = true;
+    }, 1000);
 
     /** Benefits Toggle **/
     $('#forLandlords').change(function ()
@@ -325,7 +334,6 @@ ValidateEmail = function (str)
 };
 updateValidationUI = function (success, source)
 {
-
     var input = (source == "sumo") ? input = "emailSumoGrp" : input = "emailGrp";
 
     if (success == true) {
@@ -437,9 +445,22 @@ $(window).scroll(function ()
 {
     'use strict';
     var scroll = $(window).scrollTop();
-    if (scroll > 80) {
+    if (scroll > 80)
+    {
         $('.navbar').addClass('scroll-fixed-navbar');
-    } else {
+
+        if (scroll > 480 && isPPinit) {
+            console.log('Scroll below 80px - destroying floating pointer');
+            pp.destroyPointPoint();
+            isPPinit = false;
+        }
+        else if (scroll < 480 && !isPPinit) {
+            console.log('Scroll above 80px - re-initializing floating pointer');
+            pp = $('#emailGrp').pointPoint();
+            isPPinit = true;
+        }
+    }
+    else {
         $('.navbar').removeClass('scroll-fixed-navbar');
     }
 });
