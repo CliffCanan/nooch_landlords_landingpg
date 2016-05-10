@@ -96,7 +96,7 @@ jQuery(document).ready(function ()
         $('body').addClass('rentscene');
         $('.brand-nm').text('Rent Scene');
 
-        $('.navbar-brand').attr('src', 'http://www.rentscene.com/');
+        $('.navbar-brand').attr('href', 'https://www.rentscene.com/');
 
         setTimeout(function ()
         {
