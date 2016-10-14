@@ -14,8 +14,8 @@
     margin: 0;
 }
 .vegas-overlay {
-    opacity: .25;
-    background: rgba(7,33,46,.7) url(overlays/02.png) center center repeat;
+    opacity: .35;
+    background: rgba(7,33,46,.75) url(overlays/02.png) center center repeat;
 }
 .vegas-timer {
     top: auto;
@@ -383,8 +383,8 @@ _::full-page-media, _:future,
 }
 @-webkit-keyframes kenburnsUp {
     0% {
-        -webkit-transform: scale(1.16) translate(0, 6%);
-                transform: scale(1.16) translate(0, 6%);
+        -webkit-transform: scale(1.12) translate(0, 5%);
+                transform: scale(1.12) translate(0, 5%);
     }
     100% {
         -webkit-transform: scale(1) translate(0, 0);
@@ -393,8 +393,8 @@ _::full-page-media, _:future,
 }
 @keyframes kenburnsUp {
     0% {
-        -webkit-transform: scale(1.16) translate(0, 6%);
-                transform: scale(1.16) translate(0, 6%);
+        -webkit-transform: scale(1.12) translate(0, 5%);
+                transform: scale(1.12) translate(0, 5%);
     }
     100% {
         -webkit-transform: scale(1) translate(0, 0);

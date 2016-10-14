@@ -2,8 +2,7 @@ var isRentScene_Global = false;
 var pp;
 var isPPinit = false;
 
-jQuery(window).load(function ()
-{
+jQuery(window).load(function () {
     /* Loader */
     $('.loader-img').fadeOut();
     $('.loader').delay(500).fadeOut('slow');
@@ -11,8 +10,7 @@ jQuery(window).load(function ()
     $('.modal-body img, .testimonial-image img').attr('style', 'width: auto !important; height: auto !important;');
 });
 
-jQuery(document).ready(function ()
-{
+jQuery(document).ready(function () {
     $('html').niceScroll({
         cursorborder: 0,
         cursorcolor: '#41abef',
@@ -20,7 +18,7 @@ jQuery(document).ready(function ()
         zindex: 9999,
         mousescrollstep: 30,
         // default is 40 (px)
-        scrollspeed: 52, //updated 3.28.16
+        scrollspeed: 40, //updated 3.28.16
         // default is 60
         autohidemode: 'cursor',
         bouncescroll: true,
@@ -29,8 +27,7 @@ jQuery(document).ready(function ()
     });
 
     /* Navigation */
-    $('a.scroll-link').on('click', function (e)
-    {
+    $('a.scroll-link').on('click', function (e) {
         e.preventDefault();
         scroll_to($(this), 0);
     });
@@ -58,18 +55,16 @@ jQuery(document).ready(function ()
         ],
         overlay: 'landlordlandingpage/assets/img/backgrounds/overlays/06.png',
         delay: 8000,
-        walk: function (index, slideSettings)
-        {
+        walk: function (index, slideSettings) {
             $('#top-carousel').carousel('prev');
         }
     });
 
-    $('#top-carousel').on('slide.bs.carousel', function (e)
-    {
-        if ($(e.relatedTarget).is('#slide3')) {
+    $('#top-carousel').on('slide.bs.carousel', function (e) {
+        if ($(e.relatedTarget).is('#slide3'))
+        {
             $('#slide3').css('display', 'none');
-            setTimeout(function ()
-            {
+            setTimeout(function () {
                 $('#slide3').fadeIn();
             }, 700);
         }
@@ -78,8 +73,7 @@ jQuery(document).ready(function ()
     $('.call-to-action-container').backstretch('landlordlandingpage/assets/img/backgrounds/living-room.jpg');
     $('.how-it-works-container').backstretch('landlordlandingpage/assets/img/backgrounds/bg-city.jpg');
 
-    function getParameterByName(name)
-    {
+    function getParameterByName(name) {
         name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
         var regex = new RegExp('[\\?&]' + name + '=([^&#]*)'), results = regex.exec(location.search);
         return results == null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
@@ -98,15 +92,15 @@ jQuery(document).ready(function ()
 
         $('.navbar-brand').attr('href', 'https://www.rentscene.com/');
 
-        setTimeout(function ()
-        {
+        setTimeout(function () {
             $('.fb-link').attr('href', 'https://www.facebook.com/RentScene');
             $('.tw-link').attr('href', 'https://www.twitter.com/RentScene');
             $('.gplus-link').attr('href', 'https://plus.google.com/u/1/b/109725277970836019964/+RentScenePhiladelphia/about');
             $('.ig-link').attr('href', 'https://instagram.com/rentscene');
         }, 2000);
     }
-    else {
+    else
+    {
         /** Wow - Make Elements Animate Into View **/
         new WOW({
             boxClass: 'wow',
@@ -122,7 +116,8 @@ jQuery(document).ready(function ()
 
     var pricing = getParameterByName('prc');
     if (pricing.indexOf('alt') > -1 ||
-        isRentScene_Global) {
+        isRentScene_Global)
+    {
         $('.pricingAmnt').text('1.00');
         $('.pricingToHide').addClass('hide');
         $('#pricingSlogan').html('No hidden fees. &nbsp;Period.');
@@ -133,19 +128,16 @@ jQuery(document).ready(function ()
     $('[data-toggle="popover"]').popover();
 
     /** Initialize Floating Pointer **/
-    setTimeout(function ()
-    {
-        pp = $('#emailGrp').pointPoint();
-        isPPinit = true;
-    }, 1000);
+    //setTimeout(function () {
+    //    pp = $('#emailGrp').pointPoint();
+    //    isPPinit = true;
+    //}, 1000);
 
     /** Benefits Toggle **/
-    $('#forLandlords').change(function ()
-    {
+    $('#forLandlords').change(function () {
         $('#forLandlords').tab('show');
     });
-    $('#forTenants').change(function ()
-    {
+    $('#forTenants').change(function () {
         $('#forTenants').tab('show');
     });
 
@@ -167,28 +159,24 @@ jQuery(document).ready(function ()
     });
 
     /** Pricing Box Screenshot Toggle **/
-    $('#pricingBox1').hover(function ()
-    {
+    $('#pricingBox1').hover(function () {
         $('#pricingScrnShot').attr('src', 'landlordlandingpage/assets/img/devices/nooch-screenshot-property.jpg');
         $('#pricingBox1 .pricingBoxHdr').addClass('active');
         $('#pricingBox2 .pricingBoxHdr').removeClass('active');
     });
-    $('#pricingBox2').hover(function ()
-    {
+    $('#pricingBox2').hover(function () {
         $('#pricingScrnShot').attr('src', 'landlordlandingpage/assets/img/devices/nooch-screenshot-pin-rotated.jpg');
         $('#pricingBox1 .pricingBoxHdr').removeClass('active');
         $('#pricingBox2 .pricingBoxHdr').addClass('active');
     });
 
     /** Modals **/
-    $('.launch-modal').on('click', function (e)
-    {
+    $('.launch-modal').on('click', function (e) {
         e.preventDefault();
         $('#' + $(this).data('modal-id')).modal();
     });
     /** (For Mobile): Collepse the Navbar menu when any nav link is tapped **/
-    $('.navbar-collapse .scroll-link').click(function ()
-    {
+    $('.navbar-collapse .scroll-link').click(function () {
         $('.navbar-collapse').collapse('hide');
     });
 });
@@ -200,12 +188,11 @@ jQuery(document).ready(function ()
 $(document).ajaxStop($.unblockUI);
 
 var flag = false;
-$('#signup-form .btn').bind('touchend click', function ()
-{
-    if (!flag) {
+$('#signup-form .btn').bind('touchend click', function () {
+    if (!flag)
+    {
         flag = true;
-        setTimeout(function ()
-        {
+        setTimeout(function () {
             flag = false;
         }, 200);
         attemptEmailSubmit();
@@ -213,32 +200,30 @@ $('#signup-form .btn').bind('touchend click', function ()
     return false;
 });
 
-$('#signup-form').submit(function (e)
-{
+$('#signup-form').submit(function (e) {
     e.preventDefault();
     attemptEmailSubmit();
 });
 
-attemptEmailSubmit = function ()
-{
+attemptEmailSubmit = function () {
     var email = $('#mce-EMAIL').val();
 
     if (ValidateEmail(email))
     {
         updateValidationUI(true, "body");
         // ADD THE LOADING BOX
-        $.blockUI({
-            message: '<span><i class="fa fa-refresh fa-spin fa-loading"></i></span><br/><span class="loadingMsg">Submitting...</span>',
-            css: {
-                border: 'none',
-                padding: '26px 10px 23px',
-                backgroundColor: '#000',
-                '-webkit-border-radius': '12px',
-                '-moz-border-radius': '12px',
-                'border-radius': '12px',
-                opacity: '.82'
-            }
-        });
+        //$.blockUI({
+        //    message: '<span><i class="fa fa-refresh fa-spin fa-loading"></i></span><br/><span class="loadingMsg">Submitting...</span>',
+        //    css: {
+        //        border: 'none',
+        //        padding: '26px 10px 23px',
+        //        backgroundColor: '#000',
+        //        '-webkit-border-radius': '12px',
+        //        '-moz-border-radius': '12px',
+        //        'border-radius': '12px',
+        //        opacity: '.82'
+        //    }
+        //});
 
         var emailToSave = $('#mce-EMAIL').val();
 
@@ -248,9 +233,8 @@ attemptEmailSubmit = function ()
         $.ajax({
             type: 'POST',
             url: 'https://www.noochme.com/CampaignServices/api/Services/SaveNewEmailForLandlordsApp',
-            data: { 'Email': emailToSave, 'Note1': note1, 'Note2': note2},
-            success: function (msg)
-            {
+            data: { 'Email': emailToSave, 'Note1': note1, 'Note2': note2 },
+            success: function (msg) {
                 //console.log(msg);
                 $('#mce-EMAIL').val('');
 
@@ -263,8 +247,7 @@ attemptEmailSubmit = function ()
                     currency: 'USD'
                 });
 
-                setTimeout(function ()
-                {
+                setTimeout(function () {
                     window.location = "http://www.noochme.com/landlords2/login.html?from=lp1&em=" + emailToSave;
                 }, 300);
 
@@ -287,8 +270,7 @@ attemptEmailSubmit = function ()
                     });
                 }*/
             },
-            Error: function (x, e)
-            {
+            Error: function (x, e) {
                 // On Error
                 console.log(x);
                 console.log(e);
@@ -300,69 +282,60 @@ attemptEmailSubmit = function ()
                 });
             }
         });
-    } else {
-        updateValidationUI(false, "body");
     }
+    else
+        updateValidationUI(false, "body");
 };
-ValidateEmail = function (str)
-{
+
+ValidateEmail = function (str) {
     console.log("ValidateEmail -> input: [" + str + "]");
     var at = '@';
     var dot = '.';
     var lat = str.indexOf(at);
     var lstr = str.length;
     var ldot = str.indexOf(dot);
-    if (lat == -1 || lat == 0 || lat == lstr) {
-        return false;
-    }
-    if (ldot == -1 || ldot == 0 || ldot == lstr) {
-        return false;
-    }
-    if (str.indexOf(at, lat + 1) != -1) {
-        return false;
-    }
-    if (str.substring(lat - 1, lat) == dot || str.substring(lat + 1, lat + 2) == dot) {
-        return false;
-    }
-    if (str.indexOf(dot, lat + 2) == -1) {
-        return false;
-    }
-    if (str.indexOf(' ') != -1) {
-        return false;
-    }
+    if (lat == -1 || lat == 0 || lat == lstr) return false;
+    if (ldot == -1 || ldot == 0 || ldot == lstr) return false;
+    if (str.indexOf(at, lat + 1) != -1) return false;
+    if (str.substring(lat - 1, lat) == dot || str.substring(lat + 1, lat + 2) == dot) return false;
+    if (str.indexOf(dot, lat + 2) == -1) return false;
+    if (str.indexOf(' ') != -1) return false
     return true;
 };
-updateValidationUI = function (success, source)
-{
+
+updateValidationUI = function (success, source) {
     var input = (source == "sumo") ? input = "emailSumoGrp" : input = "emailGrp";
 
-    if (success == true) {
+    if (success == true)
+    {
         $('#' + input).removeClass('has-error').addClass('has-success');
-        if ($('#' + input + ' .help-block').length) {
+        if ($('#' + input + ' .help-block').length)
+        {
             $('#' + input + ' .help-block').slideUp(400, 'swing');
         }
     }
-    else {
+    else
+    {
         $('#' + input).removeClass('has-success').addClass('has-error');
         var helpBlockTxt = 'Please enter your full email address.';
 
-        if (!$('#' + input + ' .help-block').length) {
+        if (!$('#' + input + ' .help-block').length)
+        {
             $('#' + input).append('<small class="help-block pull-left" style="display:none">' + helpBlockTxt + '</small>');
             $('#' + input + ' .help-block').slideDown(300, 'swing');
-        } else {
+        } else
+        {
             $('#' + input + ' .help-block').show();
         }
         // Now focus on the element that failed validation
-        setTimeout(function ()
-        {
+        setTimeout(function () {
             $('#' + input + ' input').focus();
         }, 200);
     }
 };
 
 
-attemptEmailSubmitSumo = function (input)
-{
+attemptEmailSubmitSumo = function (input) {
     var emailToSave = input;
 
     console.log("attemptEmailSubmitSumo emailToSave is: " + emailToSave);
@@ -389,8 +362,7 @@ attemptEmailSubmitSumo = function (input)
         type: 'POST',
         url: 'https://www.noochme.com/CampaignServices/api/Services/SaveNewEmailForLandlordsApp',
         data: { 'Email': emailToSave, 'Note1': note1, 'Note2': note2 },
-        success: function (msg)
-        {
+        success: function (msg) {
             //console.log(msg);
             //$('#mce-EMAIL').val('');
             return;
@@ -406,8 +378,7 @@ attemptEmailSubmitSumo = function (input)
                 currency: 'USD'
             });
 
-            setTimeout(function ()
-            {
+            setTimeout(function () {
                 window.location = "http://www.noochme.com/landlords2/login.html?from=lp1&em=" + emailToSave;
             }, 300);
 
@@ -421,8 +392,7 @@ attemptEmailSubmitSumo = function (input)
                 });
             }*/
         },
-        Error: function (x, e)
-        {
+        Error: function (x, e) {
             // On Error
             console.log(x);
             console.log(e);
@@ -441,80 +411,81 @@ attemptEmailSubmitSumo = function (input)
 // -----------------------------
 //	Navigation Bar
 // -----------------------------
-$(window).scroll(function ()
-{
+$(window).scroll(function () {
     'use strict';
     var scroll = $(window).scrollTop();
     if (scroll > 80)
     {
         $('.navbar').addClass('scroll-fixed-navbar');
 
-        if (scroll > 480 && isPPinit) {
-            console.log('Scroll below 80px - destroying floating pointer');
-            pp.destroyPointPoint();
-            isPPinit = false;
-        }
-        else if (scroll < 480 && !isPPinit) {
-            console.log('Scroll above 80px - re-initializing floating pointer');
-            pp = $('#emailGrp').pointPoint();
-            isPPinit = true;
-        }
+        //if (scroll > 480 && isPPinit)
+        //{
+        //    console.log('Scroll below 80px - destroying floating pointer');
+        //    pp.destroyPointPoint();
+        //    isPPinit = false;
+        //}
+        //else if (scroll < 480 && !isPPinit)
+        //{
+        //    console.log('Scroll above 80px - re-initializing floating pointer');
+        //    pp = $('#emailGrp').pointPoint();
+        //    isPPinit = true;
+        //}
     }
-    else {
+    else
         $('.navbar').removeClass('scroll-fixed-navbar');
-    }
 });
+
 // -----------------------------
 //	Scroll To Section
 // -----------------------------
-function scroll_to(clicked_link, nav_height)
-{
+function scroll_to(clicked_link, nav_height) {
     var element_class = clicked_link.attr('href').replace('#', '.');
     var scroll_to = 0;
-    if (element_class != '.top-content') {
+    if (element_class != '.top-content')
+    {
         element_class += '-container';
         scroll_to = $(element_class).offset().top - nav_height;
     }
-    if ($(window).scrollTop() != scroll_to) {
-        $('html, body').stop().animate({ scrollTop: scroll_to }, 1000, function ()
-        {
-            if (element_class == '.top-content') {
+    if ($(window).scrollTop() != scroll_to)
+    {
+        $('html, body').stop().animate({ scrollTop: scroll_to }, 1000, function () {
+            if (element_class == '.top-content')
+            {
                 $('#mce-EMAIL').focus();
             }
         });
     }
 }
+
 // -----------------------------
 //	Scroll Up
 // -----------------------------
-$(window).scroll(function ()
-{
-    if ($(this).scrollTop() > 100) {
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 100)
         $('.scroll-up').fadeIn();
-    } else {
+    else
         $('.scroll-up').fadeOut();
-    }
 });
-$('.scroll-up').click(function ()
-{
+
+$('.scroll-up').click(function () {
     $('html, body').animate({ scrollTop: 0 }, 600);
     return false;
 });
+
 // --------------------------	
 //	Benefits Tab
 // --------------------------	
-function toggleBenefitsTabs()
-{
+function toggleBenefitsTabs() {
     $('#forLandlordsTab').toggleClass('active');
     $('#forTenantsTab').toggleClass('active');
     $('#forLandlordsTab').toggleClass('in');
     $('#forTenantsTab').toggleClass('in');
 }
+
 // --------------------------	
 //	Accordion (FAQ)
 // --------------------------	
-function toggleIcon(e)
-{
+function toggleIcon(e) {
     $(e.target).prev('.panel-heading').find('.panel-title a').toggleClass('active').find('i.fa').toggleClass('fa-plus-square fa-minus-square');
 }
 $('.panel').on('hidden.bs.collapse', toggleIcon);
