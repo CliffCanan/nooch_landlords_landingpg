@@ -1622,17 +1622,18 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
   padding: 60px 20px 20px 20px;
 }
 .contact-details-box {
-  background-color: #f3f3f4;
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 12px -2px rgba(0,0,0,.16);
   border: 2px solid #cccccc;
   color: #333;
   text-align: center;
      -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
           border-radius: 50%;
-  padding: 20px 10px 20px 10px;
+  padding: 26px 10px 20px 10px;
   margin: 0 auto 10px;
-  height: 180px;
-  max-width:180px;
+  height: 190px;
+  max-width: 190px;
 }
 .contact-details-box,
 .contact-details-box .fa {
@@ -1641,9 +1642,10 @@ div#hover-wrap-6:hover #fact6 span.percentage-sign { font-size:20px; opacity:1; 
   -webkit-transition: all 0.2s ease;
           transition: all 0.2s ease;
 }
+.contact-details-box .fa { font-size: 28px; margin-top: 5px;}
 .contact-details-box:hover { border-color:#41abef; }
 .contact-details-box:hover .fa { color:#41abef; }
-.contact-details-box h2 { font-family: 'Lato', sans-serif; font-size: 1.3em; font-weight: bold; margin:0;}
+.contact-details-box h2 { font-family: 'Lato', sans-serif; font-size: 1.3em; margin:0;}
 .contact-details-box p { font-weight: 300; font-size: 16px; line-height:1.5}
 .contact-details-box a:hover {text-decoration:underline;}
 .message-contact-box { width: 100%; padding: 0 15px 0 15px; }

@@ -1,11 +1,11 @@
-var isRentScene_Global = false;
-var pp;
-var isPPinit = false;
+// For Point Point Floating Cursor - INACTIVE
+//var pp;
+//var isPPinit = false;
 
 jQuery(window).load(function () {
     /* Loader */
     $('.loader-img').fadeOut();
-    $('.loader').delay(500).fadeOut('slow');
+    $('.loader').delay(400).fadeOut();
     /* Hidden images */
     $('.modal-body img, .testimonial-image img').attr('style', 'width: auto !important; height: auto !important;');
 });
@@ -79,44 +79,30 @@ jQuery(document).ready(function () {
         return results == null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
     }
 
-    isRentScene = getParameterByName('rs');
-    if (isRentScene == '1' ||
-        window.location.pathname.indexOf('rentscene') > -1)
+    /*if (window.location.pathname.indexOf('rentscene') > -1)
     {
-        $('.wow').removeClass('wow');
-
         isRentScene_Global = true;
-
         $('body').addClass('rentscene');
         $('.brand-nm').text('Rent Scene');
-
         $('.navbar-brand').attr('href', 'https://www.rentscene.com/');
-
-        setTimeout(function () {
-            $('.fb-link').attr('href', 'https://www.facebook.com/RentScene');
-            $('.tw-link').attr('href', 'https://www.twitter.com/RentScene');
-            $('.gplus-link').attr('href', 'https://plus.google.com/u/1/b/109725277970836019964/+RentScenePhiladelphia/about');
-            $('.ig-link').attr('href', 'https://instagram.com/rentscene');
-        }, 2000);
     }
     else
-    {
-        /** Wow - Make Elements Animate Into View **/
-        new WOW({
-            boxClass: 'wow',
-            // default
-            animateClass: 'animated',
-            // default
-            offset: 10,
-            // default is 0
-            mobile: false,
-            live: true
-        }).init();
-    }
+    {*/
+    /** Wow - Make Elements Animate Into View **/
+    new WOW({
+        boxClass: 'wow',
+        // default
+        animateClass: 'animated',
+        // default
+        offset: 10,
+        // default is 0
+        mobile: false,
+        live: true
+    }).init();
+    //}
 
     var pricing = getParameterByName('prc');
-    if (pricing.indexOf('alt') > -1 ||
-        isRentScene_Global)
+    if (pricing.indexOf('alt') > -1)
     {
         $('.pricingAmnt').text('1.00');
         $('.pricingToHide').addClass('hide');
@@ -228,7 +214,7 @@ attemptEmailSubmit = function () {
         var emailToSave = $('#mce-EMAIL').val();
 
         var note1 = 'Landlords Landing Page - Body';
-        var note2 = isRentScene_Global ? 'Rent Scene' : 'Nooch';
+        var note2 = 'Nooch';
 
         $.ajax({
             type: 'POST',
@@ -356,7 +342,7 @@ attemptEmailSubmitSumo = function (input) {
     });
 
     var note1 = 'Landlords Landing Page - SumoMe';
-    var note2 = isRentScene_Global ? 'Rent Scene' : 'Nooch';
+    var note2 = 'Nooch';
 
     $.ajax({
         type: 'POST',
