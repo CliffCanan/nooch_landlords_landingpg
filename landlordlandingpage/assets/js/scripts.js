@@ -7,7 +7,7 @@ jQuery(window).load(function () {
     $('.loader-img').fadeOut();
     $('.loader').delay(400).fadeOut();
     /* Hidden images */
-    $('.modal-body img, .testimonial-image img').attr('style', 'width: auto !important; height: auto !important;');
+    //$('.modal-body img, .testimonial-image img').attr('style', 'width: auto !important; height: auto !important;');
 });
 
 jQuery(document).ready(function () {
@@ -61,8 +61,7 @@ jQuery(document).ready(function () {
     });
 
     $('#top-carousel').on('slide.bs.carousel', function (e) {
-        if ($(e.relatedTarget).is('#slide3'))
-        {
+        if ($(e.relatedTarget).is('#slide3')) {
             $('#slide3').css('display', 'none');
             setTimeout(function () {
                 $('#slide3').fadeIn();
@@ -79,6 +78,10 @@ jQuery(document).ready(function () {
         return results == null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
     }
 
+    if (window.location.pathname.indexOf('mocafi') > -1) {
+        $('body').addClass('mocafi');
+        $('.hide-pricing').addClass('hidden');
+    }
     /*if (window.location.pathname.indexOf('rentscene') > -1)
     {
         isRentScene_Global = true;
@@ -86,8 +89,7 @@ jQuery(document).ready(function () {
         $('.brand-nm').text('Rent Scene');
         $('.navbar-brand').attr('href', 'https://www.rentscene.com/');
     }
-    else
-    {*/
+
     /** Wow - Make Elements Animate Into View **/
     new WOW({
         boxClass: 'wow',
@@ -99,13 +101,11 @@ jQuery(document).ready(function () {
         mobile: false,
         live: true
     }).init();
-    //}
 
     var pricing = getParameterByName('prc');
-    if (pricing.indexOf('alt') > -1)
-    {
+    if (pricing.indexOf('alt') > -1) {
         $('.pricingAmnt').text('1.00');
-        $('.pricingToHide').addClass('hide');
+        $('#faq .hide-pricing').addClass('hide');
         $('#pricingSlogan').html('No hidden fees. &nbsp;Period.');
     }
 
@@ -175,8 +175,7 @@ $(document).ajaxStop($.unblockUI);
 
 var flag = false;
 $('#signup-form .btn').bind('touchend click', function () {
-    if (!flag)
-    {
+    if (!flag) {
         flag = true;
         setTimeout(function () {
             flag = false;
@@ -194,8 +193,7 @@ $('#signup-form').submit(function (e) {
 attemptEmailSubmit = function () {
     var email = $('#mce-EMAIL').val();
 
-    if (ValidateEmail(email))
-    {
+    if (ValidateEmail(email)) {
         updateValidationUI(true, "body");
         // ADD THE LOADING BOX
         //$.blockUI({
@@ -221,7 +219,7 @@ attemptEmailSubmit = function () {
             url: 'https://www.noochme.com/CampaignServices/api/Services/SaveNewEmailForLandlordsApp',
             data: { 'Email': emailToSave, 'Note1': note1, 'Note2': note2 },
             success: function (msg) {
-                //console.log(msg);
+                console.log(msg);
                 $('#mce-EMAIL').val('');
 
                 ga('send', 'event', 'LandlordLead', 'Submit', 'MainPageInput', 5);
@@ -229,20 +227,21 @@ attemptEmailSubmit = function () {
                 fbq('track', 'Lead', {
                     content_name: 'Landlord',
                     content_category: 'NoochForLandlords_EmailSubmit',
-                    value: 10.0,
+                    value: 5.0,
                     currency: 'USD'
                 });
 
-                setTimeout(function () {
-                    window.location = "http://www.noochme.com/landlords2/login.html?from=lp1&em=" + emailToSave;
-                }, 300);
+                // (5/7/17) - No longer accepting new signups :-( so don't send to Login page anymore.
+                //setTimeout(function () {
+                //    window.location = "http://www.noochme.com/landlords2/login.html?from=lp1&em=" + emailToSave;
+                //}, 300);
 
-                /*if (msg.IsSuccess == true) {
+                if (msg.IsSuccess == true) {
                     swal({
                         title: 'Great Success',
-                        text: '<p>Thanks for your interest in Nooch For Landlords!</p><p>We\'ll be in touch in the next few days about how to get started using Nooch to collect rent payments.</p>',
+                        text: '<p>Thanks for your interest in Nooch For Landlords!</p><p>For now, in order to provide excellent service to our existing userbase, we\'re not able to accept new users at this time :-(</p><p>But when we\'re ready to invite more users, we\'ll be in touch about how to get started.</p>',
                         type: 'success',
-                        confirmButtonText: 'Awesome',
+                        confirmButtonText: 'Ok',
                         html: true
                     });
                 }
@@ -254,7 +253,7 @@ attemptEmailSubmit = function () {
                         confirmButtonText: 'OK',
                         html: true
                     });
-                }*/
+                }
             },
             Error: function (x, e) {
                 // On Error
@@ -274,7 +273,7 @@ attemptEmailSubmit = function () {
 };
 
 ValidateEmail = function (str) {
-    console.log("ValidateEmail -> input: [" + str + "]");
+    //console.log("ValidateEmail -> input: [" + str + "]");
     var at = '@';
     var dot = '.';
     var lat = str.indexOf(at);
@@ -292,25 +291,20 @@ ValidateEmail = function (str) {
 updateValidationUI = function (success, source) {
     var input = (source == "sumo") ? input = "emailSumoGrp" : input = "emailGrp";
 
-    if (success == true)
-    {
+    if (success == true) {
         $('#' + input).removeClass('has-error').addClass('has-success');
-        if ($('#' + input + ' .help-block').length)
-        {
+        if ($('#' + input + ' .help-block').length) {
             $('#' + input + ' .help-block').slideUp(400, 'swing');
         }
     }
-    else
-    {
+    else {
         $('#' + input).removeClass('has-success').addClass('has-error');
         var helpBlockTxt = 'Please enter your full email address.';
 
-        if (!$('#' + input + ' .help-block').length)
-        {
+        if (!$('#' + input + ' .help-block').length) {
             $('#' + input).append('<small class="help-block pull-left" style="display:none">' + helpBlockTxt + '</small>');
             $('#' + input + ' .help-block').slideDown(300, 'swing');
-        } else
-        {
+        } else {
             $('#' + input + ' .help-block').show();
         }
         // Now focus on the element that failed validation
@@ -324,11 +318,11 @@ updateValidationUI = function (success, source) {
 attemptEmailSubmitSumo = function (input) {
     var emailToSave = input;
 
-    console.log("attemptEmailSubmitSumo emailToSave is: " + emailToSave);
+    //console.log("attemptEmailSubmitSumo emailToSave is: " + emailToSave);
 
     updateValidationUI(true, "sumo");
     // ADD THE LOADING BOX
-    $.blockUI({
+    /*$.blockUI({
         message: '<span><i class="fa fa-refresh fa-spin fa-loading"></i></span><br/><span class="loadingMsg">Submitting...</span>',
         css: {
             border: 'none',
@@ -339,7 +333,7 @@ attemptEmailSubmitSumo = function (input) {
             'border-radius': '12px',
             opacity: '.82'
         }
-    });
+    });*/
 
     var note1 = 'Landlords Landing Page - SumoMe';
     var note2 = 'Nooch';
@@ -350,8 +344,7 @@ attemptEmailSubmitSumo = function (input) {
         data: { 'Email': emailToSave, 'Note1': note1, 'Note2': note2 },
         success: function (msg) {
             //console.log(msg);
-            //$('#mce-EMAIL').val('');
-            return;
+
             $('#sumome-modal-mask').fadeOut(900);
             $('.sumome-scrollbox-popup').fadeOut(900);
 
@@ -360,26 +353,25 @@ attemptEmailSubmitSumo = function (input) {
             fbq('track', 'Lead', {
                 content_name: 'Landlord',
                 content_category: 'ScrollBox',
-                value: 10.0,
+                value: 5.0,
                 currency: 'USD'
             });
 
-            setTimeout(function () {
-                window.location = "http://www.noochme.com/landlords2/login.html?from=lp1&em=" + emailToSave;
-            }, 300);
+            //setTimeout(function () {
+            //    window.location = "http://www.noochme.com/landlords2/login.html?from=lp1&em=" + emailToSave;
+            //}, 300);
 
-            /*if (msg.IsSuccess == true) {
+            if (msg.IsSuccess == true) {
                 swal({
                     title: 'Great Success',
-                    text: '<p>Thanks for your interest in Nooch For Landlords!</p><p>We\'ll be in touch in the next few days about how to get started using Nooch to collect rent payments.</p>',
-                    type: 'success',
+                    text: '<p>Thanks for your interest in Nooch For Landlords!</p><p>For now, in order to provide excellent service to our existing userbase, we\'re not able to accept new users at this time :-(</p><p>But when we\'re ready to invite more users, we\'ll be in touch about how to get started.</p>',
+                        type: 'success',
                     confirmButtonText: 'Awesome',
                     html: true
                 });
-            }*/
+            }
         },
         Error: function (x, e) {
-            // On Error
             console.log(x);
             console.log(e);
             //swal({
@@ -400,19 +392,14 @@ attemptEmailSubmitSumo = function (input) {
 $(window).scroll(function () {
     'use strict';
     var scroll = $(window).scrollTop();
-    if (scroll > 80)
-    {
+    if (scroll > 80) {
         $('.navbar').addClass('scroll-fixed-navbar');
 
-        //if (scroll > 480 && isPPinit)
-        //{
-        //    console.log('Scroll below 80px - destroying floating pointer');
+        //if (scroll > 480 && isPPinit) {
         //    pp.destroyPointPoint();
         //    isPPinit = false;
         //}
-        //else if (scroll < 480 && !isPPinit)
-        //{
-        //    console.log('Scroll above 80px - re-initializing floating pointer');
+        //else if (scroll < 480 && !isPPinit) {
         //    pp = $('#emailGrp').pointPoint();
         //    isPPinit = true;
         //}
@@ -427,16 +414,13 @@ $(window).scroll(function () {
 function scroll_to(clicked_link, nav_height) {
     var element_class = clicked_link.attr('href').replace('#', '.');
     var scroll_to = 0;
-    if (element_class != '.top-content')
-    {
+    if (element_class != '.top-content') {
         element_class += '-container';
         scroll_to = $(element_class).offset().top - nav_height;
     }
-    if ($(window).scrollTop() != scroll_to)
-    {
+    if ($(window).scrollTop() != scroll_to) {
         $('html, body').stop().animate({ scrollTop: scroll_to }, 1000, function () {
-            if (element_class == '.top-content')
-            {
+            if (element_class == '.top-content') {
                 $('#mce-EMAIL').focus();
             }
         });

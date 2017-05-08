@@ -111,7 +111,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a class="scroll-link" href="#features">Features</a></li>
                         <li><a class="scroll-link" href="#how-it-works">How It Works</a></li>
-                        <li><a class="scroll-link" href="#pricing">Pricing</a></li>
+                        <li class="hide-pricing"><a class="scroll-link" href="#pricing">Pricing</a></li>
                         <li><a class="scroll-link" href="#faq">FAQs</a></li>
                         <li><a class="scroll-link" href="#about-us">About</a></li>
                         <li class="hide-rs"><a class="btn btn btn-link" href="https://www.nooch.com/" data-toggle="tooltip" title="Learn about Nooch for P2P (new page)" data-placement="bottom">Nooch P2P</a></li>
@@ -188,7 +188,7 @@
                                     <h2 class="wow fadeInDown">The <strong>Hassle-Free</strong> way to collect <strong>Rent Payments</strong> in the 21st century</h2>
                                     <div class="description wow fadeInUp">
                                         <ul>
-                                            <li>Always <strong>free to landlords</strong>. Tenants pay just $<span class="pricingAmnt">0.48</span> per payment<span class="pricingToHide"> - less than a stamp</span></li>
+                                            <li class="hide-pricing">Always <strong>free to landlords</strong>. Tenants pay just $<span class="pricingAmnt">0.48</span> per payment<span class="pricingToHide"> - less than a stamp</span></li>
                                             <li>Full landlord account setup in less than 3 minutes</li>
                                         </ul>
                                     </div>
@@ -727,7 +727,7 @@
     </div>
 
     <!-- Pricing -->
-    <div class="pricing-container section-container" id="pricing">
+    <div class="pricing-container section-container hide-pricing" id="pricing">
         <div class="container">
 
             <div class="row">
@@ -922,7 +922,7 @@
                         </div>
                     </div>
                     <!-- Faq 6 -->
-                    <div class="panel pricingToHide">
+                    <div class="panel hide-pricing">
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a data-parent="#accordion" data-toggle="collapse" class="panel-toggle" href="#faq6">
@@ -1437,7 +1437,14 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 footer-copyright">
-                    Designed by <a href="https://goo.gl/o2NGX5" rel="author" target="_blank">Cliff Canan</a>. &copy; 2016 Nooch Inc. All Rights Reserved.
+                    Designed by
+					<a href="https://goo.gl/o2NGX5" itemscope itemtype="http://schema.org/Person" rel="author" target="_blank">
+						<span itemprop="name">Cliff Canan</span>
+					</a>. &copy; 2017
+					<span itemscope itemprop="organization" itemtype="http://schema.org/Organization">
+						<span itemprop="name">Nooch Inc</span>.
+					</span>
+					All Rights Reserved.
                 </div>
             </div>
         </div>
